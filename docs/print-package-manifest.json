@@ -1,0 +1,4452 @@
+{
+  "schema_version": 1,
+  "generated_date": "2026-10-09",
+  "source": {
+    "repository": "https://github.com/karekin/Microduck-build-tutorial",
+    "baseline_commit": "49678215d0b40529522772a40c06c216390449dd",
+    "package_path": "microduck3D打印.3mf",
+    "package_bytes": 5298732,
+    "package_sha256": "e78a329d264bc5050c00b8ff6a37d6b1195b6ea128bd9760492f31b4a91cc71e",
+    "source_modified": false,
+    "units": "millimeter",
+    "application_metadata": {
+      "Application": "BambuStudio-02.07.01.62",
+      "BambuStudio:3mfVersion": "1",
+      "CreationDate": "2026-09-04",
+      "ModificationDate": "2026-09-04"
+    }
+  },
+  "method": {
+    "parser": "Python standard library ZIP/XML/JSON; all component/build transforms applied to vertices",
+    "bbox_definition": "axis-aligned vertex extrema in mm; local mesh bbox versus package-global placed bbox explicitly separated",
+    "not_validated": [
+      "watertightness/manifold geometry",
+      "slicer repair",
+      "material quantity",
+      "print time",
+      "tolerances",
+      "part names beyond original source metadata",
+      "assembled compatibility",
+      "actual machine/material"
+    ],
+    "privacy": "only allowlisted settings and filename basenames retained; designer ids and source paths omitted"
+  },
+  "summary": {
+    "zip_crc_valid": true,
+    "zip_member_count": 101,
+    "object_model_member_count": 67,
+    "empty_object_model_member_count": 31,
+    "root_resource_object_count": 67,
+    "config_object_count": 67,
+    "build_item_count": 67,
+    "printable_build_item_count": 67,
+    "plate_count": 5,
+    "plate_model_instance_count": 65,
+    "plate_assigned_printable_build_item_count": 65,
+    "unassigned_build_root_object_ids": [
+      "55",
+      "56"
+    ],
+    "mesh_resource_count": 36,
+    "unique_geometry_hash_count": 32,
+    "reused_mesh_resource_count": 5,
+    "extra_build_references_from_reuse": 31,
+    "missing_geometry_reference_count": 0,
+    "invalid_triangle_index_count": 0,
+    "non_finite_vertex_count": 0,
+    "total_resource_vertices": 219463,
+    "total_resource_triangles": 441068,
+    "contains_sliced_gcode_file": false
+  },
+  "original_project_settings": {
+    "printer_model": "Bambu Lab P1S",
+    "printer_settings_id": "Bambu Lab P1S 0.4 nozzle",
+    "print_settings_id": "0.20mm Standard @BBL X1C",
+    "layer_height": "0.2",
+    "initial_layer_print_height": "0.2",
+    "nozzle_diameter": [
+      "0.4"
+    ],
+    "curr_bed_type": "Textured PEI Plate",
+    "printable_area": [
+      "0x0",
+      "256x0",
+      "256x256",
+      "0x256"
+    ],
+    "printable_height": "250",
+    "filament_type": [
+      "PLA",
+      "PLA",
+      "PLA",
+      "PLA",
+      "PLA",
+      "PLA",
+      "PLA",
+      "PLA",
+      "PLA",
+      "PLA",
+      "PLA",
+      "PLA",
+      "PLA",
+      "PLA",
+      "PLA",
+      "PLA",
+      "PLA",
+      "PLA",
+      "PLA",
+      "PLA",
+      "PLA"
+    ],
+    "filament_colour": [
+      "#A6A9AA",
+      "#0080FF",
+      "#000000",
+      "#C85406",
+      "#03FF07",
+      "#FF0600",
+      "#B40001",
+      "#00FF00",
+      "#FF0000",
+      "#FF9929",
+      "#777777",
+      "#F20000",
+      "#FA0000",
+      "#00FF00",
+      "#CC0000",
+      "#777777",
+      "#FAFAFA",
+      "#FF7400",
+      "#FFBE00",
+      "#4A4A4A",
+      "#B9B9B9"
+    ],
+    "filament_settings_id": [
+      "Bambu PLA Basic @BBL P1S 0.4 nozzle",
+      "Generic PLA",
+      "Generic PLA",
+      "Generic PLA",
+      "Generic PLA",
+      "Generic PLA",
+      "Generic PLA",
+      "Generic PLA",
+      "Generic PLA",
+      "Generic PLA",
+      "Generic PLA",
+      "Generic PLA",
+      "Generic PLA",
+      "Generic PLA",
+      "Generic PLA",
+      "Generic PLA",
+      "Generic PLA",
+      "Generic PLA",
+      "Generic PLA",
+      "Generic PLA",
+      "Generic PLA"
+    ],
+    "filament_diameter": [
+      "1.75",
+      "1.75",
+      "1.75",
+      "1.75",
+      "1.75",
+      "1.75",
+      "1.75",
+      "1.75",
+      "1.75",
+      "1.75",
+      "1.75",
+      "1.75",
+      "1.75",
+      "1.75",
+      "1.75",
+      "1.75",
+      "1.75",
+      "1.75",
+      "1.75",
+      "1.75",
+      "1.75"
+    ],
+    "nozzle_temperature": [
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220"
+    ],
+    "nozzle_temperature_initial_layer": [
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220",
+      "220"
+    ],
+    "textured_plate_temp": [
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55"
+    ],
+    "textured_plate_temp_initial_layer": [
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55"
+    ],
+    "sparse_infill_density": "15%",
+    "sparse_infill_pattern": "grid",
+    "wall_loops": "2",
+    "enable_support": "1",
+    "support_type": "tree(auto)",
+    "support_on_build_plate_only": "0",
+    "support_top_z_distance": "0.2",
+    "support_bottom_z_distance": "0.2",
+    "support_object_xy_distance": "0.35"
+  },
+  "plates": [
+    {
+      "id": 1,
+      "original_name": "黄色的鸭嘴和脚部分",
+      "root_object_ids": [
+        "2",
+        "4",
+        "64",
+        "66"
+      ],
+      "model_instance_count": 4,
+      "thumbnail": "assets/print-preflight/plate_1.png",
+      "printable_build_item_count": 4,
+      "geometry_reference_count": 4,
+      "unique_geometry_resource_count": 4,
+      "package_global_bbox_mm": {
+        "min": [
+          32.553944,
+          57.531622,
+          -0.0
+        ],
+        "max": [
+          233.318639,
+          178.735548,
+          39.489998
+        ],
+        "size": [
+          200.764695,
+          121.203926,
+          39.489998
+        ]
+      },
+      "used_extruder_indices_1based": [
+        4
+      ],
+      "thumbnail_sha256": "5f99294ba294d405b692caa478f073760726d21aeac46ba2fa7221d63099e2f5"
+    },
+    {
+      "id": 2,
+      "original_name": "白色的外壳",
+      "root_object_ids": [
+        "6",
+        "8",
+        "10",
+        "72",
+        "74"
+      ],
+      "model_instance_count": 5,
+      "thumbnail": "assets/print-preflight/plate_2.png",
+      "printable_build_item_count": 5,
+      "geometry_reference_count": 5,
+      "unique_geometry_resource_count": 5,
+      "package_global_bbox_mm": {
+        "min": [
+          336.817402,
+          44.6168,
+          -0.0
+        ],
+        "max": [
+          524.181815,
+          212.091834,
+          116.073266
+        ],
+        "size": [
+          187.364413,
+          167.475034,
+          116.073266
+        ]
+      },
+      "used_extruder_indices_1based": [
+        17
+      ],
+      "thumbnail_sha256": "061d4c80acaa4fed735a51f631759e4661ac14cec5001f1fee83124497b4c31b"
+    },
+    {
+      "id": 3,
+      "original_name": "灰色的结构件",
+      "root_object_ids": [
+        "12",
+        "14",
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36",
+        "38",
+        "40",
+        "42",
+        "60",
+        "70",
+        "76"
+      ],
+      "model_instance_count": 19,
+      "thumbnail": "assets/print-preflight/plate_3.png",
+      "printable_build_item_count": 19,
+      "geometry_reference_count": 19,
+      "unique_geometry_resource_count": 18,
+      "package_global_bbox_mm": {
+        "min": [
+          627.806238,
+          9.012611,
+          -0.0
+        ],
+        "max": [
+          856.645296,
+          242.860308,
+          34.5
+        ],
+        "size": [
+          228.839058,
+          233.847697,
+          34.5
+        ]
+      },
+      "used_extruder_indices_1based": [
+        1
+      ],
+      "thumbnail_sha256": "b6c7f4e38d2e07e4c3b995d40f74410e24fa297f531acec53535c54d95665319"
+    },
+    {
+      "id": 4,
+      "original_name": "结构件 舵机转盘 轴承",
+      "root_object_ids": [
+        "50",
+        "51",
+        "53",
+        "57",
+        "59",
+        "62",
+        "68",
+        "77",
+        "78",
+        "79",
+        "80",
+        "81",
+        "82",
+        "83",
+        "84",
+        "85",
+        "86",
+        "87",
+        "88",
+        "89",
+        "90",
+        "91",
+        "92",
+        "93",
+        "94",
+        "95",
+        "96",
+        "97",
+        "98",
+        "99",
+        "100",
+        "101",
+        "102",
+        "103"
+      ],
+      "model_instance_count": 34,
+      "thumbnail": "assets/print-preflight/plate_4.png",
+      "printable_build_item_count": 34,
+      "geometry_reference_count": 34,
+      "unique_geometry_resource_count": 6,
+      "package_global_bbox_mm": {
+        "min": [
+          25.618542,
+          -265.673783,
+          -0.0
+        ],
+        "max": [
+          238.653422,
+          -89.014064,
+          4.599998
+        ],
+        "size": [
+          213.03488,
+          176.659719,
+          4.599998
+        ]
+      },
+      "used_extruder_indices_1based": [
+        3
+      ],
+      "thumbnail_sha256": "1334e3c8dda795e6e297cefba157c9764df4482eb8bb31ff70c7a5d641dc3aff"
+    },
+    {
+      "id": 5,
+      "original_name": "浅黄色的眼镜和脚掌",
+      "root_object_ids": [
+        "44",
+        "46",
+        "48"
+      ],
+      "model_instance_count": 3,
+      "thumbnail": "assets/print-preflight/plate_5.png",
+      "printable_build_item_count": 3,
+      "geometry_reference_count": 3,
+      "unique_geometry_resource_count": 3,
+      "package_global_bbox_mm": {
+        "min": [
+          384.799524,
+          -233.558189,
+          -0.0
+        ],
+        "max": [
+          493.434028,
+          -138.415867,
+          18.382284
+        ],
+        "size": [
+          108.634504,
+          95.142322,
+          18.382284
+        ]
+      },
+      "used_extruder_indices_1based": [
+        10
+      ],
+      "thumbnail_sha256": "da8a66bc8d17cc90891139f974331d83be2e95efc106d579f89fc6f10b72f8c9"
+    }
+  ],
+  "build_items": [
+    {
+      "build_index": 0,
+      "root_object_id": "2",
+      "original_name": "3.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        1
+      ],
+      "extruder_index_1based": 4,
+      "components": [
+        {
+          "path": "3D/Objects/object_3.model",
+          "mesh_object_id": "1"
+        }
+      ],
+      "package_global_transform": "-0.00873778892 -0.999923333 0.0087737614 0.00010418231 0.00877318598 0.999961509 -0.999961819 0.00873836667 2.75160752e-05 78.9214635 116.256846 9.92671632",
+      "package_global_bbox_mm": {
+        "min": [
+          32.553944,
+          57.531622,
+          -0.0
+        ],
+        "max": [
+          124.312599,
+          174.647901,
+          20.061301
+        ],
+        "size": [
+          91.758655,
+          117.116279,
+          20.061301
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 1,
+      "root_object_id": "4",
+      "original_name": "4.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        1
+      ],
+      "extruder_index_1based": 4,
+      "components": [
+        {
+          "path": "3D/Objects/object_4.model",
+          "mesh_object_id": "3"
+        }
+      ],
+      "package_global_transform": "-0.00727844279 -0.99993643 0.00861166922 -0.00136616907 0.00862183278 0.999961898 -0.999972579 0.00726640047 -0.00142883574 186.643687 93.3618622 14.475973",
+      "package_global_bbox_mm": {
+        "min": [
+          140.71317,
+          58.64409,
+          -0.0
+        ],
+        "max": [
+          232.126205,
+          128.079594,
+          29.044504
+        ],
+        "size": [
+          91.413035,
+          69.435503,
+          29.044504
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 2,
+      "root_object_id": "6",
+      "original_name": "5.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        2
+      ],
+      "extruder_index_1based": 17,
+      "components": [
+        {
+          "path": "3D/Objects/object_5.model",
+          "mesh_object_id": "5"
+        }
+      ],
+      "package_global_transform": "-0.000109256228 0.132400213 -0.991196334 0.000124820653 0.991196334 0.1324002 0.999999986 -0.000109256228 -0.000124820653 383.680462 181.252604 58.0222853",
+      "package_global_bbox_mm": {
+        "min": [
+          337.791794,
+          150.166344,
+          -0.0
+        ],
+        "max": [
+          429.551788,
+          212.091834,
+          116.073266
+        ],
+        "size": [
+          91.759994,
+          61.92549,
+          116.073266
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 3,
+      "root_object_id": "8",
+      "original_name": "7.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        2
+      ],
+      "extruder_index_1based": 17,
+      "components": [
+        {
+          "path": "3D/Objects/object_7.model",
+          "mesh_object_id": "7"
+        }
+      ],
+      "package_global_transform": "-2.22044605e-16 -1 0 1 -2.22044605e-16 0 0 0 1 357.662403 85.0608005 16.8570004",
+      "package_global_bbox_mm": {
+        "min": [
+          336.817402,
+          44.6168,
+          0.0
+        ],
+        "max": [
+          378.507404,
+          125.504801,
+          33.714001
+        ],
+        "size": [
+          41.690002,
+          80.888,
+          33.714001
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 4,
+      "root_object_id": "10",
+      "original_name": "8.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        2
+      ],
+      "extruder_index_1based": 17,
+      "components": [
+        {
+          "path": "3D/Objects/object_8.model",
+          "mesh_object_id": "9"
+        }
+      ],
+      "package_global_transform": "-0.0378090158 -0.999284766 0.000659789605 -0.998676123 0.0378090158 0.0348780761 -0.0348780761 0.000659789605 -0.999391357 415.984618 85.0331257 15.4815362",
+      "package_global_bbox_mm": {
+        "min": [
+          394.987788,
+          45.0375,
+          -0.0
+        ],
+        "max": [
+          437.410546,
+          125.587526,
+          32.019878
+        ],
+        "size": [
+          42.422758,
+          80.550026,
+          32.019878
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 5,
+      "root_object_id": "12",
+      "original_name": "a.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        3
+      ],
+      "extruder_index_1based": 1,
+      "components": [
+        {
+          "path": "3D/Objects/object_10.model",
+          "mesh_object_id": "11"
+        }
+      ],
+      "package_global_transform": "2.22044605e-16 0 1 0 1 0 -1 0 2.22044605e-16 655.055238 191.393153 8.5",
+      "package_global_bbox_mm": {
+        "min": [
+          627.806238,
+          149.648154,
+          -0.0
+        ],
+        "max": [
+          682.304238,
+          233.138152,
+          17.0
+        ],
+        "size": [
+          54.498001,
+          83.489998,
+          17.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 6,
+      "root_object_id": "14",
+      "original_name": "b.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        3
+      ],
+      "extruder_index_1based": 1,
+      "components": [
+        {
+          "path": "3D/Objects/object_11.model",
+          "mesh_object_id": "13"
+        }
+      ],
+      "package_global_transform": "2.22044605e-16 0 -1 0 1 0 1 0 2.22044605e-16 715.41009 175.314713 17.25",
+      "package_global_bbox_mm": {
+        "min": [
+          699.18509,
+          165.814713,
+          -0.0
+        ],
+        "max": [
+          731.63509,
+          184.814713,
+          34.5
+        ],
+        "size": [
+          32.450001,
+          19.0,
+          34.5
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 7,
+      "root_object_id": "16",
+      "original_name": "d.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        3
+      ],
+      "extruder_index_1based": 1,
+      "components": [
+        {
+          "path": "3D/Objects/object_13.model",
+          "mesh_object_id": "15"
+        }
+      ],
+      "package_global_transform": "1 0 0 0 1 0 0 0 1 766.576779 232.248627 1",
+      "package_global_bbox_mm": {
+        "min": [
+          756.576779,
+          226.748627,
+          0.0
+        ],
+        "max": [
+          776.576779,
+          237.748627,
+          2.0
+        ],
+        "size": [
+          20.0,
+          11.0,
+          2.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 8,
+      "root_object_id": "18",
+      "original_name": "e.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        3
+      ],
+      "extruder_index_1based": 1,
+      "components": [
+        {
+          "path": "3D/Objects/object_14.model",
+          "mesh_object_id": "17"
+        }
+      ],
+      "package_global_transform": "1 0 0 0 1 0 0 0 1 766.143938 208.247699 1",
+      "package_global_bbox_mm": {
+        "min": [
+          756.143938,
+          202.747699,
+          0.0
+        ],
+        "max": [
+          776.143938,
+          213.747699,
+          2.0
+        ],
+        "size": [
+          20.0,
+          11.0,
+          2.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 9,
+      "root_object_id": "20",
+      "original_name": "f.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        3
+      ],
+      "extruder_index_1based": 1,
+      "components": [
+        {
+          "path": "3D/Objects/object_15.model",
+          "mesh_object_id": "19"
+        }
+      ],
+      "package_global_transform": "1 0 0 0 1 0 0 0 1 825.646045 62.5447089 0.499000013",
+      "package_global_bbox_mm": {
+        "min": [
+          796.618045,
+          40.046708,
+          0.0
+        ],
+        "max": [
+          854.674045,
+          85.04271,
+          0.998
+        ],
+        "size": [
+          58.056,
+          44.996002,
+          0.998
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 10,
+      "root_object_id": "22",
+      "original_name": "g.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        3
+      ],
+      "extruder_index_1based": 1,
+      "components": [
+        {
+          "path": "3D/Objects/object_16.model",
+          "mesh_object_id": "21"
+        }
+      ],
+      "package_global_transform": "-1 1.2246468e-16 0 -1.2246468e-16 -1 0 0 0 1 821.714637 31.5106118 0.499000013",
+      "package_global_bbox_mm": {
+        "min": [
+          792.686637,
+          9.012611,
+          0.0
+        ],
+        "max": [
+          850.742637,
+          54.008613,
+          0.998
+        ],
+        "size": [
+          58.056,
+          44.996002,
+          0.998
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 11,
+      "root_object_id": "24",
+      "original_name": "h.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        3
+      ],
+      "extruder_index_1based": 1,
+      "components": [
+        {
+          "path": "3D/Objects/object_17.model",
+          "mesh_object_id": "23"
+        }
+      ],
+      "package_global_transform": "1 0 0 0 2.22044605e-16 -1 0 1 2.22044605e-16 655.314912 107.632125 9.39999962",
+      "package_global_bbox_mm": {
+        "min": [
+          628.214912,
+          70.882125,
+          -0.0
+        ],
+        "max": [
+          682.414912,
+          144.382125,
+          18.799999
+        ],
+        "size": [
+          54.200001,
+          73.5,
+          18.799999
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 12,
+      "root_object_id": "26",
+      "original_name": "i.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        3
+      ],
+      "extruder_index_1based": 1,
+      "components": [
+        {
+          "path": "3D/Objects/object_18.model",
+          "mesh_object_id": "25"
+        }
+      ],
+      "package_global_transform": "4.18166185e-05 -0.000370486455 0.99999993 -0.000370486455 0.999999863 0.000370501922 -0.99999993 -0.000370501922 4.16793526e-05 718.744586 234.541103 1.90117142",
+      "package_global_bbox_mm": {
+        "min": [
+          691.720001,
+          231.2075,
+          0.0
+        ],
+        "max": [
+          745.768063,
+          237.877069,
+          3.802429
+        ],
+        "size": [
+          54.048061,
+          6.669568,
+          3.802429
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 13,
+      "root_object_id": "28",
+      "original_name": "j.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        3
+      ],
+      "extruder_index_1based": 1,
+      "components": [
+        {
+          "path": "3D/Objects/object_19.model",
+          "mesh_object_id": "27"
+        }
+      ],
+      "package_global_transform": "-2.22044605e-16 -1 0 2.22044605e-16 -4.93038066e-32 -1 1 -2.22044605e-16 2.22044605e-16 716.964953 208.106691 13.8470001",
+      "package_global_bbox_mm": {
+        "min": [
+          699.464953,
+          199.10769,
+          -0.0
+        ],
+        "max": [
+          734.464953,
+          217.105692,
+          27.694
+        ],
+        "size": [
+          35.0,
+          17.998001,
+          27.694
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 14,
+      "root_object_id": "30",
+      "original_name": "k.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        3
+      ],
+      "extruder_index_1based": 1,
+      "components": [
+        {
+          "path": "3D/Objects/object_20.model",
+          "mesh_object_id": "29"
+        }
+      ],
+      "package_global_transform": "1 0 0 0 -1 0 0 0 -1 807.914959 167.803783 3.9749999",
+      "package_global_bbox_mm": {
+        "min": [
+          797.914959,
+          138.804783,
+          0.0
+        ],
+        "max": [
+          817.914959,
+          196.802784,
+          7.95
+        ],
+        "size": [
+          20.0,
+          57.998001,
+          7.95
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 15,
+      "root_object_id": "32",
+      "original_name": "l.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        3
+      ],
+      "extruder_index_1based": 1,
+      "components": [
+        {
+          "path": "3D/Objects/object_21.model",
+          "mesh_object_id": "31"
+        }
+      ],
+      "package_global_transform": "1 0 0 0 1 0 0 0 1 840.223352 169.498895 3.9749999",
+      "package_global_bbox_mm": {
+        "min": [
+          830.222352,
+          140.499895,
+          0.0
+        ],
+        "max": [
+          850.224352,
+          198.497895,
+          7.95
+        ],
+        "size": [
+          20.001999,
+          57.998001,
+          7.95
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 16,
+      "root_object_id": "34",
+      "original_name": "m.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        3
+      ],
+      "extruder_index_1based": 1,
+      "components": [
+        {
+          "path": "3D/Objects/object_22.model",
+          "mesh_object_id": "33"
+        }
+      ],
+      "package_global_transform": "-2.22044605e-16 1 0 -2.22044605e-16 -4.93038066e-32 1 1 2.22044605e-16 2.22044605e-16 828.146296 224.860308 1.5",
+      "package_global_bbox_mm": {
+        "min": [
+          799.647296,
+          206.860308,
+          -0.0
+        ],
+        "max": [
+          856.645296,
+          242.860308,
+          3.0
+        ],
+        "size": [
+          56.998001,
+          36.0,
+          3.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 17,
+      "root_object_id": "36",
+      "original_name": "n.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        3
+      ],
+      "extruder_index_1based": 1,
+      "components": [
+        {
+          "path": "3D/Objects/object_23.model",
+          "mesh_object_id": "35"
+        }
+      ],
+      "package_global_transform": "2.22044605e-16 0 1 0 1 0 -1 0 2.22044605e-16 664.31308 22.409852 12.8999996",
+      "package_global_bbox_mm": {
+        "min": [
+          652.81408,
+          12.160852,
+          -0.0
+        ],
+        "max": [
+          675.81208,
+          32.658853,
+          25.799999
+        ],
+        "size": [
+          22.998001,
+          20.498001,
+          25.799999
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 18,
+      "root_object_id": "38",
+      "original_name": "o.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        3
+      ],
+      "extruder_index_1based": 1,
+      "components": [
+        {
+          "path": "3D/Objects/object_24.model",
+          "mesh_object_id": "37"
+        }
+      ],
+      "package_global_transform": "2.22044605e-16 0 1 0 1 0 -1 0 2.22044605e-16 663.413394 51.8173932 12.8999996",
+      "package_global_bbox_mm": {
+        "min": [
+          651.914394,
+          41.568393,
+          -0.0
+        ],
+        "max": [
+          674.912395,
+          62.066394,
+          25.799999
+        ],
+        "size": [
+          22.998001,
+          20.498001,
+          25.799999
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 19,
+      "root_object_id": "40",
+      "original_name": "p.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        3
+      ],
+      "extruder_index_1based": 1,
+      "components": [
+        {
+          "path": "3D/Objects/object_25.model",
+          "mesh_object_id": "39"
+        }
+      ],
+      "package_global_transform": "-0.0088406159 -0.999921834 -0.00884138153 0.000125680191 0.0088406159 -0.999960913 0.999960913 -0.00884138153 4.75138774e-05 737.285066 79.6765694 1.49982822",
+      "package_global_bbox_mm": {
+        "min": [
+          693.23899,
+          63.018693,
+          0.0
+        ],
+        "max": [
+          781.055575,
+          96.337521,
+          3.007665
+        ],
+        "size": [
+          87.816585,
+          33.318828,
+          3.007665
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 20,
+      "root_object_id": "42",
+      "original_name": "q.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        3
+      ],
+      "extruder_index_1based": 1,
+      "components": [
+        {
+          "path": "3D/Objects/object_26.model",
+          "mesh_object_id": "41"
+        }
+      ],
+      "package_global_transform": "-0.00762010801 -0.99994243 0.00755453131 -0.00861373896 0.00762010801 0.999933867 -0.999933867 0.00755453131 -0.00867130911 735.538917 32.0192358 4.17308197",
+      "package_global_bbox_mm": {
+        "min": [
+          691.572964,
+          15.589558,
+          -0.0
+        ],
+        "max": [
+          779.239712,
+          48.471156,
+          8.618532
+        ],
+        "size": [
+          87.666748,
+          32.881597,
+          8.618532
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 21,
+      "root_object_id": "44",
+      "original_name": "111.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        5
+      ],
+      "extruder_index_1based": 10,
+      "components": [
+        {
+          "path": "3D/Objects/object_29.model",
+          "mesh_object_id": "43"
+        }
+      ],
+      "package_global_transform": "0.999999916 0.000277016862 -0.000301523684 0.000277016862 0.0845677566 0.996417692 0.000301523684 -0.996417692 0.0845676728 412.810185 -212.848776 8.29705267",
+      "package_global_bbox_mm": {
+        "min": [
+          385.806321,
+          -233.558189,
+          -0.0
+        ],
+        "max": [
+          439.816029,
+          -192.355271,
+          18.362634
+        ],
+        "size": [
+          54.009708,
+          41.202918,
+          18.362634
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 22,
+      "root_object_id": "46",
+      "original_name": "222.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        5
+      ],
+      "extruder_index_1based": 10,
+      "components": [
+        {
+          "path": "3D/Objects/object_30.model",
+          "mesh_object_id": "45"
+        }
+      ],
+      "package_global_transform": "0.999999443 -0.000777282361 0.000713498369 -0.000777282361 -0.0854145955 0.996345193 -0.000713498369 -0.996345193 -0.0854151522 411.813622 -159.13178 8.29252668",
+      "package_global_bbox_mm": {
+        "min": [
+          384.799524,
+          -179.634472,
+          -0.0
+        ],
+        "max": [
+          438.825141,
+          -138.415867,
+          18.382284
+        ],
+        "size": [
+          54.025617,
+          41.218605,
+          18.382284
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 23,
+      "root_object_id": "48",
+      "original_name": "333.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        5
+      ],
+      "extruder_index_1based": 10,
+      "components": [
+        {
+          "path": "3D/Objects/object_31.model",
+          "mesh_object_id": "47"
+        }
+      ],
+      "package_global_transform": "2.22044605e-16 0 -1 0 1 0 1 0 2.22044605e-16 478.434028 -189.21141 4.75",
+      "package_global_bbox_mm": {
+        "min": [
+          463.434028,
+          -204.21141,
+          -0.0
+        ],
+        "max": [
+          493.434028,
+          -174.21141,
+          9.5
+        ],
+        "size": [
+          30.0,
+          30.0,
+          9.5
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 24,
+      "root_object_id": "50",
+      "original_name": "dfvdfb.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_32.model",
+          "mesh_object_id": "49"
+        }
+      ],
+      "package_global_transform": "2.22044605e-16 0 -1 0 1 0 1 0 2.22044605e-16 53.2794603 -145.045584 1.49900007",
+      "package_global_bbox_mm": {
+        "min": [
+          41.78046,
+          -165.045584,
+          -0.0
+        ],
+        "max": [
+          64.778461,
+          -125.045584,
+          2.998
+        ],
+        "size": [
+          22.998001,
+          40.0,
+          2.998
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 25,
+      "root_object_id": "51",
+      "original_name": "dfvdfb.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_32.model",
+          "mesh_object_id": "49"
+        }
+      ],
+      "package_global_transform": "2.22044605e-16 0 -1 0 1 0 1 0 2.22044605e-16 87.4379973 -145.400325 1.49900007",
+      "package_global_bbox_mm": {
+        "min": [
+          75.938997,
+          -165.400325,
+          -0.0
+        ],
+        "max": [
+          98.936998,
+          -125.400325,
+          2.998
+        ],
+        "size": [
+          22.998001,
+          40.0,
+          2.998
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 26,
+      "root_object_id": "53",
+      "original_name": "ersgtbgertgestrg.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_42.model",
+          "mesh_object_id": "52"
+        }
+      ],
+      "package_global_transform": "-2.22044605e-16 0 -1 0 1 0 1 0 -2.22044605e-16 59.8430935 -214.924304 2",
+      "package_global_bbox_mm": {
+        "min": [
+          48.844093,
+          -225.924304,
+          -0.0
+        ],
+        "max": [
+          70.842094,
+          -203.924304,
+          4.0
+        ],
+        "size": [
+          21.998001,
+          22.0,
+          4.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 27,
+      "root_object_id": "55",
+      "original_name": "idle_horn.stl",
+      "printable": true,
+      "assigned_plate_ids": [],
+      "extruder_index_1based": 1,
+      "components": [
+        {
+          "path": "3D/Objects/object_105.model",
+          "mesh_object_id": "54"
+        }
+      ],
+      "package_global_transform": "1 0 0 0 1 0 0 0 1 2621.27188 -134.881123 2.07499981",
+      "package_global_bbox_mm": {
+        "min": [
+          2613.27188,
+          -142.881123,
+          -0.0
+        ],
+        "max": [
+          2629.27188,
+          -126.881123,
+          4.15
+        ],
+        "size": [
+          16.0,
+          16.0,
+          4.15
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 28,
+      "root_object_id": "56",
+      "original_name": "idle_horn.stl",
+      "printable": true,
+      "assigned_plate_ids": [],
+      "extruder_index_1based": 1,
+      "components": [
+        {
+          "path": "3D/Objects/object_105.model",
+          "mesh_object_id": "54"
+        }
+      ],
+      "package_global_transform": "1 0 0 0 1 0 0 0 1 2621.18771 -107.944788 2.07499981",
+      "package_global_bbox_mm": {
+        "min": [
+          2613.18771,
+          -115.944788,
+          -0.0
+        ],
+        "max": [
+          2629.18771,
+          -99.944788,
+          4.15
+        ],
+        "size": [
+          16.0,
+          16.0,
+          4.15
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 29,
+      "root_object_id": "57",
+      "original_name": "idle_horn.stl",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_105.model",
+          "mesh_object_id": "54"
+        }
+      ],
+      "package_global_transform": "1 0 0 0 1 0 0 0 1 133.610052 -122.495698 2.07499981",
+      "package_global_bbox_mm": {
+        "min": [
+          125.610052,
+          -130.495698,
+          -0.0
+        ],
+        "max": [
+          141.610052,
+          -114.495698,
+          4.15
+        ],
+        "size": [
+          16.0,
+          16.0,
+          4.15
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 30,
+      "root_object_id": "59",
+      "original_name": "idle_cap.stl",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_109.model",
+          "mesh_object_id": "58"
+        }
+      ],
+      "package_global_transform": "-1 0 -1.2246468e-16 0 1 0 1.2246468e-16 0 -1 165.172208 -123.94707 2.29999924",
+      "package_global_bbox_mm": {
+        "min": [
+          161.772208,
+          -127.34707,
+          -0.0
+        ],
+        "max": [
+          168.572208,
+          -120.54707,
+          4.599998
+        ],
+        "size": [
+          6.8,
+          6.8,
+          4.599998
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 31,
+      "root_object_id": "60",
+      "original_name": "b.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        3
+      ],
+      "extruder_index_1based": 1,
+      "components": [
+        {
+          "path": "3D/Objects/object_11.model",
+          "mesh_object_id": "13"
+        }
+      ],
+      "package_global_transform": "2.22044605e-16 0 -1 0 1 0 1 0 2.22044605e-16 763.153454 175.603638 17.25",
+      "package_global_bbox_mm": {
+        "min": [
+          746.928454,
+          166.103638,
+          -0.0
+        ],
+        "max": [
+          779.378454,
+          185.103638,
+          34.5
+        ],
+        "size": [
+          32.450001,
+          19.0,
+          34.5
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 32,
+      "root_object_id": "62",
+      "original_name": "rgbn.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_161.model",
+          "mesh_object_id": "61"
+        }
+      ],
+      "package_global_transform": "1 0 0 0 1 0 0 0 1 87.8471756 -96.336333 1.5",
+      "package_global_bbox_mm": {
+        "min": [
+          80.547175,
+          -103.636334,
+          0.0
+        ],
+        "max": [
+          95.147176,
+          -89.036334,
+          3.0
+        ],
+        "size": [
+          14.6,
+          14.6,
+          3.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 33,
+      "root_object_id": "64",
+      "original_name": "grbrgn.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        1
+      ],
+      "extruder_index_1based": 4,
+      "components": [
+        {
+          "path": "3D/Objects/object_162.model",
+          "mesh_object_id": "63"
+        }
+      ],
+      "package_global_transform": "1 0 0 0 1 0 0 0 1 215.07064 165.987548 19.7445984",
+      "package_global_bbox_mm": {
+        "min": [
+          196.818639,
+          153.237547,
+          0.0
+        ],
+        "max": [
+          233.318639,
+          178.735548,
+          39.487999
+        ],
+        "size": [
+          36.5,
+          25.498001,
+          39.487999
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 34,
+      "root_object_id": "66",
+      "original_name": "thngthm.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        1
+      ],
+      "extruder_index_1based": 4,
+      "components": [
+        {
+          "path": "3D/Objects/object_163.model",
+          "mesh_object_id": "65"
+        }
+      ],
+      "package_global_transform": "1 0 0 0 1 0 0 0 1 156.756761 164.461893 19.7465973",
+      "package_global_bbox_mm": {
+        "min": [
+          138.50476,
+          151.711892,
+          0.0
+        ],
+        "max": [
+          175.00476,
+          177.209893,
+          39.489998
+        ],
+        "size": [
+          36.5,
+          25.498001,
+          39.489998
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 35,
+      "root_object_id": "68",
+      "original_name": "rgbn.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_164.model",
+          "mesh_object_id": "67"
+        }
+      ],
+      "package_global_transform": "1 0 0 0 1 0 0 0 1 52.6792497 -96.3140636 1.5",
+      "package_global_bbox_mm": {
+        "min": [
+          45.37925,
+          -103.614065,
+          0.0
+        ],
+        "max": [
+          59.97925,
+          -89.014064,
+          3.0
+        ],
+        "size": [
+          14.6,
+          14.6,
+          3.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 36,
+      "root_object_id": "70",
+      "original_name": "dfbdfbbbbb1.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        3
+      ],
+      "extruder_index_1based": 1,
+      "components": [
+        {
+          "path": "3D/Objects/object_165.model",
+          "mesh_object_id": "69"
+        }
+      ],
+      "package_global_transform": "1 0 0 0 2.22044605e-16 -1 0 1 2.22044605e-16 824.64618 112.168772 11.2480001",
+      "package_global_bbox_mm": {
+        "min": [
+          806.696179,
+          95.168841,
+          -0.0
+        ],
+        "max": [
+          842.594182,
+          129.168841,
+          22.5
+        ],
+        "size": [
+          35.898003,
+          34.0,
+          22.5
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 37,
+      "root_object_id": "72",
+      "original_name": "fgb.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        2
+      ],
+      "extruder_index_1based": 17,
+      "components": [
+        {
+          "path": "3D/Objects/object_167.model",
+          "mesh_object_id": "71"
+        }
+      ],
+      "package_global_transform": "1 0 0 0 -1 0 0 0 -1 493.684115 167.651217 13.9980011",
+      "package_global_bbox_mm": {
+        "min": [
+          463.183814,
+          143.822913,
+          0.0
+        ],
+        "max": [
+          524.181815,
+          191.480914,
+          27.998001
+        ],
+        "size": [
+          60.998001,
+          47.658001,
+          27.998001
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 38,
+      "root_object_id": "74",
+      "original_name": "gbgb.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        2
+      ],
+      "extruder_index_1based": 17,
+      "components": [
+        {
+          "path": "3D/Objects/object_168.model",
+          "mesh_object_id": "73"
+        }
+      ],
+      "package_global_transform": "1 0 0 0 1 0 0 0 1 492.628995 85.8455757 14",
+      "package_global_bbox_mm": {
+        "min": [
+          462.128694,
+          62.015879,
+          0.0
+        ],
+        "max": [
+          523.126695,
+          109.67388,
+          27.998001
+        ],
+        "size": [
+          60.998001,
+          47.658001,
+          27.998001
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 39,
+      "root_object_id": "76",
+      "original_name": "ghmghmghmghm.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        3
+      ],
+      "extruder_index_1based": 1,
+      "components": [
+        {
+          "path": "3D/Objects/object_175.model",
+          "mesh_object_id": "75"
+        }
+      ],
+      "package_global_transform": "2.22044605e-16 0 -1 0 1 0 1 0 2.22044605e-16 738.499689 130.569942 6.24800014",
+      "package_global_bbox_mm": {
+        "min": [
+          694.674318,
+          108.256742,
+          -0.0
+        ],
+        "max": [
+          782.32432,
+          152.882742,
+          12.498
+        ],
+        "size": [
+          87.650002,
+          44.626,
+          12.498
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 40,
+      "root_object_id": "77",
+      "original_name": "idle_horn.stl",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_105.model",
+          "mesh_object_id": "54"
+        }
+      ],
+      "package_global_transform": "1 0 0 0 1 0 0 0 1 132.888682 -141.290134 2.07499981",
+      "package_global_bbox_mm": {
+        "min": [
+          124.888682,
+          -149.290134,
+          -0.0
+        ],
+        "max": [
+          140.888682,
+          -133.290134,
+          4.15
+        ],
+        "size": [
+          16.0,
+          16.0,
+          4.15
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 41,
+      "root_object_id": "78",
+      "original_name": "idle_cap.stl",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_109.model",
+          "mesh_object_id": "58"
+        }
+      ],
+      "package_global_transform": "-1 0 -1.2246468e-16 0 1 0 1.2246468e-16 0 -1 164.450838 -142.741506 2.29999924",
+      "package_global_bbox_mm": {
+        "min": [
+          161.050838,
+          -146.141506,
+          -0.0
+        ],
+        "max": [
+          167.850838,
+          -139.341506,
+          4.599998
+        ],
+        "size": [
+          6.8,
+          6.8,
+          4.599998
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 42,
+      "root_object_id": "79",
+      "original_name": "idle_horn.stl",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_105.model",
+          "mesh_object_id": "54"
+        }
+      ],
+      "package_global_transform": "1 0 0 0 1 0 0 0 1 133.446732 -160.880742 2.07499981",
+      "package_global_bbox_mm": {
+        "min": [
+          125.446732,
+          -168.880742,
+          -0.0
+        ],
+        "max": [
+          141.446732,
+          -152.880742,
+          4.15
+        ],
+        "size": [
+          16.0,
+          16.0,
+          4.15
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 43,
+      "root_object_id": "80",
+      "original_name": "idle_cap.stl",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_109.model",
+          "mesh_object_id": "58"
+        }
+      ],
+      "package_global_transform": "-1 0 -1.2246468e-16 0 1 0 1.2246468e-16 0 -1 165.008888 -162.332115 2.29999924",
+      "package_global_bbox_mm": {
+        "min": [
+          161.608888,
+          -165.732115,
+          -0.0
+        ],
+        "max": [
+          168.408888,
+          -158.932115,
+          4.599998
+        ],
+        "size": [
+          6.8,
+          6.8,
+          4.599998
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 44,
+      "root_object_id": "81",
+      "original_name": "idle_horn.stl",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_105.model",
+          "mesh_object_id": "54"
+        }
+      ],
+      "package_global_transform": "1 0 0 0 1 0 0 0 1 197.253879 -120.268526 2.07499981",
+      "package_global_bbox_mm": {
+        "min": [
+          189.253879,
+          -128.268526,
+          -0.0
+        ],
+        "max": [
+          205.253879,
+          -112.268526,
+          4.15
+        ],
+        "size": [
+          16.0,
+          16.0,
+          4.15
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 45,
+      "root_object_id": "82",
+      "original_name": "idle_cap.stl",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_109.model",
+          "mesh_object_id": "58"
+        }
+      ],
+      "package_global_transform": "-1 0 -1.2246468e-16 0 1 0 1.2246468e-16 0 -1 228.816035 -121.719898 2.29999924",
+      "package_global_bbox_mm": {
+        "min": [
+          225.416035,
+          -125.119898,
+          -0.0
+        ],
+        "max": [
+          232.216035,
+          -118.319898,
+          4.599998
+        ],
+        "size": [
+          6.8,
+          6.8,
+          4.599998
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 46,
+      "root_object_id": "83",
+      "original_name": "idle_horn.stl",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_105.model",
+          "mesh_object_id": "54"
+        }
+      ],
+      "package_global_transform": "1 0 0 0 1 0 0 0 1 197.195595 -138.717155 2.07499981",
+      "package_global_bbox_mm": {
+        "min": [
+          189.195595,
+          -146.717155,
+          -0.0
+        ],
+        "max": [
+          205.195595,
+          -130.717155,
+          4.15
+        ],
+        "size": [
+          16.0,
+          16.0,
+          4.15
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 47,
+      "root_object_id": "84",
+      "original_name": "idle_cap.stl",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_109.model",
+          "mesh_object_id": "58"
+        }
+      ],
+      "package_global_transform": "-1 0 -1.2246468e-16 0 1 0 1.2246468e-16 0 -1 228.757751 -140.168527 2.29999924",
+      "package_global_bbox_mm": {
+        "min": [
+          225.357751,
+          -143.568527,
+          -0.0
+        ],
+        "max": [
+          232.157751,
+          -136.768527,
+          4.599998
+        ],
+        "size": [
+          6.8,
+          6.8,
+          4.599998
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 48,
+      "root_object_id": "85",
+      "original_name": "idle_horn.stl",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_105.model",
+          "mesh_object_id": "54"
+        }
+      ],
+      "package_global_transform": "1 0 0 0 1 0 0 0 1 197.13861 -160.168251 2.07499981",
+      "package_global_bbox_mm": {
+        "min": [
+          189.13861,
+          -168.168251,
+          -0.0
+        ],
+        "max": [
+          205.13861,
+          -152.168251,
+          4.15
+        ],
+        "size": [
+          16.0,
+          16.0,
+          4.15
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 49,
+      "root_object_id": "86",
+      "original_name": "idle_cap.stl",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_109.model",
+          "mesh_object_id": "58"
+        }
+      ],
+      "package_global_transform": "-1 0 -1.2246468e-16 0 1 0 1.2246468e-16 0 -1 228.700766 -161.619624 2.29999924",
+      "package_global_bbox_mm": {
+        "min": [
+          225.300766,
+          -165.019624,
+          -0.0
+        ],
+        "max": [
+          232.100766,
+          -158.219624,
+          4.599998
+        ],
+        "size": [
+          6.8,
+          6.8,
+          4.599998
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 50,
+      "root_object_id": "87",
+      "original_name": "ersgtbgertgestrg.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_42.model",
+          "mesh_object_id": "52"
+        }
+      ],
+      "package_global_transform": "-2.22044605e-16 0 -1 0 1 0 1 0 -2.22044605e-16 36.8450923 -214.9243 2",
+      "package_global_bbox_mm": {
+        "min": [
+          25.846092,
+          -225.9243,
+          -0.0
+        ],
+        "max": [
+          47.844093,
+          -203.9243,
+          4.0
+        ],
+        "size": [
+          21.998001,
+          22.0,
+          4.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 51,
+      "root_object_id": "88",
+      "original_name": "ersgtbgertgestrg.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_42.model",
+          "mesh_object_id": "52"
+        }
+      ],
+      "package_global_transform": "-2.22044605e-16 0 -1 0 1 0 1 0 -2.22044605e-16 82.8410983 -214.9243 2",
+      "package_global_bbox_mm": {
+        "min": [
+          71.842098,
+          -225.9243,
+          -0.0
+        ],
+        "max": [
+          93.840099,
+          -203.9243,
+          4.0
+        ],
+        "size": [
+          21.998001,
+          22.0,
+          4.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 52,
+      "root_object_id": "89",
+      "original_name": "ersgtbgertgestrg.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_42.model",
+          "mesh_object_id": "52"
+        }
+      ],
+      "package_global_transform": "-2.22044605e-16 0 -1 0 1 0 1 0 -2.22044605e-16 131.156108 -215.34583 2",
+      "package_global_bbox_mm": {
+        "min": [
+          120.157107,
+          -226.34583,
+          -0.0
+        ],
+        "max": [
+          142.155108,
+          -204.34583,
+          4.0
+        ],
+        "size": [
+          21.998001,
+          22.0,
+          4.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 53,
+      "root_object_id": "90",
+      "original_name": "ersgtbgertgestrg.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_42.model",
+          "mesh_object_id": "52"
+        }
+      ],
+      "package_global_transform": "-2.22044605e-16 0 -1 0 1 0 1 0 -2.22044605e-16 108.158107 -215.345827 2",
+      "package_global_bbox_mm": {
+        "min": [
+          97.159107,
+          -226.345827,
+          -0.0
+        ],
+        "max": [
+          119.157107,
+          -204.345827,
+          4.0
+        ],
+        "size": [
+          21.998001,
+          22.0,
+          4.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 54,
+      "root_object_id": "91",
+      "original_name": "ersgtbgertgestrg.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_42.model",
+          "mesh_object_id": "52"
+        }
+      ],
+      "package_global_transform": "-2.22044605e-16 0 -1 0 1 0 1 0 -2.22044605e-16 154.154113 -215.345827 2",
+      "package_global_bbox_mm": {
+        "min": [
+          143.155113,
+          -226.345827,
+          -0.0
+        ],
+        "max": [
+          165.153113,
+          -204.345827,
+          4.0
+        ],
+        "size": [
+          21.998001,
+          22.0,
+          4.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 55,
+      "root_object_id": "92",
+      "original_name": "ersgtbgertgestrg.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_42.model",
+          "mesh_object_id": "52"
+        }
+      ],
+      "package_global_transform": "-2.22044605e-16 0 -1 0 1 0 1 0 -2.22044605e-16 204.656416 -216.246963 2",
+      "package_global_bbox_mm": {
+        "min": [
+          193.657416,
+          -227.246963,
+          -0.0
+        ],
+        "max": [
+          215.655417,
+          -205.246963,
+          4.0
+        ],
+        "size": [
+          21.998001,
+          22.0,
+          4.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 56,
+      "root_object_id": "93",
+      "original_name": "ersgtbgertgestrg.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_42.model",
+          "mesh_object_id": "52"
+        }
+      ],
+      "package_global_transform": "-2.22044605e-16 0 -1 0 1 0 1 0 -2.22044605e-16 181.658415 -216.246959 2",
+      "package_global_bbox_mm": {
+        "min": [
+          170.659414,
+          -227.246959,
+          -0.0
+        ],
+        "max": [
+          192.657415,
+          -205.246959,
+          4.0
+        ],
+        "size": [
+          21.998001,
+          22.0,
+          4.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 57,
+      "root_object_id": "94",
+      "original_name": "ersgtbgertgestrg.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_42.model",
+          "mesh_object_id": "52"
+        }
+      ],
+      "package_global_transform": "-2.22044605e-16 0 -1 0 1 0 1 0 -2.22044605e-16 227.654421 -216.246959 2",
+      "package_global_bbox_mm": {
+        "min": [
+          216.655421,
+          -227.246959,
+          -0.0
+        ],
+        "max": [
+          238.653422,
+          -205.246959,
+          4.0
+        ],
+        "size": [
+          21.998001,
+          22.0,
+          4.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 58,
+      "root_object_id": "95",
+      "original_name": "ersgtbgertgestrg.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_42.model",
+          "mesh_object_id": "52"
+        }
+      ],
+      "package_global_transform": "-2.22044605e-16 0 -1 0 1 0 1 0 -2.22044605e-16 59.615544 -253.351125 2",
+      "package_global_bbox_mm": {
+        "min": [
+          48.616543,
+          -264.351125,
+          -0.0
+        ],
+        "max": [
+          70.614544,
+          -242.351125,
+          4.0
+        ],
+        "size": [
+          21.998001,
+          22.0,
+          4.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 59,
+      "root_object_id": "96",
+      "original_name": "ersgtbgertgestrg.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_42.model",
+          "mesh_object_id": "52"
+        }
+      ],
+      "package_global_transform": "-2.22044605e-16 0 -1 0 1 0 1 0 -2.22044605e-16 36.6175429 -253.351121 2",
+      "package_global_bbox_mm": {
+        "min": [
+          25.618542,
+          -264.351121,
+          -0.0
+        ],
+        "max": [
+          47.616543,
+          -242.351121,
+          4.0
+        ],
+        "size": [
+          21.998001,
+          22.0,
+          4.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 60,
+      "root_object_id": "97",
+      "original_name": "ersgtbgertgestrg.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_42.model",
+          "mesh_object_id": "52"
+        }
+      ],
+      "package_global_transform": "-2.22044605e-16 0 -1 0 1 0 1 0 -2.22044605e-16 82.6135489 -253.351121 2",
+      "package_global_bbox_mm": {
+        "min": [
+          71.614548,
+          -264.351121,
+          -0.0
+        ],
+        "max": [
+          93.612549,
+          -242.351121,
+          4.0
+        ],
+        "size": [
+          21.998001,
+          22.0,
+          4.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 61,
+      "root_object_id": "98",
+      "original_name": "ersgtbgertgestrg.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_42.model",
+          "mesh_object_id": "52"
+        }
+      ],
+      "package_global_transform": "-2.22044605e-16 0 -1 0 1 0 1 0 -2.22044605e-16 130.928559 -253.772651 2",
+      "package_global_bbox_mm": {
+        "min": [
+          119.929559,
+          -264.772651,
+          -0.0
+        ],
+        "max": [
+          141.92756,
+          -242.772651,
+          4.0
+        ],
+        "size": [
+          21.998001,
+          22.0,
+          4.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 62,
+      "root_object_id": "99",
+      "original_name": "ersgtbgertgestrg.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_42.model",
+          "mesh_object_id": "52"
+        }
+      ],
+      "package_global_transform": "-2.22044605e-16 0 -1 0 1 0 1 0 -2.22044605e-16 107.930558 -253.772648 2",
+      "package_global_bbox_mm": {
+        "min": [
+          96.931558,
+          -264.772648,
+          -0.0
+        ],
+        "max": [
+          118.929558,
+          -242.772648,
+          4.0
+        ],
+        "size": [
+          21.998001,
+          22.0,
+          4.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 63,
+      "root_object_id": "100",
+      "original_name": "ersgtbgertgestrg.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_42.model",
+          "mesh_object_id": "52"
+        }
+      ],
+      "package_global_transform": "-2.22044605e-16 0 -1 0 1 0 1 0 -2.22044605e-16 153.926564 -253.772648 2",
+      "package_global_bbox_mm": {
+        "min": [
+          142.927564,
+          -264.772648,
+          -0.0
+        ],
+        "max": [
+          164.925565,
+          -242.772648,
+          4.0
+        ],
+        "size": [
+          21.998001,
+          22.0,
+          4.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 64,
+      "root_object_id": "101",
+      "original_name": "ersgtbgertgestrg.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_42.model",
+          "mesh_object_id": "52"
+        }
+      ],
+      "package_global_transform": "-2.22044605e-16 0 -1 0 1 0 1 0 -2.22044605e-16 204.428866 -254.673783 2",
+      "package_global_bbox_mm": {
+        "min": [
+          193.429866,
+          -265.673783,
+          -0.0
+        ],
+        "max": [
+          215.427866,
+          -243.673783,
+          4.0
+        ],
+        "size": [
+          21.998001,
+          22.0,
+          4.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 65,
+      "root_object_id": "102",
+      "original_name": "ersgtbgertgestrg.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_42.model",
+          "mesh_object_id": "52"
+        }
+      ],
+      "package_global_transform": "-2.22044605e-16 0 -1 0 1 0 1 0 -2.22044605e-16 181.430865 -254.67378 2",
+      "package_global_bbox_mm": {
+        "min": [
+          170.431865,
+          -265.67378,
+          -0.0
+        ],
+        "max": [
+          192.429866,
+          -243.67378,
+          4.0
+        ],
+        "size": [
+          21.998001,
+          22.0,
+          4.0
+        ]
+      },
+      "resolved_geometry": true
+    },
+    {
+      "build_index": 66,
+      "root_object_id": "103",
+      "original_name": "ersgtbgertgestrg.obj",
+      "printable": true,
+      "assigned_plate_ids": [
+        4
+      ],
+      "extruder_index_1based": 3,
+      "components": [
+        {
+          "path": "3D/Objects/object_42.model",
+          "mesh_object_id": "52"
+        }
+      ],
+      "package_global_transform": "-2.22044605e-16 0 -1 0 1 0 1 0 -2.22044605e-16 227.426871 -254.67378 2",
+      "package_global_bbox_mm": {
+        "min": [
+          216.427871,
+          -265.67378,
+          -0.0
+        ],
+        "max": [
+          238.425871,
+          -243.67378,
+          4.0
+        ],
+        "size": [
+          21.998001,
+          22.0,
+          4.0
+        ]
+      },
+      "resolved_geometry": true
+    }
+  ],
+  "mesh_resources": [
+    {
+      "path": "3D/Objects/object_164.model",
+      "mesh_object_id": "67",
+      "vertex_count": 864,
+      "triangle_count": 1728,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -7.3,
+          -7.3,
+          -1.5
+        ],
+        "max": [
+          7.3,
+          7.3,
+          1.5
+        ],
+        "size": [
+          14.6,
+          14.6,
+          3.0
+        ]
+      },
+      "geometry_sha256": "bf11b862c59e421cfdcd9e18998092879b6d2a1a521886accc41bcf3efd9627a",
+      "package_member_sha256": "1bd3ae99df601058ccc7e3ec86335b1e2551b90628860656ab9fbbfcfc875b4e",
+      "zip_uncompressed_bytes": 122833,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_14.model",
+      "mesh_object_id": "17",
+      "vertex_count": 1256,
+      "triangle_count": 2524,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -10.0,
+          -5.5,
+          -1.0
+        ],
+        "max": [
+          10.0,
+          5.5,
+          1.0
+        ],
+        "size": [
+          20.0,
+          11.0,
+          2.0
+        ]
+      },
+      "geometry_sha256": "c617c5de17da792b96244a9e0e18ed6a7591e813a4667398654256dbcd68041d",
+      "package_member_sha256": "2862b27ec7a82551c466ba53c559742cf53368d9d1d05ade6ad2f91096bd8398",
+      "zip_uncompressed_bytes": 177603,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_22.model",
+      "mesh_object_id": "33",
+      "vertex_count": 1839,
+      "triangle_count": 3702,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -18.0,
+          -1.5,
+          -28.499001
+        ],
+        "max": [
+          18.0,
+          1.5,
+          28.499001
+        ],
+        "size": [
+          36.0,
+          3.0,
+          56.998001
+        ]
+      },
+      "geometry_sha256": "7bee3c50c6a3ca38cd8fe3776ab5b08ef7987a57e23e3dace9b1a93f6d66cd29",
+      "package_member_sha256": "411b375c1e5cf8b148739fc954b4577357de59e431b83fd6f3f80c9f3e08ac86",
+      "zip_uncompressed_bytes": 267571,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_15.model",
+      "mesh_object_id": "19",
+      "vertex_count": 1784,
+      "triangle_count": 3600,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -29.028,
+          -22.498001,
+          -0.499
+        ],
+        "max": [
+          29.028,
+          22.498001,
+          0.499
+        ],
+        "size": [
+          58.056,
+          44.996002,
+          0.998
+        ]
+      },
+      "geometry_sha256": "c8018cebbd5dc8832f7cb64ca32417b8e636f840e62eca47bed4ebd7e7f4535c",
+      "package_member_sha256": "89f87721a798119d9e454fe981c99260c21818b433a2e9e766c6a8f09a7e8839",
+      "zip_uncompressed_bytes": 274366,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_16.model",
+      "mesh_object_id": "21",
+      "vertex_count": 1784,
+      "triangle_count": 3600,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -29.028,
+          -22.498001,
+          -0.499
+        ],
+        "max": [
+          29.028,
+          22.498001,
+          0.499
+        ],
+        "size": [
+          58.056,
+          44.996002,
+          0.998
+        ]
+      },
+      "geometry_sha256": "c8018cebbd5dc8832f7cb64ca32417b8e636f840e62eca47bed4ebd7e7f4535c",
+      "package_member_sha256": "e2df0c64747f8b515b19899c116e34783a2a948f664ab902b9d37168dd5a0ca6",
+      "zip_uncompressed_bytes": 274366,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_17.model",
+      "mesh_object_id": "23",
+      "vertex_count": 1855,
+      "triangle_count": 3726,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -27.1,
+          -9.4,
+          -36.75
+        ],
+        "max": [
+          27.1,
+          9.4,
+          36.75
+        ],
+        "size": [
+          54.200001,
+          18.799999,
+          73.5
+        ]
+      },
+      "geometry_sha256": "6be0a16c9066f15a755355eb14cc0fc41f6816d1c604f2388ae07a91a9244008",
+      "package_member_sha256": "07b3e6ee664125476fa6f61f64bfb37257e4ffcc9bfdbfc929ded8a561814683",
+      "zip_uncompressed_bytes": 280579,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_162.model",
+      "mesh_object_id": "63",
+      "vertex_count": 2882,
+      "triangle_count": 5788,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -18.252001,
+          -12.75,
+          -19.744598
+        ],
+        "max": [
+          18.247999,
+          12.748001,
+          19.743401
+        ],
+        "size": [
+          36.5,
+          25.498001,
+          39.487999
+        ]
+      },
+      "geometry_sha256": "aa6b47b80fc5c80294de1c4ac07058d057149a3e9d3a8a809abd5472e6133e64",
+      "package_member_sha256": "76a7b30fb49db3b75c8675eac1d3c6dddb47a2330eb52076bf003f31b018bac7",
+      "zip_uncompressed_bytes": 441603,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_163.model",
+      "mesh_object_id": "65",
+      "vertex_count": 2882,
+      "triangle_count": 5788,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -18.252001,
+          -12.75,
+          -19.746597
+        ],
+        "max": [
+          18.247999,
+          12.748001,
+          19.743401
+        ],
+        "size": [
+          36.5,
+          25.498001,
+          39.489998
+        ]
+      },
+      "geometry_sha256": "3b90728f410223a535d4959effe23500f654c2dbfdd2913c359a67fed90624b8",
+      "package_member_sha256": "964e15f4771b57f645c7ce1f2e2c32f906fbe73434aad9bdf6568b09c36fe1bb",
+      "zip_uncompressed_bytes": 442601,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_31.model",
+      "mesh_object_id": "47",
+      "vertex_count": 498,
+      "triangle_count": 996,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -4.75,
+          -15.0,
+          -15.0
+        ],
+        "max": [
+          4.75,
+          15.0,
+          15.0
+        ],
+        "size": [
+          9.5,
+          30.0,
+          30.0
+        ]
+      },
+      "geometry_sha256": "436f63021d63352e0ab3906a8974aaddd04a12130c886bf798ad81cca522f3e0",
+      "package_member_sha256": "9135a8ef67fcbbec3959e7cd132c2dbbfada959f1b95a416655bf5a9df8b6e54",
+      "zip_uncompressed_bytes": 72589,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_167.model",
+      "mesh_object_id": "71",
+      "vertex_count": 6389,
+      "triangle_count": 12782,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -30.500301,
+          -23.829701,
+          -14.0
+        ],
+        "max": [
+          30.4977,
+          23.828301,
+          13.998001
+        ],
+        "size": [
+          60.998001,
+          47.658001,
+          27.998001
+        ]
+      },
+      "geometry_sha256": "aec0da1db72eb46d5db6aac8a3e4d5e170b112ad214e20f3c5b9fda572afc7b2",
+      "package_member_sha256": "916b268e5780517718a8a076deda8a408188466e28689b997558d4564251926a",
+      "zip_uncompressed_bytes": 973997,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_161.model",
+      "mesh_object_id": "61",
+      "vertex_count": 864,
+      "triangle_count": 1728,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -7.3,
+          -7.3,
+          -1.5
+        ],
+        "max": [
+          7.3,
+          7.3,
+          1.5
+        ],
+        "size": [
+          14.6,
+          14.6,
+          3.0
+        ]
+      },
+      "geometry_sha256": "bf11b862c59e421cfdcd9e18998092879b6d2a1a521886accc41bcf3efd9627a",
+      "package_member_sha256": "f1540f943624a9ae85119e13cd4d4ceaa3e5971a4d865865415267460d08caac",
+      "zip_uncompressed_bytes": 122833,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_32.model",
+      "mesh_object_id": "49",
+      "vertex_count": 1241,
+      "triangle_count": 2498,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -1.499,
+          -20.0,
+          -11.499
+        ],
+        "max": [
+          1.499,
+          20.0,
+          11.499
+        ],
+        "size": [
+          2.998,
+          40.0,
+          22.998001
+        ]
+      },
+      "geometry_sha256": "dfb0caa9a81613f8fdae60f812c6adb6162a7700d3cd53681ce2097a29683364",
+      "package_member_sha256": "05f690354171a96f8b91d417a0704c24bb2801cc2f5969c59b7456ae7430bae5",
+      "zip_uncompressed_bytes": 186638,
+      "build_reference_count": 2
+    },
+    {
+      "path": "3D/Objects/object_26.model",
+      "mesh_object_id": "41",
+      "vertex_count": 3971,
+      "triangle_count": 7938,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -16.118,
+          -4.219,
+          -43.836052
+        ],
+        "max": [
+          16.118,
+          4.219,
+          43.836052
+        ],
+        "size": [
+          32.236,
+          8.438,
+          87.672104
+        ]
+      },
+      "geometry_sha256": "39c4c4fd128997f5421761b279b87311dcc5530dbfc37fcb62abd6931ac74a6e",
+      "package_member_sha256": "92b0a0275f648bd24a5cf7b5a1055c13ea4667b0cc889d3a6d86383946edb6c4",
+      "zip_uncompressed_bytes": 607616,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_109.model",
+      "mesh_object_id": "58",
+      "vertex_count": 4033,
+      "triangle_count": 8066,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -3.4,
+          -3.4,
+          -2.299999
+        ],
+        "max": [
+          3.4,
+          3.4,
+          2.299999
+        ],
+        "size": [
+          6.8,
+          6.8,
+          4.599998
+        ]
+      },
+      "geometry_sha256": "f24da23c79420ffee35074304d0a471f69340a94f7e422f1312e1b10453ca08f",
+      "package_member_sha256": "b8545c69e4271e861ce0e149e4f30ec62b4c11dc4bd2517e1fce985ff54dcb5e",
+      "zip_uncompressed_bytes": 627715,
+      "build_reference_count": 6
+    },
+    {
+      "path": "3D/Objects/object_13.model",
+      "mesh_object_id": "15",
+      "vertex_count": 1256,
+      "triangle_count": 2524,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -10.0,
+          -5.5,
+          -1.0
+        ],
+        "max": [
+          10.0,
+          5.5,
+          1.0
+        ],
+        "size": [
+          20.0,
+          11.0,
+          2.0
+        ]
+      },
+      "geometry_sha256": "c617c5de17da792b96244a9e0e18ed6a7591e813a4667398654256dbcd68041d",
+      "package_member_sha256": "798b2b47182ae2b8dd47965a975dd18f1ddef547b264950b42093ba54ad1220a",
+      "zip_uncompressed_bytes": 177603,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_165.model",
+      "mesh_object_id": "69",
+      "vertex_count": 4866,
+      "triangle_count": 9772,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -17.950001,
+          -11.252,
+          -16.999901
+        ],
+        "max": [
+          17.948002,
+          11.248,
+          17.000099
+        ],
+        "size": [
+          35.898003,
+          22.5,
+          34.0
+        ]
+      },
+      "geometry_sha256": "fe724d24c3ca3efb5eade1bcbc76ef2551c7370fc9f7ab1ee004e819f2b4ff88",
+      "package_member_sha256": "2848a89e9fc2b6d1084ac697ce3a597fc9a4d42bc2254db9cf7ac0186e889209",
+      "zip_uncompressed_bytes": 735532,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_18.model",
+      "mesh_object_id": "25",
+      "vertex_count": 781,
+      "triangle_count": 1566,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -1.901,
+          -3.326,
+          -27.024
+        ],
+        "max": [
+          1.901,
+          3.326,
+          27.024
+        ],
+        "size": [
+          3.802,
+          6.652,
+          54.048
+        ]
+      },
+      "geometry_sha256": "96ae9bc0420695944004fba361da0fc7f53188984fbf42099f441efbca356707",
+      "package_member_sha256": "e623f2d90aad1d5782b77852cfb20544e7d018d2b0b7de8725c0168a0e13d43e",
+      "zip_uncompressed_bytes": 117135,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_175.model",
+      "mesh_object_id": "75",
+      "vertex_count": 5739,
+      "triangle_count": 11494,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -6.25,
+          -22.3132,
+          -43.825401
+        ],
+        "max": [
+          6.248,
+          22.3128,
+          43.8246
+        ],
+        "size": [
+          12.498,
+          44.625999,
+          87.650002
+        ]
+      },
+      "geometry_sha256": "d90e003e7856e0e67081b647cb93e0f82410f9413d3237f3aafa4502fa64b84f",
+      "package_member_sha256": "fdd39bc17e43d1ef7c48b3db99e8f49dedb989749a9a52b1a50d7fb16704cc57",
+      "zip_uncompressed_bytes": 872372,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_10.model",
+      "mesh_object_id": "11",
+      "vertex_count": 6391,
+      "triangle_count": 12846,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -8.5,
+          -41.744999,
+          -27.249001
+        ],
+        "max": [
+          8.5,
+          41.744999,
+          27.249001
+        ],
+        "size": [
+          17.0,
+          83.489998,
+          54.498001
+        ]
+      },
+      "geometry_sha256": "d0c7f518199f3ec832232fa786504b32b305daf3e21139f3ec1ac9e94600da03",
+      "package_member_sha256": "9b5ac3ebc5be79de40b057068b3dfc607a2e6d58676b50a3555d5414452ddfbc",
+      "zip_uncompressed_bytes": 981323,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_168.model",
+      "mesh_object_id": "73",
+      "vertex_count": 6355,
+      "triangle_count": 12714,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -30.500301,
+          -23.829701,
+          -14.0
+        ],
+        "max": [
+          30.4977,
+          23.828301,
+          13.998001
+        ],
+        "size": [
+          60.998001,
+          47.658001,
+          27.998001
+        ]
+      },
+      "geometry_sha256": "91e41688bfb1af43df99994ab9559541851542c3aba972046a5170a9c13eb1cb",
+      "package_member_sha256": "f6c7190f39d2737c5b460b6ab3bc9bca3c429625054bb80b0581495197b99761",
+      "zip_uncompressed_bytes": 969536,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_42.model",
+      "mesh_object_id": "52",
+      "vertex_count": 5550,
+      "triangle_count": 11100,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -2.0,
+          -11.0,
+          -10.999
+        ],
+        "max": [
+          2.0,
+          11.0,
+          10.999
+        ],
+        "size": [
+          4.0,
+          22.0,
+          21.998001
+        ]
+      },
+      "geometry_sha256": "faa1b64ae08bde962b7c14024589bfaafc6308c914bc617bc3ae9ad5b105c454",
+      "package_member_sha256": "86a2740d3f0a80daa287707ceaa8eef5be14a1a78fa3c9ae07b87bdb7f265c1f",
+      "zip_uncompressed_bytes": 832565,
+      "build_reference_count": 18
+    },
+    {
+      "path": "3D/Objects/object_20.model",
+      "mesh_object_id": "29",
+      "vertex_count": 7419,
+      "triangle_count": 14866,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -10.0,
+          -28.999001,
+          -3.975
+        ],
+        "max": [
+          10.0,
+          28.999001,
+          3.975
+        ],
+        "size": [
+          20.0,
+          57.998001,
+          7.95
+        ]
+      },
+      "geometry_sha256": "4a0b0c99f0570a2159a31469902150441e247b99b67f5baa9effa1c13d67ac17",
+      "package_member_sha256": "d77f59e5b4976b37d85e0159642aef45186c5634e54d476b398abb1449ffc978",
+      "zip_uncompressed_bytes": 1140835,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_23.model",
+      "mesh_object_id": "35",
+      "vertex_count": 6306,
+      "triangle_count": 12644,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -12.9,
+          -10.249,
+          -11.499
+        ],
+        "max": [
+          12.9,
+          10.249,
+          11.499
+        ],
+        "size": [
+          25.799999,
+          20.498001,
+          22.998001
+        ]
+      },
+      "geometry_sha256": "b6003be255e2c7f067c57b9e840b48fe2050041012a05237dec02c0a4bfa03e0",
+      "package_member_sha256": "d3f1e5d8a7918d76fa59aedda7eb1d52351879a63ac78d606b0904101733144b",
+      "zip_uncompressed_bytes": 968660,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_24.model",
+      "mesh_object_id": "37",
+      "vertex_count": 6306,
+      "triangle_count": 12644,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -12.9,
+          -10.249,
+          -11.499
+        ],
+        "max": [
+          12.9,
+          10.249,
+          11.499
+        ],
+        "size": [
+          25.799999,
+          20.498001,
+          22.998001
+        ]
+      },
+      "geometry_sha256": "b6003be255e2c7f067c57b9e840b48fe2050041012a05237dec02c0a4bfa03e0",
+      "package_member_sha256": "4a5229dd2afdea5ba7af630847745821311c6fcba745c0df1ce80f24b6823353",
+      "zip_uncompressed_bytes": 968660,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_25.model",
+      "mesh_object_id": "39",
+      "vertex_count": 4950,
+      "triangle_count": 9896,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -16.283001,
+          -1.638,
+          -43.91
+        ],
+        "max": [
+          16.283001,
+          1.638,
+          43.91
+        ],
+        "size": [
+          32.566002,
+          3.276,
+          87.82
+        ]
+      },
+      "geometry_sha256": "f39a8dcc53acd9c29377ece941e34fa1f7e99e24ee3fd23413b0a3fa1148fe6a",
+      "package_member_sha256": "fab71227a7e6fe2f90fc8a38fddfa19202048c80b0abe401f212b7329f4c9887",
+      "zip_uncompressed_bytes": 761647,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_5.model",
+      "mesh_object_id": "5",
+      "vertex_count": 8059,
+      "triangle_count": 16114,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -61.346001,
+          -23.167999,
+          -45.879997
+        ],
+        "max": [
+          61.346001,
+          23.167999,
+          45.879997
+        ],
+        "size": [
+          122.692001,
+          46.335999,
+          91.759995
+        ]
+      },
+      "geometry_sha256": "5edc08cd3021ee776387fb2e0665eaf643220bceb0624a74ced881796f67be68",
+      "package_member_sha256": "7357a33bac78efcebd71dabac7b2d239c157546a21e6f02600c8ef2654162ef0",
+      "zip_uncompressed_bytes": 1245045,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_11.model",
+      "mesh_object_id": "13",
+      "vertex_count": 10502,
+      "triangle_count": 21038,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -17.25,
+          -9.5,
+          -16.225
+        ],
+        "max": [
+          17.25,
+          9.5,
+          16.225
+        ],
+        "size": [
+          34.5,
+          19.0,
+          32.450001
+        ]
+      },
+      "geometry_sha256": "4ead182786ff897e95f6bc8604f4104f9936ff3dec9154403bcb75ddc24f1d32",
+      "package_member_sha256": "b785fea2fe8cc9a694e49065ce9fb96b8ff5e8911267b9ce02c87c71b72c43ed",
+      "zip_uncompressed_bytes": 1616842,
+      "build_reference_count": 2
+    },
+    {
+      "path": "3D/Objects/object_7.model",
+      "mesh_object_id": "7",
+      "vertex_count": 10438,
+      "triangle_count": 20898,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -40.444,
+          -20.845001,
+          -16.857
+        ],
+        "max": [
+          40.444,
+          20.845001,
+          16.857
+        ],
+        "size": [
+          80.888,
+          41.690002,
+          33.714001
+        ]
+      },
+      "geometry_sha256": "06da710a922d961318077633696a876d8348cd6505b6ee3083a1e88c4c4c7ba4",
+      "package_member_sha256": "4c3ca304d244993980fb458fd32af9236b2e0998e0ab41bf09d2ce510eaef6d0",
+      "zip_uncompressed_bytes": 1617352,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_105.model",
+      "mesh_object_id": "54",
+      "vertex_count": 8361,
+      "triangle_count": 16738,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -8.0,
+          -8.0,
+          -2.075
+        ],
+        "max": [
+          8.0,
+          8.0,
+          2.075
+        ],
+        "size": [
+          16.0,
+          16.0,
+          4.15
+        ]
+      },
+      "geometry_sha256": "1ffffc595c2239efc2de1eeaba3b91d39a525b68a51400c340d02943ac9d3f46",
+      "package_member_sha256": "f1131ac6ddc31884678be137d0889f93a18750b592f1cc148f4eef2d7220458f",
+      "zip_uncompressed_bytes": 1297772,
+      "build_reference_count": 8
+    },
+    {
+      "path": "3D/Objects/object_19.model",
+      "mesh_object_id": "27",
+      "vertex_count": 6061,
+      "triangle_count": 12158,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -8.999001,
+          -13.847,
+          -17.5
+        ],
+        "max": [
+          8.999001,
+          13.847,
+          17.5
+        ],
+        "size": [
+          17.998001,
+          27.694,
+          35.0
+        ]
+      },
+      "geometry_sha256": "df7bf5caff9b8a35b3b6797840d289d75f16bf70f568530bc3626201cb9b90cf",
+      "package_member_sha256": "802475662f0e0cfdb2706bad7539e896a30bc67cd9ec64030aef518d27d70048",
+      "zip_uncompressed_bytes": 926888,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_21.model",
+      "mesh_object_id": "31",
+      "vertex_count": 7419,
+      "triangle_count": 14866,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -10.001,
+          -28.999001,
+          -3.975
+        ],
+        "max": [
+          10.001,
+          28.999001,
+          3.975
+        ],
+        "size": [
+          20.001999,
+          57.998001,
+          7.95
+        ]
+      },
+      "geometry_sha256": "38c5e8b0736b0315b26235e9e58b8df7bba069d531198ed509df9cd45c024ef8",
+      "package_member_sha256": "07d825ac270dec4c86a20d471766e37e3af37ccc1b87b94a0d4b5cac0479ab99",
+      "zip_uncompressed_bytes": 1143811,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_4.model",
+      "mesh_object_id": "3",
+      "vertex_count": 14151,
+      "triangle_count": 28322,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -34.356049,
+          -14.724,
+          -45.707001
+        ],
+        "max": [
+          34.356049,
+          14.724,
+          45.707001
+        ],
+        "size": [
+          68.712097,
+          29.448,
+          91.414001
+        ]
+      },
+      "geometry_sha256": "f3e78827be2409ec46c598bed18e57f0538eaa77f7322508b285de5c8fa50f3b",
+      "package_member_sha256": "421ed7694ca4509cce9b4dbe3bd4565d6ccd8bbbc9c353aa848f9e8c65333696",
+      "zip_uncompressed_bytes": 2221824,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_8.model",
+      "mesh_object_id": "9",
+      "vertex_count": 10438,
+      "triangle_count": 20896,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -40.448997,
+          -20.846001,
+          -15.882999
+        ],
+        "max": [
+          40.448997,
+          20.846001,
+          15.882999
+        ],
+        "size": [
+          80.897995,
+          41.692001,
+          31.765999
+        ]
+      },
+      "geometry_sha256": "2cec4be97958fdc68414e4a6b8bb0fd5005ce95e6eda273a5592171226c03e57",
+      "package_member_sha256": "f6f69afda3f96182d05eb15c6801bf314a4c1ca7d0c4539977f19c0d5055f1d1",
+      "zip_uncompressed_bytes": 1610363,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_3.model",
+      "mesh_object_id": "1",
+      "vertex_count": 10793,
+      "triangle_count": 21602,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -58.373001,
+          -10.066999,
+          -45.881
+        ],
+        "max": [
+          58.373001,
+          10.066999,
+          45.881
+        ],
+        "size": [
+          116.746002,
+          20.133999,
+          91.762001
+        ]
+      },
+      "geometry_sha256": "cf83169c5391fa73013af312b43b4d42b2ba4ac777977a59afcfd4d33d49e782",
+      "package_member_sha256": "707677bd0f6e1babcfc7755b9c5982dd206309a3bd281b37e91bf343b26f02be",
+      "zip_uncompressed_bytes": 1677685,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_30.model",
+      "mesh_object_id": "45",
+      "vertex_count": 22461,
+      "triangle_count": 45648,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -27.000999,
+          -9.453,
+          -20.549
+        ],
+        "max": [
+          27.000999,
+          9.453,
+          20.549
+        ],
+        "size": [
+          54.001999,
+          18.906,
+          41.098
+        ]
+      },
+      "geometry_sha256": "22b2a27f00e15febbc18f4add43b69737eb0038426c9bf8727bcfa7f8d99d891",
+      "package_member_sha256": "f8863dfe2effcc748f618e1180ccf87617092af8339b35a0672db5ada24fdea7",
+      "zip_uncompressed_bytes": 3599711,
+      "build_reference_count": 1
+    },
+    {
+      "path": "3D/Objects/object_29.model",
+      "mesh_object_id": "43",
+      "vertex_count": 22719,
+      "triangle_count": 46258,
+      "invalid_triangle_index_count": 0,
+      "non_finite_vertex_count": 0,
+      "local_bbox_mm": {
+        "min": [
+          -27.000999,
+          -9.453,
+          -20.549
+        ],
+        "max": [
+          27.000999,
+          9.453,
+          20.549
+        ],
+        "size": [
+          54.001999,
+          18.906,
+          41.098
+        ]
+      },
+      "geometry_sha256": "692444e7b282b142696c26e13ccdcc948e86752ea826ec7623f73e3b7100b4dc",
+      "package_member_sha256": "47d7f5a51818536d193a31e8982757b21d866ee2c29a79d651196474eeb19f73",
+      "zip_uncompressed_bytes": 3640465,
+      "build_reference_count": 1
+    }
+  ],
+  "empty_object_members": [
+    {
+      "path": "3D/Objects/object_194.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_184.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_177.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_179.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_189.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_198.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_196.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_181.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_185.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_199.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_187.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_182.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_183.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_180.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_176.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_190.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_193.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_106.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_108.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_201.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_202.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_151.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_35.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_188.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_186.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_178.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_200.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_195.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_191.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_192.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    },
+    {
+      "path": "3D/Objects/object_197.model",
+      "zip_uncompressed_bytes": 406,
+      "classification": "empty_model_resources_and_build"
+    }
+  ],
+  "component_reference_graph": [
+    {
+      "root_object_id": "2",
+      "path": "3D/Objects/object_3.model",
+      "mesh_object_id": "1",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "4",
+      "path": "3D/Objects/object_4.model",
+      "mesh_object_id": "3",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "6",
+      "path": "3D/Objects/object_5.model",
+      "mesh_object_id": "5",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "8",
+      "path": "3D/Objects/object_7.model",
+      "mesh_object_id": "7",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "10",
+      "path": "3D/Objects/object_8.model",
+      "mesh_object_id": "9",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "12",
+      "path": "3D/Objects/object_10.model",
+      "mesh_object_id": "11",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "14",
+      "path": "3D/Objects/object_11.model",
+      "mesh_object_id": "13",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "16",
+      "path": "3D/Objects/object_13.model",
+      "mesh_object_id": "15",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "18",
+      "path": "3D/Objects/object_14.model",
+      "mesh_object_id": "17",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "20",
+      "path": "3D/Objects/object_15.model",
+      "mesh_object_id": "19",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "22",
+      "path": "3D/Objects/object_16.model",
+      "mesh_object_id": "21",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "24",
+      "path": "3D/Objects/object_17.model",
+      "mesh_object_id": "23",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "26",
+      "path": "3D/Objects/object_18.model",
+      "mesh_object_id": "25",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "28",
+      "path": "3D/Objects/object_19.model",
+      "mesh_object_id": "27",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "30",
+      "path": "3D/Objects/object_20.model",
+      "mesh_object_id": "29",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "32",
+      "path": "3D/Objects/object_21.model",
+      "mesh_object_id": "31",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "34",
+      "path": "3D/Objects/object_22.model",
+      "mesh_object_id": "33",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "36",
+      "path": "3D/Objects/object_23.model",
+      "mesh_object_id": "35",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "38",
+      "path": "3D/Objects/object_24.model",
+      "mesh_object_id": "37",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "40",
+      "path": "3D/Objects/object_25.model",
+      "mesh_object_id": "39",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "42",
+      "path": "3D/Objects/object_26.model",
+      "mesh_object_id": "41",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "44",
+      "path": "3D/Objects/object_29.model",
+      "mesh_object_id": "43",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "46",
+      "path": "3D/Objects/object_30.model",
+      "mesh_object_id": "45",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "48",
+      "path": "3D/Objects/object_31.model",
+      "mesh_object_id": "47",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "50",
+      "path": "3D/Objects/object_32.model",
+      "mesh_object_id": "49",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "51",
+      "path": "3D/Objects/object_32.model",
+      "mesh_object_id": "49",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "53",
+      "path": "3D/Objects/object_42.model",
+      "mesh_object_id": "52",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "55",
+      "path": "3D/Objects/object_105.model",
+      "mesh_object_id": "54",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 -4.06250025e-16"
+    },
+    {
+      "root_object_id": "56",
+      "path": "3D/Objects/object_105.model",
+      "mesh_object_id": "54",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 -4.06250025e-16"
+    },
+    {
+      "root_object_id": "57",
+      "path": "3D/Objects/object_105.model",
+      "mesh_object_id": "54",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 -4.06250025e-16"
+    },
+    {
+      "root_object_id": "59",
+      "path": "3D/Objects/object_109.model",
+      "mesh_object_id": "58",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "60",
+      "path": "3D/Objects/object_11.model",
+      "mesh_object_id": "13",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "62",
+      "path": "3D/Objects/object_161.model",
+      "mesh_object_id": "61",
+      "transform": "1 0 0 0 1 0 0 0 1 0 -9.53674316e-07 0"
+    },
+    {
+      "root_object_id": "64",
+      "path": "3D/Objects/object_162.model",
+      "mesh_object_id": "63",
+      "transform": "1 0 0 0 1 0 0 0 1 0 -9.53674316e-07 0"
+    },
+    {
+      "root_object_id": "66",
+      "path": "3D/Objects/object_163.model",
+      "mesh_object_id": "65",
+      "transform": "1 0 0 0 1 0 0 0 1 0 -9.53674316e-07 0"
+    },
+    {
+      "root_object_id": "68",
+      "path": "3D/Objects/object_164.model",
+      "mesh_object_id": "67",
+      "transform": "1 0 0 0 1 0 0 0 1 0 -9.53674316e-07 0"
+    },
+    {
+      "root_object_id": "70",
+      "path": "3D/Objects/object_165.model",
+      "mesh_object_id": "69",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 -3.05175781e-05"
+    },
+    {
+      "root_object_id": "72",
+      "path": "3D/Objects/object_167.model",
+      "mesh_object_id": "71",
+      "transform": "1 0 0 0 1 0 0 0 1 0 3.81469727e-06 0"
+    },
+    {
+      "root_object_id": "74",
+      "path": "3D/Objects/object_168.model",
+      "mesh_object_id": "73",
+      "transform": "1 0 0 0 1 0 0 0 1 0 3.81469727e-06 0"
+    },
+    {
+      "root_object_id": "76",
+      "path": "3D/Objects/object_175.model",
+      "mesh_object_id": "75",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 3.05175781e-05"
+    },
+    {
+      "root_object_id": "77",
+      "path": "3D/Objects/object_105.model",
+      "mesh_object_id": "54",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 -4.06250025e-16"
+    },
+    {
+      "root_object_id": "78",
+      "path": "3D/Objects/object_109.model",
+      "mesh_object_id": "58",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "79",
+      "path": "3D/Objects/object_105.model",
+      "mesh_object_id": "54",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 -4.06250025e-16"
+    },
+    {
+      "root_object_id": "80",
+      "path": "3D/Objects/object_109.model",
+      "mesh_object_id": "58",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "81",
+      "path": "3D/Objects/object_105.model",
+      "mesh_object_id": "54",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 -4.06250025e-16"
+    },
+    {
+      "root_object_id": "82",
+      "path": "3D/Objects/object_109.model",
+      "mesh_object_id": "58",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "83",
+      "path": "3D/Objects/object_105.model",
+      "mesh_object_id": "54",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 -4.06250025e-16"
+    },
+    {
+      "root_object_id": "84",
+      "path": "3D/Objects/object_109.model",
+      "mesh_object_id": "58",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "85",
+      "path": "3D/Objects/object_105.model",
+      "mesh_object_id": "54",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 -4.06250025e-16"
+    },
+    {
+      "root_object_id": "86",
+      "path": "3D/Objects/object_109.model",
+      "mesh_object_id": "58",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "87",
+      "path": "3D/Objects/object_42.model",
+      "mesh_object_id": "52",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "88",
+      "path": "3D/Objects/object_42.model",
+      "mesh_object_id": "52",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "89",
+      "path": "3D/Objects/object_42.model",
+      "mesh_object_id": "52",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "90",
+      "path": "3D/Objects/object_42.model",
+      "mesh_object_id": "52",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "91",
+      "path": "3D/Objects/object_42.model",
+      "mesh_object_id": "52",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "92",
+      "path": "3D/Objects/object_42.model",
+      "mesh_object_id": "52",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "93",
+      "path": "3D/Objects/object_42.model",
+      "mesh_object_id": "52",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "94",
+      "path": "3D/Objects/object_42.model",
+      "mesh_object_id": "52",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "95",
+      "path": "3D/Objects/object_42.model",
+      "mesh_object_id": "52",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "96",
+      "path": "3D/Objects/object_42.model",
+      "mesh_object_id": "52",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "97",
+      "path": "3D/Objects/object_42.model",
+      "mesh_object_id": "52",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "98",
+      "path": "3D/Objects/object_42.model",
+      "mesh_object_id": "52",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "99",
+      "path": "3D/Objects/object_42.model",
+      "mesh_object_id": "52",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "100",
+      "path": "3D/Objects/object_42.model",
+      "mesh_object_id": "52",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "101",
+      "path": "3D/Objects/object_42.model",
+      "mesh_object_id": "52",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "102",
+      "path": "3D/Objects/object_42.model",
+      "mesh_object_id": "52",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    },
+    {
+      "root_object_id": "103",
+      "path": "3D/Objects/object_42.model",
+      "mesh_object_id": "52",
+      "transform": "1 0 0 0 1 0 0 0 1 0 0 0"
+    }
+  ],
+  "missing_geometry_references": []
+}

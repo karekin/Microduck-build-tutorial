@@ -3,6 +3,7 @@
 
 import onnxruntime as ort
 import numpy as np
+from pathlib import Path
 
 from constants import MOTOR_TO_ID, KP_DEFAULT, KP_RL, OBSERVATION_DOF_ORDER
 from controller import ControllerProtocol
@@ -31,14 +32,18 @@ class WalkMove(Move):
         self._startup_pose: dict[str, float] = {}
 
         # Load ONNX policy
-        self._ort_session = ort.InferenceSession(f"src/agents/{AGENT_NAME}")
-
-        self.action_scale = 1.0
+        policy_path = Path(__file__).resolve().parents[1] / "agents" / AGENT_NAME
+        self._ort_session = ort.InferenceSession(str(policy_path))
 
         # Reference pose: read from ONNX metadata
         meta = self._ort_session.get_modelmeta().custom_metadata_map
         names = meta["joint_names"].split(",")
         positions = [float(v) for v in meta["default_joint_pos"].split(",")]
+        if len(positions) != len(OBSERVATION_DOF_ORDER) or not np.isfinite(positions).all():
+            raise ValueError("ONNX default_joint_pos must contain 14 finite joint positions")
+        self.action_scale = float(meta["action_scale"])
+        if not np.isfinite(self.action_scale) or self.action_scale <= 0:
+            raise ValueError("ONNX action_scale must be finite and positive")
         if names != OBSERVATION_DOF_ORDER:
             raise ValueError(
                 "ONNX joint_names order does not match OBSERVATION_DOF_ORDER: "
@@ -51,7 +56,14 @@ class WalkMove(Move):
         # base_obs = gyro(3) + proj_grav(3) + pos(N) + vel(N) + action(N) + cmd(3)
         # phase_obs = base_obs + phase(2)
         base_obs_size = 3 + 3 + 3 * len(OBSERVATION_DOF_ORDER) + 3
-        self._use_reference_phase: bool = self._ort_session.get_inputs()[0].shape[1] > base_obs_size
+        inputs = self._ort_session.get_inputs()
+        outputs = self._ort_session.get_outputs()
+        if (len(inputs) != 1 or inputs[0].type != "tensor(float)"
+                or inputs[0].shape not in ([1, base_obs_size], [1, base_obs_size + 2])):
+            raise ValueError("ONNX policy requires one float32 input with shape [1,51] or [1,53]")
+        if len(outputs) != 1 or outputs[0].shape != [1, len(OBSERVATION_DOF_ORDER)]:
+            raise ValueError("ONNX policy requires one output with shape [1,14]")
+        self._use_reference_phase = inputs[0].shape[1] == base_obs_size + 2
         self._phase_step = 0
         self._phase_total_steps = 20
 
@@ -108,9 +120,14 @@ class WalkMove(Move):
         
         # Run policy
         input_obs = self.build_observation(obs)
-        ort_inputs = {self._ort_session.get_inputs()[0].name: [input_obs]}
+        policy_input = np.asarray([input_obs], dtype=np.float32)
+        if not np.isfinite(policy_input).all():
+            raise ValueError("Policy observation contains non-finite values")
+        ort_inputs = {self._ort_session.get_inputs()[0].name: policy_input}
         ort_outs = self._ort_session.run(None, ort_inputs)
         action = ort_outs[0][0]
+        if action.shape != (len(OBSERVATION_DOF_ORDER),) or not np.isfinite(action).all():
+            raise ValueError("Policy output must contain 14 finite actions")
         self._last_action = action.tolist()
 
         # Update command

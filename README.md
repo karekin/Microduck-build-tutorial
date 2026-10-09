@@ -19,6 +19,8 @@ Microduck 是一个小型双足机器人项目，包含两部分：
 
 视频教程：https://www.youtube.com/watch?v=Vep8AjoCnEM
 
+本机复刻准备与已验证范围见 [复刻前软件运行指南](docs/复刻前软件运行指南.md)；打印包和装配检查见 [打印与装配准备清单](docs/打印与装配准备清单.md)。本分支补齐了缺失的14关节仿真资源并加入有限时长模拟验证。模拟站立通过，行走稳定性与实机复刻仍须分别验证。
+
 ## 致谢
 
 感谢开源项目 [microban](https://github.com/Rhoban/microban) 和 [microduck](https://github.com/pollen-robotics/microduck)。本项目的机械结构、部署思路、仿真训练和实机行走流程都受益于这些开源工作。
@@ -53,7 +55,7 @@ Microduck 是一个小型双足机器人项目，包含两部分：
 | 开关 | 电源开关 | 1 | 控制机器人主电源。 |
 | 存储 | 16GB 或更大 microSD 卡 | 1 | 推荐使用质量稳定的新卡。镜像刷写后首次启动会自动扩展分区。 |
 | IMU | BNO080/BNO085/BNO086 模块 | 1 | 通过 I2C 读取姿态，代码会自动探测常见地址。 |
-| 结构件 | 3D 打印件 | 1 套 | 使用 `microduck/cad/` 中的模型打印。推荐 PLA。 |
+| 结构件 | 3D 打印件 | 1 套 | 使用仓库根目录 `microduck3D打印.3mf`；切片前核对打印机、材料和支撑设置。推荐 PLA。 |
 | 螺丝 | M2/M2.5 自攻螺丝 | 若干 | 舵机固定、舵盘固定、结构件连接。建议多备。 |
 | 线材 | Dynamixel 3-pin 线| 若干 | 舵机串联、电源连接、分线。 |
 
@@ -608,7 +610,7 @@ The following is the main bill of materials for building one Microduck. Prices v
 | Switch | Power switch | 1 | Main power switch for the robot. |
 | Storage | 16GB or larger microSD card | 1 | Use a reliable new card. The image expands the filesystem on first boot. |
 | IMU | BNO080/BNO085/BNO086 module | 1 | Read over I2C. The code auto-detects common BNO08x addresses. |
-| Mechanical parts | 3D-printed parts | 1 set | Print from the models under `microduck/cad/`. PLA is recommended. |
+| Mechanical parts | 3D-printed parts | 1 set | Use `microduck3D打印.3mf` at the repository root; verify printer/material/support settings before slicing. PLA is recommended. |
 | Screws | M2/M2.5 self-tapping screws | Several | Used for servo mounting, horn mounting, and structural assembly. Keep extras. |
 | Bearings/shims | POM shims and steel shims | Several | Low-cost rotational support. |
 | Cables | Dynamixel 3-pin cables, JST wires, power connectors | Several | Servo daisy chains, power wiring, and splitters. |

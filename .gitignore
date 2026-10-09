@@ -9,3 +9,4 @@ tmp_*/
 *.img
 *.img.xz
 *.img.xz.sha256
+.omx/

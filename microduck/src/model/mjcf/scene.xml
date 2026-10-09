@@ -9,7 +9,11 @@ http://www.apache.org/licenses/LICENSE-2.0
 -->
 
 <mujoco model="scene">
-    <include file="robot.xml" />
+    <!-- 14DOF Microduck; legacy 19-actuator robot.xml is preserved. -->
+    <include file="microduck_14dof/robot_walk.xml" />
+
+    <!-- Resolve included model meshes relative to this entry point. -->
+    <compiler meshdir="microduck_14dof/assets" strippath="true"/>
 
     <visual>
         <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0" />

@@ -2,6 +2,7 @@
 # Copyright 2026 Marc Duclusaud
 
 import time
+import math
 from collections import deque
 from collections.abc import Callable
 from pathlib import Path
@@ -16,7 +17,7 @@ if TYPE_CHECKING:
 from bam.model import load_model as bam_load_model
 from bam.mujoco import MujocoController as BamController
 
-from constants import MOTOR_TO_ID, ID_TO_MOTOR, NEUTRAL_POSE, KP_DEFAULT, BAM_VIN, BAM_VOLTAGE_DROP_GAIN, BAM_VIN_MIN, BAM_MAX_CURRENT
+from constants import MOTOR_TO_ID, ID_TO_MOTOR, NEUTRAL_POSE, KP_DEFAULT, KP_RL, BAM_VIN, BAM_VOLTAGE_DROP_GAIN, BAM_VIN_MIN, BAM_MAX_CURRENT
 
 
 class _DelayBuffer:
@@ -41,7 +42,7 @@ class MuJoCoController:
     def __init__(
         self,
         mjcf_path: str,
-        key_callback: Callable[[int, int, int, int], None] | None = None,
+        key_callback: Callable[[int], None] | None = None,
         stop_flag_path: str = "/tmp/microduck_scheduler.stop",
         reset_source: "MuJoCoInputSource | None" = None,
         # Actuation delay (command → motor), in simulator steps (default timestep: 0.005 s)
@@ -52,10 +53,25 @@ class MuJoCoController:
         delay_gyro_ticks: int = 0,
         delay_quat_ticks: int = 0,
         trunk_com_offset: tuple[float, float, float] = (0.0, 0.0, 0.0),
+        frequency_hz: float = 50.0,
+        headless: bool = False,
+        scheduler_driven: bool = False,
+        initial_height_m: float = 0.165,
+        physics_timestep_s: float | None = None,
+        policy_kp: int = KP_RL,
     ) -> None:
         self._stop_flag_path = Path(stop_flag_path)
         self._reset_source = reset_source
+        self._scheduler_driven = scheduler_driven
+        self._policy_kp = policy_kp
+        if not math.isfinite(initial_height_m) or initial_height_m <= 0:
+            raise ValueError("Initial root height must be finite and positive")
+        self._initial_height_m = initial_height_m
         self._model = mujoco.MjModel.from_xml_path(mjcf_path)
+        if physics_timestep_s is not None:
+            if not math.isfinite(physics_timestep_s) or physics_timestep_s <= 0:
+                raise ValueError("Physics timestep must be finite and positive")
+            self._model.opt.timestep = physics_timestep_s
         self._data = mujoco.MjData(self._model)
 
         self._name_to_actuator_idx: dict[str, int] = {}
@@ -72,19 +88,21 @@ class MuJoCoController:
             self._name_to_qpos_idx[name] = self._model.jnt_qposadr[joint_id]
             self._name_to_qvel_idx[name] = self._model.jnt_dofadr[joint_id]
         # Number of physics sub-steps per scheduler tick (scheduler runs at 50 Hz)
-        self._steps_per_tick = max(1, round(0.02 / self._model.opt.timestep))
+        self._steps_per_tick = self.substeps_for_period(frequency_hz, self._model.opt.timestep)
         self._torque_interval = 0.1
         self._last_torque_print = 0.0
 
         # Apply CoM offset on trunk body (simulates inertial model error)
         if any(v != 0.0 for v in trunk_com_offset):
-            trunk_id = mujoco.mj_name2id(self._model, mujoco.mjtObj.mjOBJ_BODY, "trunk")
+            trunk_id = mujoco.mj_name2id(self._model, mujoco.mjtObj.mjOBJ_BODY, "trunk_base")
+            if trunk_id < 0:
+                raise ValueError("CoM offset requires the matching trunk_base body")
             self._model.body_ipos[trunk_id, 0] += trunk_com_offset[0]
             self._model.body_ipos[trunk_id, 1] += trunk_com_offset[1]
             self._model.body_ipos[trunk_id, 2] += trunk_com_offset[2]
 
         # Set initial pose to neutral so the robot starts upright
-        self._data.qpos[2] = 0.165
+        self._data.qpos[2] = self._initial_height_m
         for name, angle in NEUTRAL_POSE.items():
             if name in self._name_to_qpos_idx:
                 self._data.qpos[self._name_to_qpos_idx[name]] = angle
@@ -116,28 +134,68 @@ class MuJoCoController:
         bam_model = bam_load_model(motor_name="xl330", model="m6")
         bam_model.actuator.kp = KP_DEFAULT
         bam_model.actuator.vin = BAM_VIN
+        bam_model.actuator.max_current = BAM_MAX_CURRENT
+        # BAM produces torque, not position setpoints. Match training's
+        # set_to_motor(): otherwise an XML position actuator applies its own
+        # kp * (BAM torque - q), silently adding a second control law.
+        torque_limit = bam_model.kt.value * BAM_MAX_CURRENT
+        for index in self._name_to_actuator_idx.values():
+            self._model.actuator_dyntype[index] = mujoco.mjtDyn.mjDYN_NONE
+            self._model.actuator_gaintype[index] = mujoco.mjtGain.mjGAIN_FIXED
+            self._model.actuator_biastype[index] = mujoco.mjtBias.mjBIAS_NONE
+            self._model.actuator_dynprm[index, :] = 0.0
+            self._model.actuator_gainprm[index, :] = 0.0
+            self._model.actuator_gainprm[index, 0] = 1.0
+            self._model.actuator_biasprm[index, :] = 0.0
+            self._model.actuator_gear[index, :] = 0.0
+            self._model.actuator_gear[index, 0] = 1.0
+            self._model.actuator_ctrllimited[index] = True
+            self._model.actuator_ctrlrange[index] = (-torque_limit, torque_limit)
+            self._model.actuator_forcelimited[index] = True
+            self._model.actuator_forcerange[index] = (-torque_limit, torque_limit)
         self._bam = BamController(
             bam_model,
             list(MOTOR_TO_ID.keys()),
             self._model,
             self._data,
-            vin_drop_gain=BAM_VOLTAGE_DROP_GAIN,
+            # Older BAM used Vdrop = gain * sum(|torque|). BAM 1.0 uses
+            # Vdrop = resistance * sum(|torque|) / kt, so preserve the units.
+            vin_drop_resistance=BAM_VOLTAGE_DROP_GAIN * bam_model.kt.value,
             vin_min=BAM_VIN_MIN,
-            max_current=BAM_MAX_CURRENT,
         )
-        self._bam.reset(self._data.qpos)
+        self._reset_motor_model()
 
-        self._viewer = mujoco.viewer.launch_passive(
+        self._viewer = None if headless else mujoco.viewer.launch_passive(
             self._model, self._data, key_callback=key_callback
         )
 
         # Sensor indices for IMU readout
         self._sensor_orientation = mujoco.mj_name2id(self._model, mujoco.mjtObj.mjOBJ_SENSOR, "orientation")
         self._sensor_gyro = mujoco.mj_name2id(self._model, mujoco.mjtObj.mjOBJ_SENSOR, "angular-velocity")
+        if self._sensor_orientation < 0 or self._sensor_gyro < 0:
+            raise ValueError("Simulation requires orientation and angular-velocity sensors")
+        self._targets = {name: angle for name, angle in NEUTRAL_POSE.items()}
+        # BAM calls mj_setConst while configuring armatures; MuJoCo restores
+        # qpos0 there. Seed the actual starting pose only after that setup.
+        self.reset()
+
+    @staticmethod
+    def substeps_for_period(frequency_hz: float, timestep: float) -> int:
+        if not math.isfinite(frequency_hz) or frequency_hz <= 0 or timestep <= 0:
+            raise ValueError("Simulation frequency and timestep must be positive")
+        steps = 1.0 / frequency_hz / timestep
+        rounded = round(steps)
+        if rounded < 1 or not math.isclose(steps, rounded, abs_tol=1e-8):
+            raise ValueError("Control period must be an integer multiple of the physics timestep")
+        return rounded
 
     @property
-    def viewer_opt(self) -> mujoco.MjvOption:
-        return self._viewer.opt
+    def simulation_time(self) -> float:
+        return float(self._data.time)
+
+    @property
+    def viewer_opt(self) -> mujoco.MjvOption | None:
+        return None if self._viewer is None else self._viewer.opt
 
     def set_kp(self, kp: float) -> None:
         self._bam.model.actuator.kp = kp
@@ -147,7 +205,8 @@ class MuJoCoController:
         return [kp] * len(ids)
 
     def sync_write_kp(self, ids: list[int], gains: list[int]) -> None:
-        self._bam.model.actuator.kp = gains[0]
+        gain = gains[0]
+        self._bam.model.actuator.kp = self._policy_kp if gain == KP_RL else gain
 
     def sync_write_torque_enable(self, ids: list[int], values: list[bool]) -> None:
         pass
@@ -156,22 +215,48 @@ class MuJoCoController:
         pass
 
     def sync_write_goal_position(self, ids: list[int], positions: list[float]) -> None:
-        if not self._viewer.is_running():
+        if self._viewer is not None and not self._viewer.is_running():
             self._stop_flag_path.write_text("stop\n", encoding="ascii")
             return
 
-        cmd = dict(zip(ids, positions))
+        self._targets.update({ID_TO_MOTOR[mid]: pos for mid, pos in zip(ids, positions)})
+        if not self._scheduler_driven:
+            self._advance_physics()
+
+    def begin_tick(self) -> bool:
+        if self._reset_source is not None and self._reset_source.consume_reset():
+            self.reset()
+            return True
+        return False
+
+    def end_tick(self) -> None:
+        if self._scheduler_driven:
+            self._advance_physics()
+
+    def _advance_physics(self) -> None:
+        if self._viewer is not None and not self._viewer.is_running():
+            self._stop_flag_path.write_text("stop\n", encoding="ascii")
+            return
 
         for _ in range(self._steps_per_tick):
-            for motor_id, pos in cmd.items():
+            for name, pos in self._targets.items():
+                motor_id = MOTOR_TO_ID[name]
                 delayed_pos = self._delay_act[motor_id].push_and_read(pos)
                 self._bam.set_q_target(ID_TO_MOTOR[motor_id], delayed_pos)
             self._bam.update()
+            # BAM 1.0.2 CPU matches FRICTION_DOF efc_id against joint IDs.
+            # With a floating root these differ from DOF IDs. Recompute the
+            # load-dependent budget with the actual per-DOF motor friction
+            # removed, matching BAM's training-side external-load semantics.
+            dofs = self._bam.dof_indexes
+            frictionloss, damping = self._bam.model.compute_frictions(
+                self._data.qfrc_actuator[dofs],
+                self._external_torque_without_motor_friction(),
+                self._data.qvel[dofs],
+            )
+            self._model.dof_frictionloss[dofs] = frictionloss
+            self._model.dof_damping[dofs] = damping
             mujoco.mj_step(self._model, self._data)
-
-        if self._reset_source is not None and self._reset_source.consume_reset():
-            self.reset()
-            return
 
         if self._reset_source is not None and self._reset_source.show_torque:
             now = time.monotonic()
@@ -180,7 +265,20 @@ class MuJoCoController:
                 print(f"Torque sum: {total:.3f} Nm")
                 self._last_torque_print = now
 
-        self._viewer.sync()
+        if self._viewer is not None:
+            self._viewer.sync()
+
+    def shutdown(self) -> None:
+        if self._viewer is not None:
+            self._viewer.close()
+
+    def _external_torque_without_motor_friction(self):
+        dofs = self._bam.dof_indexes
+        selector = (self._data.efc_id[None, :] == dofs[:, None]) & (
+            self._data.efc_type[None, :] == mujoco.mjtConstraint.mjCNSTR_FRICTION_DOF
+        )
+        motor_friction = (self._data.efc_force[None, :] * selector).sum(axis=1)
+        return -self._data.qfrc_bias[dofs] + self._data.qfrc_constraint[dofs] - motor_friction
 
     def sync_read_present_position(self, ids: list[int]) -> list[float]:
         return [
@@ -212,10 +310,10 @@ class MuJoCoController:
 
     def sync_read_present_current(self, ids: list[int]) -> list[float]:
         # Motor current from the torque applied by the bam model: I = torque / kt.
-        # ctrl holds the (current-clipped) torque set in MujocoController.update().
+        # Read the actually applied actuator torque, after MuJoCo force limits.
         kt = self._bam.model.kt.value
         return [
-            float(self._data.ctrl[self._name_to_actuator_idx[ID_TO_MOTOR[mid]]] / kt)
+            float(self._data.actuator_force[self._name_to_actuator_idx[ID_TO_MOTOR[mid]]] / kt)
             for mid in ids
         ]
 
@@ -255,18 +353,44 @@ class MuJoCoController:
             current = (float(w), float(x), float(y), float(z))
         return self._delay_quat.push_and_read(current)
 
-    def reset(self) -> None:
+    def reset(self, *, pose: dict[str, float] | None = None) -> None:
         """Reset the simulation to the initial neutral standing pose."""
-        self._data.qpos[:] = 0.0
-        self._data.qvel[:] = 0.0
-        self._data.ctrl[:] = 0.0
-        self._data.qpos[2] = 0.165
-        for name, angle in NEUTRAL_POSE.items():
+        mujoco.mj_resetData(self._model, self._data)
+        self._data.qpos[2] = self._initial_height_m
+        initial_pose = NEUTRAL_POSE if pose is None else pose
+        for name, angle in initial_pose.items():
             if name in self._name_to_qpos_idx:
                 self._data.qpos[self._name_to_qpos_idx[name]] = angle
+        self._reset_motor_model()
         mujoco.mj_forward(self._model, self._data)
-        self._bam.reset(self._data.qpos)
-        for mid in MOTOR_TO_ID.values():
-            neutral = self._data.qpos[self._name_to_qpos_idx[ID_TO_MOTOR[mid]]]
+        self._targets = dict(initial_pose)
+        for name, index in self._name_to_qpos_idx.items():
+            mid = MOTOR_TO_ID[name]
+            neutral = self._data.qpos[index]
             self._delay_act[mid].fill(neutral)
-        self._viewer.sync()
+            self._delay_pos[mid].fill(neutral)
+            self._delay_vel[mid].fill(0.0)
+        self._fill_sensor_delays()
+        if self._viewer is not None:
+            self._viewer.sync()
+
+    def _fill_sensor_delays(self) -> None:
+        quat = (1.0, 0.0, 0.0, 0.0)
+        gyro = (0.0, 0.0, 0.0)
+        if self._sensor_orientation >= 0:
+            adr = self._model.sensor_adr[self._sensor_orientation]
+            quat = tuple(float(v) for v in self._data.sensordata[adr:adr + 4])
+        if self._sensor_gyro >= 0:
+            adr = self._model.sensor_adr[self._sensor_gyro]
+            gyro = tuple(float(v) for v in self._data.sensordata[adr:adr + 3])
+        self._delay_quat.fill(quat)
+        self._delay_gyro.fill(gyro)
+
+    def _reset_motor_model(self) -> None:
+        # Match BAM's training edit_spec initial state. CPU update() then
+        # replaces these fields with its computed budget before each step.
+        self._model.dof_frictionloss[self._bam.dof_indexes] = 0.0
+        self._model.dof_damping[self._bam.dof_indexes] = 0.0
+        self._bam.model.reset()
+        self._bam.q_target = self._data.qpos[self._bam.qpos_indexes].copy()
+        self._bam.last_ts = self._data.time

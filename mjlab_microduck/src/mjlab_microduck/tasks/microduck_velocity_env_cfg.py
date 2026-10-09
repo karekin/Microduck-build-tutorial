@@ -10,6 +10,7 @@
 
 import numpy as np
 from copy import deepcopy
+from mjlab_microduck.actuator import bam_init
 
 from mjlab.envs import ManagerBasedRlEnvCfg
 from mjlab.envs.mdp.actions import JointPositionActionCfg
@@ -342,6 +343,10 @@ def make_microduck_velocity_env_cfg(play: bool = False) -> ManagerBasedRlEnvCfg:
     command.rotation_min_ang_vel = 0.5
 
     #---------------------------- Events ----------------------------
+    # BAM writes per-environment friction/damping fields. Its decorated startup
+    # hook asks MjLab to expand both fields before the first actuator step.
+    cfg.events["bam_init"] = EventTermCfg(func=bam_init, mode="startup")
+
     cfg.events["reset_base"].params["pose_range"]["z"] = (0.12, 0.13)
 
     cfg.events["push_robot"].params["velocity_range"] = {

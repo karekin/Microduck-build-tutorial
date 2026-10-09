@@ -1,4 +1,4 @@
-.PHONY: sync setup run stop shutdown voltage imu imu-check imu-viewer sim viewer direction-check direction-check-sim gamepad-headless-enable gamepad-headless-disable
+.PHONY: sync setup run stop shutdown voltage imu imu-check imu-viewer sim sim-headless viewer direction-check direction-check-sim gamepad-headless-enable gamepad-headless-disable
 
 HOST ?= microduck
 ID ?=
@@ -7,11 +7,13 @@ SERIAL_PORT ?= auto
 IMU_CHECK_DURATION ?= 3.0
 IMU_CHECK_FREQUENCY ?= 50.0
 IMU_CHECK_ARGS ?=
+SIM_PYTHON := $(if $(filter Darwin,$(shell uname -s)),mjpython,python)
 
 sync:
 	rsync -avz \
 		--exclude='.git' \
 		--exclude='.venv' \
+		--exclude='.omx' \
 		--exclude='__pycache__' \
 		--exclude='cad' \
 		--exclude='docs' \
@@ -25,7 +27,10 @@ setup: sync
 	ssh -tt $(HOST) "bash -l -c 'cd microduck && UV_HTTP_TIMEOUT=$(UV_HTTP_TIMEOUT) uv sync --frozen'"
 
 sim:
-	PYTHONPATH=src uv run --group sim src/sim/sim_main.py --hz 50
+	PYTHONPATH=src uv run --locked --group sim $(SIM_PYTHON) src/sim/sim_main.py --hz 50
+
+sim-headless:
+	uv run --locked --group sim python src/sim/sim_main.py --headless --walk --ticks 500 --log logs/standing.jsonl
 
 viewer:
 	PYTHONPATH=src uv run src/sim/viewer_main.py --hz 25

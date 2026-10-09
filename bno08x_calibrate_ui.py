@@ -10,8 +10,8 @@ The UI shows the signals used by the walking policy:
   - quaternion age/rate and gyro age/rate
 
 Example:
-  python3 bno08x_calibrate_ui.py --host microduck --user pi
-  python3 bno08x_calibrate_ui.py --host 192.168.2.42 --user pi --password '...'
+  python3 bno08x_calibrate_ui.py --host microduck --user user
+  python3 bno08x_calibrate_ui.py --host 192.168.2.42 --user user
 """
 
 from __future__ import annotations
@@ -39,7 +39,8 @@ except ImportError:
     sys.exit(1)
 
 
-DEFAULT_MOUNT_QUAT = "0.5,-0.5,-0.5,0.5"
+# Match microduck/src/constants.py; verify the physical mounting before use.
+DEFAULT_MOUNT_QUAT = "0.7071068,0.0,0.7071068,0.0"
 LOG_PATH = "/tmp/microduck_bno08x_calibrate_ui.log"
 
 REMOTE_TEMPLATE = r"""

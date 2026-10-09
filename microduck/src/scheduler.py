@@ -64,7 +64,11 @@ class Scheduler:
         # the oldest entry is the command issued OVERCURRENT_PROXY_DELAY_TICKS ticks ago.
         self._cmd_history: deque[dict[str, float]] = deque(maxlen=OVERCURRENT_PROXY_DELAY_TICKS + 1)
 
-    def run(self):
+    def run(self, *, max_ticks: int | None = None, realtime: bool = True,
+            tick_callback=None, time_source=None, observation_callback=None):
+        if max_ticks is not None and max_ticks <= 0:
+            raise ValueError("max_ticks must be positive")
+        tick = 0
         print(f"Starting control loop at {1 / self.dt:.1f} Hz", end="\r\n", flush=True)
         if self.stop_flag_path.exists():
             self.stop_flag_path.unlink()
@@ -73,12 +77,21 @@ class Scheduler:
             self.input_source.start()
 
         try:
-            while True:
+            while max_ticks is None or tick < max_ticks:
                 if self.stop_flag_path.exists():
                     print("Stop requested through stop flag", end="\r\n", flush=True)
                     break
 
                 start_time = time.perf_counter()
+
+                begin_tick = getattr(self.controller, "begin_tick", None)
+                if callable(begin_tick) and begin_tick():
+                    reset_obs = Observation()
+                    for move in self.registered_moves.values():
+                        move.on_stop(reset_obs, MotorCommand())
+                        move.state = MoveState.INACTIVE
+                    self._cmd_history.clear()
+                    self._overcurrent_ticks = 0
 
                 # Read robot observations and user input
                 try:
@@ -92,10 +105,12 @@ class Scheduler:
                     continue
                 self._serial_errors = 0
 
-                robot_state.time_s = start_time - self.loop_start_time
+                robot_state.time_s = time_source() if time_source else start_time - self.loop_start_time
                 user_input = self.input_source.read() if self.input_source else UserInput()
                 user_input.velocity = scale_velocity(user_input.velocity)
                 obs = Observation(robot_state=robot_state, user_input=user_input)
+                if observation_callback is not None:
+                    observation_callback(obs)
 
                 imu_status_getter = getattr(self.controller, "get_imu_status", None)
                 if callable(imu_status_getter):
@@ -134,6 +149,12 @@ class Scheduler:
                 # Send command to motors
                 self._cmd_history.append(dict(command.target_angles))
                 self._send_to_motors(command)
+                end_tick = getattr(self.controller, "end_tick", None)
+                if callable(end_tick):
+                    end_tick()
+                if tick_callback is not None:
+                    tick_callback(tick, obs, command)
+                tick += 1
 
                 # IMU / gyro terminal display
                 if obs.user_input.show_imu and (start_time - self._last_imu_print_s) >= 0.5:
@@ -164,6 +185,8 @@ class Scheduler:
                 elapsed_time = time.perf_counter() - start_time
                 sleep_time = self.dt - elapsed_time
 
+                if not realtime:
+                    continue
                 if sleep_time > 0:
                     time.sleep(sleep_time)
                 else:
@@ -174,6 +197,7 @@ class Scheduler:
             print("Control loop interrupted by user", end="\r\n", flush=True)
         finally:
             self._cleanup()
+        return tick
 
     def _cleanup(self) -> None:
         """Disable torque, stop input source, and clear stop artifacts."""

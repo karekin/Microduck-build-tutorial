@@ -1,0 +1,184 @@
+{
+  "status": "PASS",
+  "scope": "local software / simulated standing only",
+  "hardware_verified": false,
+  "walking_stability_verified": false,
+  "policy_sha256": "5707c06da8346ecd4c2ff15dcd74ffabc575e0f14bcbb18076501324f9bbe279",
+  "checks": [
+    {
+      "check": "deployment-tests",
+      "passed": true,
+      "exit_code": 0,
+      "log": ".omx/artifacts/preflight/20261009T064501285215Z/deployment-tests.log"
+    },
+    {
+      "check": "standing-10s",
+      "passed": true,
+      "exit_code": 0,
+      "log": ".omx/artifacts/preflight/20261009T064501285215Z/standing-10s.log"
+    },
+    {
+      "check": "standing-stability",
+      "passed": true,
+      "metrics": {
+        "type": "summary",
+        "evidence": "LOCAL_SIM_POLICY_CLOSED_LOOP",
+        "hardware_verified": false,
+        "ticks": 500,
+        "requested_ticks_completed": true,
+        "simulation_time_s": 10.000000000000009,
+        "minimum_root_height_m": 0.11069916039223988,
+        "below_training_height_threshold_ticks": 0,
+        "active_move_ticks": 425
+      }
+    },
+    {
+      "check": "training-tests",
+      "passed": true,
+      "exit_code": 0,
+      "log": ".omx/artifacts/preflight/20261009T064501285215Z/training-tests.log"
+    },
+    {
+      "check": "training-cpu-smoke",
+      "passed": true,
+      "exit_code": 0,
+      "log": ".omx/artifacts/preflight/20261009T064501285215Z/training-cpu-smoke.log"
+    },
+    {
+      "check": "training-update-export",
+      "passed": true,
+      "exit_code": 0,
+      "log": ".omx/artifacts/preflight/20261009T064501285215Z/training-update-export.log"
+    }
+  ],
+  "checked_at": "2026-10-09",
+  "baseline_commit": "49678215d0b40529522772a40c06c216390449dd",
+  "local_branch": "codex/microduck-preflight",
+  "bounded_walk_comparison": [
+    {
+      "scenario": "bounded_walk_src_kp125_vx005_ramp",
+      "kp": 125,
+      "min_height": 0.11427031545208904,
+      "below_height_ticks": 0,
+      "max_tilt_deg": 5.647473861999138,
+      "x_displacement_m": 0.3518746336885173,
+      "y_displacement_m": 0.004354948414332806,
+      "mean_vx_world_after_ramp": 0.03103022945377004,
+      "max_total_sim_current_a": 3.3196470663579465,
+      "applied_kp_values": [
+        125
+      ],
+      "mean_body_vx_after_ramp": 0.030870512861451028,
+      "mean_body_vy_after_ramp": 0.013813371654734195,
+      "final_yaw_deg": -49.55791958088839,
+      "target_vx_m_s": 0.05
+    },
+    {
+      "scenario": "bounded_walk_src_kp125_vx010_ramp",
+      "kp": 125,
+      "min_height": 0.11451110021286151,
+      "below_height_ticks": 0,
+      "max_tilt_deg": 8.028174672050834,
+      "x_displacement_m": 1.6162164904047154,
+      "y_displacement_m": 0.7173164602074891,
+      "mean_vx_world_after_ramp": 0.142498160472124,
+      "max_total_sim_current_a": 3.827263880216665,
+      "applied_kp_values": [
+        125
+      ],
+      "mean_body_vx_after_ramp": 0.16701962991807845,
+      "mean_body_vy_after_ramp": 0.023976981433566375,
+      "final_yaw_deg": 48.8839537175289,
+      "target_vx_m_s": 0.1
+    },
+    {
+      "scenario": "bounded_walk_src_kp200_vx005_ramp",
+      "kp": 200,
+      "min_height": 0.1157265030259892,
+      "below_height_ticks": 0,
+      "max_tilt_deg": 3.9194803280179875,
+      "x_displacement_m": 0.42729928306824,
+      "y_displacement_m": -0.009047566604968109,
+      "mean_vx_world_after_ramp": 0.03575401829705148,
+      "max_total_sim_current_a": 4.679134684002307,
+      "applied_kp_values": [
+        200
+      ],
+      "mean_body_vx_after_ramp": 0.037840164554939874,
+      "mean_body_vy_after_ramp": -0.0009463922001818959,
+      "final_yaw_deg": 5.191193510541672,
+      "target_vx_m_s": 0.05
+    },
+    {
+      "scenario": "bounded_walk_src_kp200_vx010_ramp",
+      "kp": 200,
+      "min_height": 0.11627551093361195,
+      "below_height_ticks": 0,
+      "max_tilt_deg": 4.944811036043975,
+      "x_displacement_m": 1.3595588507464496,
+      "y_displacement_m": -0.5575790420365092,
+      "mean_vx_world_after_ramp": 0.11669841137341032,
+      "max_total_sim_current_a": 4.970515507762598,
+      "applied_kp_values": [
+        200
+      ],
+      "mean_body_vx_after_ramp": 0.13383542055321446,
+      "mean_body_vy_after_ramp": 0.021013399562802397,
+      "final_yaw_deg": -65.00908890464493,
+      "target_vx_m_s": 0.1
+    },
+    {
+      "scenario": "bounded_walk_src_kp200_vx020_ramp",
+      "kp": 200,
+      "min_height": 0.11609750397065674,
+      "below_height_ticks": 0,
+      "max_tilt_deg": 5.052841936839081,
+      "x_displacement_m": -0.3263650795047572,
+      "y_displacement_m": 1.0542496094420353,
+      "mean_vx_world_after_ramp": -0.04833444775890131,
+      "max_total_sim_current_a": 6.350922314515028,
+      "applied_kp_values": [
+        200
+      ],
+      "mean_body_vx_after_ramp": 0.27595305439917167,
+      "mean_body_vy_after_ramp": 0.017928861374450197,
+      "final_yaw_deg": -110.8725398246438,
+      "target_vx_m_s": 0.2
+    },
+    {
+      "scenario": "bounded_walk_tutorial_kp125_vx010_ramp",
+      "kp": 125,
+      "min_height": -0.10650725385157962,
+      "below_height_ticks": 417,
+      "max_tilt_deg": 179.89134461632037,
+      "x_displacement_m": 0.9483483423656218,
+      "y_displacement_m": 0.09059827946462538,
+      "mean_vx_world_after_ramp": 0.07201798296404038,
+      "max_total_sim_current_a": 12.910955803821853,
+      "applied_kp_values": [
+        125,
+        400
+      ],
+      "mean_body_vx_after_ramp": 0.08293625715822359,
+      "mean_body_vy_after_ramp": 0.001791786184559153,
+      "final_yaw_deg": -177.52611682385538,
+      "target_vx_m_s": 0.1
+    }
+  ],
+  "printing_summary": {
+    "plates": 5,
+    "plate_instances": 65,
+    "build_instances": 67,
+    "unassigned_instances": 2,
+    "original_3mf_sha256": "e78a329d264bc5050c00b8ff6a37d6b1195b6ea128bd9760492f31b4a91cc71e"
+  },
+  "known_open_items": [
+    "Default-delay walking simulation falls",
+    "Higher-speed heading/velocity tracking remains inaccurate",
+    "Shipped 63/18 checkpoint differs from 51/14 deployment policy",
+    "Exact policy-to-training-asset version binding is not established",
+    "No hardware or CUDA training verified"
+  ],
+  "deployment_tests": "18",
+  "training_tests": "4"
+}
