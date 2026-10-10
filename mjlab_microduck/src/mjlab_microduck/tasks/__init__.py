@@ -8,10 +8,16 @@
 
 from mjlab.tasks.registry import register_mjlab_task
 from mjlab.tasks.velocity.rl import VelocityOnPolicyRunner
+from mjlab.rl.runner import MjlabOnPolicyRunner
 
 from mjlab_microduck.tasks.microduck_velocity_env_cfg import (
     make_microduck_velocity_env_cfg,
     MicroduckVelocityRlCfg,
+)
+from mjlab_microduck.tasks.microduck_learning_env_cfg import (
+    TASK as LEARNING_TASK,
+    MicroduckLearningRlCfg,
+    make_microduck_learning_env_cfg,
 )
 
 register_mjlab_task(
@@ -20,4 +26,13 @@ register_mjlab_task(
     play_env_cfg=make_microduck_velocity_env_cfg(play=True),
     rl_cfg=MicroduckVelocityRlCfg,
     runner_cls=VelocityOnPolicyRunner,
+)
+
+# An independent CPU teaching task; never changes the velocity task or assets.
+register_mjlab_task(
+    task_id=LEARNING_TASK,
+    env_cfg=make_microduck_learning_env_cfg(),
+    play_env_cfg=make_microduck_learning_env_cfg(play=True),
+    rl_cfg=MicroduckLearningRlCfg,
+    runner_cls=MjlabOnPolicyRunner,
 )

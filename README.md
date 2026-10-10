@@ -1,5 +1,7 @@
 # Microduck
 
+> **学习分支 `codex/microduck-learning`**：无GPU的Mac本地体验最小PPO闭环。执行 `./learn.sh` 训练并导出、评估新模型，执行 `./learn.sh --view` 在浏览器查看。完整说明见 [LEARNING.md](LEARNING.md)。此入口仅用于学习流程，新模型不能用于实机。下方为保留的原教程与硬件资料。
+
 <p align="center">
   <img src="docs/assets/cad-exploded.gif" alt="Microduck 结构爆炸图" width="560">
 </p>
