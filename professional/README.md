@@ -24,7 +24,7 @@ python3 professional/run.py train
 python3 professional/run.py train --backend hf --namespace YOUR_ACCOUNT
 ```
 
-默认仅显示命令。装好独立环境后加`--execute`才实际运行；HF需要账户授权与余额，会产生费用，默认60分钟超时。本次交付没有提交收费任务。日志使用本地TensorBoard，不向W&B上传。
+默认仅显示命令。装好独立环境后加`--execute`才实际运行；HF需要账户授权与余额，会产生费用，默认60分钟超时。初次创建分支时没有提交收费任务；后续获批的一小时GPU链路已完成，见[GPU首轮结果](gpu-result-20261010.md)。日志使用本地TensorBoard，不向W&B上传。
 
 小规模检查通过，再运行正式基线（默认1024环境、4000轮）。先测显存与吞吐，再决定是否提高到4096环境：
 
@@ -54,5 +54,5 @@ uv run scripts/infer_policy.py --walking output.onnx --new-cmd-obs
 - 官方运行仓库目前只是固定版本参考，尚未引入教程运行程序；61维实际部署应使用匹配的官方运行栈，或经过单独验证的接口适配。
 - `verify`证明源码完整；命令与配置检查不是GPU训练或实机能力证明。
 - Python/依赖以官方独立`uv.lock`为准；不能把教程的虚拟环境当成专业路线已经安装完成。
-- 本机已完成独立`uv sync --frozen`、训练CLI参数核对、8项工作流/接口回归、官方任务CPU初始化与3步物理检查；记录见`local-validation.json`。CUDA训练和实机仍未验证。
+- 本机已完成独立`uv sync --frozen`、训练CLI参数核对、初始8项工作流/接口回归、官方任务CPU初始化与3步物理检查；记录见`local-validation.json`。后续12项回归和L4 CUDA训练链路通过；稳定步态和实机仍未验证。
 - 代码Apache-2.0，官方3D模型CC-BY-NC-SA-4.0，原始许可文件保留在固定源码内。
