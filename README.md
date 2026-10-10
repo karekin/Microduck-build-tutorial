@@ -1,5 +1,7 @@
 # Microduck
 
+团队新同学从[完整操作手册](docs/团队上手操作手册.md)开始：包括源码交付、独立环境安装、学习PPO、本地仿真、在线GPU训练、模型回收与两套硬件部署路线。
+
 > **专业分支 `codex/microduck-professional`**：训练以固定版本的 Pollen Robotics 官方源码为基础。先阅读 [专业训练入口](professional/README.md)，再阅读 [24项来源与能力路线](docs/professional/README.md)。旧教程的51维部署程序作为对照保留，不能直接运行官方61维策略。本分支的新增来源与实验提案需要分别通过训练、评估和实机验证。
 
 <p align="center">
