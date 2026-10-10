@@ -10,3 +10,4 @@ tmp_*/
 *.img.xz
 *.img.xz.sha256
 .omx/
+professional/runs/

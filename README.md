@@ -1,5 +1,7 @@
 # Microduck
 
+> **专业分支 `codex/microduck-professional`**：训练以固定版本的 Pollen Robotics 官方源码为基础。先阅读 [专业训练入口](professional/README.md)，再阅读 [24项来源与能力路线](docs/professional/README.md)。旧教程的51维部署程序作为对照保留，不能直接运行官方61维策略。本分支的新增来源与实验提案需要分别通过训练、评估和实机验证。
+
 <p align="center">
   <img src="docs/assets/cad-exploded.gif" alt="Microduck 结构爆炸图" width="560">
 </p>

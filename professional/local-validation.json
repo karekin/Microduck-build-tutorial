@@ -1,0 +1,33 @@
+{
+  "task": "Mjlab-Velocity-Flat-MicroDuck",
+  "device": "cpu",
+  "source_commit": "ceca01706143d729305baa94cbd8ab990979e325",
+  "cuda_available": false,
+  "registry_tasks": 45,
+  "gpu_training": "not_run",
+  "hardware_verified": false,
+  "status": "PASS",
+  "actor_shape": [
+    1,
+    61
+  ],
+  "critic_shape": [
+    1,
+    76
+  ],
+  "actions": 14,
+  "physical_control_steps": 3,
+  "checked_date": "2026-10-10",
+  "workflow_tests_passed": 8,
+  "official_files_verified": 254,
+  "isolated_frozen_install": "PASS",
+  "training_cli_flags": "verified_against_installed_help",
+  "versions": {
+    "torch": "2.9.1",
+    "mjlab": "1.3.0",
+    "better-actuator-models": "1.0.1",
+    "rsl-rl-lib": "5.0.1",
+    "onnx": "1.22.0",
+    "onnxruntime": "1.24.4"
+  }
+}

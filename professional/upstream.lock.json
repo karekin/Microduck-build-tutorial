@@ -1,0 +1,1551 @@
+{
+  "schema_version": 1,
+  "checked_date": "2026-10-10",
+  "repository": "https://github.com/pollen-robotics/microduck_rl",
+  "ref": "develop",
+  "commit": "ceca01706143d729305baa94cbd8ab990979e325",
+  "source_url": "https://github.com/pollen-robotics/microduck_rl/tree/ceca01706143d729305baa94cbd8ab990979e325",
+  "vendor_directory": "professional/upstream/microduck_rl",
+  "files": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "git_blob": "7257287274960356ed1e8c8adb96d64737ba5685",
+      "sha256": "ff9e1ab101c9dcec2cf5dee50ca995a5d9f0660aa1ccfdea8e5da059ee5cfb05"
+    },
+    {
+      "path": "AGENTS.md",
+      "mode": "100644",
+      "git_blob": "4d3f2295d517ede06248907edcec4c17a6b39215",
+      "sha256": "2230a98be94bd8944c50600bed472bde53bc2480045a41ebab67c57a6a38079b"
+    },
+    {
+      "path": "CLAUDE.md",
+      "mode": "100644",
+      "git_blob": "43c994c2d3617f947bcb5adf1933e21dabe46bb5",
+      "sha256": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "git_blob": "5babf660c98eac4418422e1a62a5d9fc51a4d63e",
+      "sha256": "2d3fd9ffffa70a4307498ec630b14a6b4731e010f8ddda92686eaf65733c2dfe"
+    },
+    {
+      "path": "LICENSE-MODELS.md",
+      "mode": "100644",
+      "git_blob": "b7eb7fc4c20a686984d7d19b0b2f1f9750252e76",
+      "sha256": "51526767ce31785f88f318ede4870f4b0d466267c79ce6fb9009c682f798da30"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "git_blob": "3999215bbdf6ec09ec70fe7708d574d29577cfcf",
+      "sha256": "baca2fd269fd15a1b3a3e600bcedf5a9083f93a5ba1b6e0d53ad13d2c6a9ec37"
+    },
+    {
+      "path": "docs/roller_standup_policy_summary.md",
+      "mode": "100644",
+      "git_blob": "c7def69c17ade1de804551fb259be35b9911e674",
+      "sha256": "32d53f83de1a21c5e13ed9baa0b9b7ca6eefc7e763aea6a3dd19dc4a165e8486"
+    },
+    {
+      "path": "docs/sitstand_policy.md",
+      "mode": "100644",
+      "git_blob": "d04f656674699f8596c47635ff30bc8da546dc04",
+      "sha256": "edf3044f9f942b4ba1698160bf62a8f53cc970dbe1dffa527f3180e03b164a1f"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-07-17-roller-crouch-glide.md",
+      "mode": "100644",
+      "git_blob": "372f0c4becc7b7b935810da6972a3a8d163affd2",
+      "sha256": "d9c10ba0e836a2f4760c118fe7c8094a4bc0ce7b9301da3e37cdc59239033e67"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-07-22-roller-slope.md",
+      "mode": "100644",
+      "git_blob": "2862c70407c9ad9270a5df26a72ba146d8ea62b6",
+      "sha256": "cb2ebc86629d02ea7acb59b8459dfec159da7b54a6e446012feea09afbde4347"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-07-24-ground-pick-pose-following.md",
+      "mode": "100644",
+      "git_blob": "e1a4c1e3f18d0db63a02d8025045de506960be9e",
+      "sha256": "1d2af76b0dd69f8d75968fb0045e052a224c795c650f946609edaa9669edd39b"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-07-24-shoot-pose-following.md",
+      "mode": "100644",
+      "git_blob": "696600b56b0967c48bdcdf33fad598e42663e896",
+      "sha256": "84b650a5172559cec7f09b28091d36907b91e02e7b347f6a5ce23f92a1d8da28"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-07-27-swizzle-head-control.md",
+      "mode": "100644",
+      "git_blob": "3690f1f1c863eb929769f1375f477146be2b76b0",
+      "sha256": "abd2bfbaf01538969bf0d8dcca1afa51e37193807df7425625e847e557914c66"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-04-roller-standup.md",
+      "mode": "100644",
+      "git_blob": "31b1ec098ef1534c6c136650f779c842e4d2e5a2",
+      "sha256": "cd7ad30f918bf9c83c328be544dfd19b38bd81e4ef883757148d45daae6cebf0"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-04-spin-env.md",
+      "mode": "100644",
+      "git_blob": "64ccd8430a87ae4b247d66b6d239e4a8b1a2d7f6",
+      "sha256": "2f2fb22f79cd7390a917a32cc5f026b5debdf0a17ba57abe0fd41b5b73bbe8d7"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-07-17-roller-crouch-glide-design.md",
+      "mode": "100644",
+      "git_blob": "f0757c1faa2ac6f4cad334df58262c64f15fc14a",
+      "sha256": "e76a24f508f75c61f7b6e501a718bb7b2d48fb7f25e873f23a58b8b3f204556d"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-07-22-roller-slope-design.md",
+      "mode": "100644",
+      "git_blob": "130ebba58739223d00839a84dbf7f29ac44e7eef",
+      "sha256": "af0a560fa0537bbdd62c490abe9241768f2d9e134473be65aaba053352855c28"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-07-23-swizzle-env-design.md",
+      "mode": "100644",
+      "git_blob": "358f94cb2f96c705a90352d1cdaea816ed9e0479",
+      "sha256": "0bd417c0c0e2873a3d7fceed0eb729b66628b7953dfe2b2a63c460aeee4f02d6"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-07-24-ground-pick-pose-following-design.md",
+      "mode": "100644",
+      "git_blob": "339857b2dbb5f4a559a3fa06f4081535a0314f68",
+      "sha256": "53c3f77f1958b3594a6fce66f711c38db9380ed123bcb039ba2ad649cf36a869"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-07-24-shoot-pose-following-design.md",
+      "mode": "100644",
+      "git_blob": "294e783b252439a667c647c4151f8bd8525abc83",
+      "sha256": "eed901730b9ac3e77fec05e9b37a908165a89d545d17199565ae31d956357d0d"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-07-27-swizzle-head-control-design.md",
+      "mode": "100644",
+      "git_blob": "31cb623b9e86c0f13fcbdb05f898912b4eb020de",
+      "sha256": "0c6015d5542f01ea00cc8d65a503a898e47c2a92c16c5184b5a144c94dc6c148"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-04-roller-standup-design.md",
+      "mode": "100644",
+      "git_blob": "f775e4c9245c97337d53a21a30046e1c4ad554b0",
+      "sha256": "b902d9aee3a86fb9f29fcf08db2a1a13dcc25373fe2e27b1d43d12d0b15c87a8"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-04-spin-env-design.md",
+      "mode": "100644",
+      "git_blob": "251be4bd0f7d4f7ff9edc46764bf6c8574620960",
+      "sha256": "1465e5fa43b5e45a0e6f30ed4a9a2e2a175a0d039a4e8bc7addad59e9eded645"
+    },
+    {
+      "path": "docs/velstand_policy.md",
+      "mode": "100644",
+      "git_blob": "8e5009623e13177c8efc6d4983f35f5df9eafaf2",
+      "sha256": "e2ab07da06d2086bc6e09422a4f3ef06290aa0f3347350d0cb045d1c537e7ab5"
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "git_blob": "d4b4be445bc8612d6a3d489f1ef4d95a14c86016",
+      "sha256": "8f02478242546ae2d63db47708bf1b2d8dd75cbe967c93a4cc5a7255d04827da"
+    },
+    {
+      "path": "scripts/crouch_pose_editor.py",
+      "mode": "100644",
+      "git_blob": "1c8193f8d001c229a781d37463cc22efd69e600a",
+      "sha256": "0268aacd7bdc0d3ecca8cbd40b70e2f65d25ed52d83b8b50327e306a478cac41"
+    },
+    {
+      "path": "scripts/export.py",
+      "mode": "100644",
+      "git_blob": "e8cf26efe469e3d8ad9639882e0f3c90af88ec9f",
+      "sha256": "435d576ebd20fb34727bb1bc1438ac6521ab76654225d789d3d90cebce47de25"
+    },
+    {
+      "path": "scripts/hf/README.md",
+      "mode": "100644",
+      "git_blob": "f77b1f2e69f9e36f76ae8a2266de8679e36caee9",
+      "sha256": "10fffdc425e2cb8602ee17389187d69f508faf101342d7575f108979d9d78cc0"
+    },
+    {
+      "path": "scripts/hf/train_hf.py",
+      "mode": "100644",
+      "git_blob": "85b476e673472e869941376499d2cedd6253f3e3",
+      "sha256": "0db74a6edd3cc157a5596ac6f019496e8fdde936d9edcc3f260052297d7f1ae9"
+    },
+    {
+      "path": "scripts/hf/uploader.py",
+      "mode": "100644",
+      "git_blob": "7c5f96621ed184ce9d60c7bc20edeecbb14d7833",
+      "sha256": "0b9610e26cfc02082b361d2198768d260846cd8354a2824251e31718935512a1"
+    },
+    {
+      "path": "scripts/infer_policy.py",
+      "mode": "100755",
+      "git_blob": "7b368df063d96d481bcfe34cc5785229686e1b10",
+      "sha256": "03bfd0642a880cd379e057536ee819bd1377d4af7b5206a57907d10afd1d4270"
+    },
+    {
+      "path": "scripts/odom_anchor_points.py",
+      "mode": "100755",
+      "git_blob": "7fcf8f114b6a9566fb3bd2f245d69b0f9b4f84db",
+      "sha256": "a004cfa4859635bccf4f681b950a3a24f5abe00555413aba114ab004b52f9b24"
+    },
+    {
+      "path": "scripts/odom_anchor_sets.json",
+      "mode": "100644",
+      "git_blob": "f6a53990fb1ef3c7fdf168e5641fea6cc80c70d4",
+      "sha256": "7f3e37c975ba16a1fbe4490249ee59a4ea42c4f8adbe8761cacd8d5d58bc5f37"
+    },
+    {
+      "path": "scripts/pickup_battery.py",
+      "mode": "100644",
+      "git_blob": "138860f8cd6d9132071146c38e3c2ed3cae1d0ec",
+      "sha256": "7f33b2b05ef5cd0ba5f13e2e450b2c76852a86825ce60bcafc5e4c00ddf0a886"
+    },
+    {
+      "path": "scripts/pickup_datagen.py",
+      "mode": "100644",
+      "git_blob": "522b44b3eba86f53b92ee8fa2ca40361f750e94c",
+      "sha256": "ecdd7ff73582acbe237ab4124d4b3de8d2c05bdac46564a0d1005bdd0f1b7f66"
+    },
+    {
+      "path": "scripts/pickup_demo.py",
+      "mode": "100644",
+      "git_blob": "f5442d358f9a4ad7bbe3e8a76b8e073f3d7be997",
+      "sha256": "885ca692f74675d928d10f2091419574be0ad1c823c19e577d9c3c082d7ee5e2"
+    },
+    {
+      "path": "scripts/pickup_e2e_robotd.py",
+      "mode": "100644",
+      "git_blob": "ccdb546d32d2a2f9538cd97d33f59cd42ac02651",
+      "sha256": "de7240bffd6b0c5535e66e1335e8fa2cf4a51a1258ed72e1c296290d39b2d05c"
+    },
+    {
+      "path": "scripts/pickup_eval.py",
+      "mode": "100644",
+      "git_blob": "2173ff6367572de07fdeba4c9096f733d7264e35",
+      "sha256": "c08d95aa941a333f8e19932f8e8eaf49bdf5ab19a4a16ec978cecaf44d89d537"
+    },
+    {
+      "path": "scripts/pickup_train.py",
+      "mode": "100644",
+      "git_blob": "1ec834beb3f8cbfc82d95487ed83fe152ae83e78",
+      "sha256": "44f51b9901e7362c2345ee8c7a62f56d463c2de65917c259e67722714786ec2e"
+    },
+    {
+      "path": "scripts/play_latest.py",
+      "mode": "100644",
+      "git_blob": "841ff1d7406b82ac28b25b72ccc52501f4022721",
+      "sha256": "1e898b201992a111dbc220832f63d32dc9fcc79f0f5658a0075d854fd4c99adc"
+    },
+    {
+      "path": "scripts/plot_observations_comparison_plotly.py",
+      "mode": "100755",
+      "git_blob": "d3cb4b0ee272f1e2406bd05e2dcc59a5cc6bea2a",
+      "sha256": "f5e9af3bdc1e81822980e81475c307a8925797ac87fdd100b0a5fe0898ce54d5"
+    },
+    {
+      "path": "scripts/testbench_sim2real.py",
+      "mode": "100644",
+      "git_blob": "1ba3d58735767bd775142a84a8eaa67e52668f39",
+      "sha256": "ebdb1007bb56cb2ab7c700d205d7815bad1afab0853508e38916e25244fd347f"
+    },
+    {
+      "path": "scripts/validate_bam_testbench.py",
+      "mode": "100644",
+      "git_blob": "08455e7b3d854cee005e5ddfa7c42159493521a7",
+      "sha256": "3be5028f89f65ad960fd19e1a56fc20875a43c7b1f9cc75d5cc3ef56ae91efbe"
+    },
+    {
+      "path": "scripts/view_slope_terrain.py",
+      "mode": "100644",
+      "git_blob": "fef271dd5974d27ef31483c4d322cc27257af954",
+      "sha256": "252467c923df9641edfa064b028acd48024cc57a67b2cbb3db3dfdb31870aaa5"
+    },
+    {
+      "path": "scripts/wandb_utils.py",
+      "mode": "100644",
+      "git_blob": "d55f7d425ba807211cb51745d6d60cdec5c54dd4",
+      "sha256": "a4682def0e329c16f287dc881ab629e1b7918ff0d18de4c38c366ff2e3839250"
+    },
+    {
+      "path": "src/mjlab_microduck/__init__.py",
+      "mode": "100644",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/mjlab_microduck/actuator/__init__.py",
+      "mode": "100644",
+      "git_blob": "170f7c0500c132c5cdb391c7693d8bcbc120b0b0",
+      "sha256": "181bfbec32115818720695915322f6e2c860fe87767570662a029f8e2d01f12d"
+    },
+    {
+      "path": "src/mjlab_microduck/actuator/friction_dr_bam.py",
+      "mode": "100644",
+      "git_blob": "1f5b6652f7d46be7216432acf24945d96d89f1e6",
+      "sha256": "20d25ce2fd06a94bc4fd5356a657710a0959a352bad3dfcc670122f0f0bcd4d4"
+    },
+    {
+      "path": "src/mjlab_microduck/export.py",
+      "mode": "100644",
+      "git_blob": "f66e101bc761e09b82fa509e14c473367f96d69c",
+      "sha256": "ef4d851eee70ce0d1c896a0be14fd4a936a0d17e83649dfd572a5282ffcdf5b9"
+    },
+    {
+      "path": "src/mjlab_microduck/hf_jobs.py",
+      "mode": "100644",
+      "git_blob": "425a9b912d1a8599d28f7554b393ee86db17bbd1",
+      "sha256": "d447a20e1feed595ef29a1a19e6a51630327341eb270f0acf4fcb314f69fd285"
+    },
+    {
+      "path": "src/mjlab_microduck/pickup/__init__.py",
+      "mode": "100644",
+      "git_blob": "d47e85c499601a63ae071d94b38dfd874eafc8b4",
+      "sha256": "7f9ef6fbcbd8b157b71f978092f41cdf8505992a6ecd91b59fc2b0fdef8cad2f"
+    },
+    {
+      "path": "src/mjlab_microduck/pickup/features.py",
+      "mode": "100644",
+      "git_blob": "8ca41cc403e352dd186255f726feefc47fbdd209",
+      "sha256": "e1f49f64ce597215bca8d2734476fe5aa615a46a6bb6387c57fdd9a4b35f5015"
+    },
+    {
+      "path": "src/mjlab_microduck/pickup/hand.py",
+      "mode": "100644",
+      "git_blob": "88b61d18c610804109ccee917f0dd3e1b707b896",
+      "sha256": "6b3229a8784e685b2837d44aa11d2c5cdb46e8337de62db8591572ba17537c3a"
+    },
+    {
+      "path": "src/mjlab_microduck/pickup/model.py",
+      "mode": "100644",
+      "git_blob": "2be8aaf02dbbbc574e91f79eea0b51db9cf17f67",
+      "sha256": "d738f60870bfa44be8d14afca4ec05d2c1920968202419bd814949b25d94813e"
+    },
+    {
+      "path": "src/mjlab_microduck/publish/__init__.py",
+      "mode": "100644",
+      "git_blob": "9520b13361fede055d28a9ca7e6ef75276b123f6",
+      "sha256": "7768b41714b565cc97b5553a170b5d95cf17abafe6baa0f9a4be0b7e8cfec7bf"
+    },
+    {
+      "path": "src/mjlab_microduck/publish/cli.py",
+      "mode": "100644",
+      "git_blob": "5cc0f62e4aec67842091174a8b8162739756d95b",
+      "sha256": "adb198a8b2c0aa10069cbcc3fe2c32b5540533cf04b410caa190b3bdcc24058b"
+    },
+    {
+      "path": "src/mjlab_microduck/publish/manifest.py",
+      "mode": "100644",
+      "git_blob": "c260aa68219ba7797f187db2b286469d1b481e6f",
+      "sha256": "d66bae7920c2a86fef56877d8ced25c4b1fee67d5637da56d284056722dc7866"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/__init__.py",
+      "mode": "100644",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/add_backlash.py",
+      "mode": "100644",
+      "git_blob": "2ff88034768a0740249d25c36108f3beecddfb8a",
+      "sha256": "805a17ba4ad60f7a2ba20ff90879ad93a6db66013150c5ad9be3d31bc7b4252c"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/additional.xml",
+      "mode": "100644",
+      "git_blob": "25cc7d851fb54c25539486e88c50c2ffc69386ef",
+      "sha256": "958010af8e09a2ac7a79797d1aead327435e5201b3c4df0f2f7220f3c2c42941"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/allcollisions_contacts.xml",
+      "mode": "100644",
+      "git_blob": "6bc88f5075e21028ffa11a5cfe4d288ef0c270c4",
+      "sha256": "8a5bd59e09c6469fa99036bb6cfa6e31972c363bb4ed065bec22f0eb465d6f16"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/apartment.xml",
+      "mode": "100644",
+      "git_blob": "a4da55a49c1fdede96b28812b9d74b0a32afe373",
+      "sha256": "4e6a6f5baf07ab842d9860a2e5baa72f516b864213cecb8184123d17ab23d7de"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/ankle_l_v1.part",
+      "mode": "100644",
+      "git_blob": "a322de4f21ba5d42f2d95cdfdb9b898df56a1cd3",
+      "sha256": "f074c5b5cc3273d46142f382820b4446206c0c08e81a13104b61d8c07f4be75c"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/ankle_l_v1.stl",
+      "mode": "100644",
+      "git_blob": "833977b0498f5e0ad69a59fd7821baadff940ecc",
+      "sha256": "cf4407956caf05b2e9bb2c75764fa365d217f44efb5d365ed18ccfa62db3436f"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/ankle_left.part",
+      "mode": "100644",
+      "git_blob": "cb50ddfd7d327980fffbcab8ad38e2e2c975bb6b",
+      "sha256": "29dfeff917970b424cdb166b388be6f9ef03cd78e07d80f757a807abf9878866"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/ankle_left.stl",
+      "mode": "100644",
+      "git_blob": "2dad3b1633f4158b1262288ba73b46c7d194264d",
+      "sha256": "2ec1bd89205b407efebaa9a8898ad9fea741389d87b80ecc5c96b21d1668119e"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/ankle_r_v1.part",
+      "mode": "100644",
+      "git_blob": "56c7bcf235fbf3601e2d6cb162c4401571af2f75",
+      "sha256": "a64063150d4f0c99eb124c2e7c091d2f78565a9db2467d506d5d81fde6d512cf"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/ankle_r_v1.stl",
+      "mode": "100644",
+      "git_blob": "0affaf7cc675861e9536fa3fd9750c2259b6be54",
+      "sha256": "0ddd5d3135cde74bddbfbaf6469f50ac02ba44681b796853a052bf0d23751d1d"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/ankle_right.part",
+      "mode": "100644",
+      "git_blob": "50c8759b5b3b0f3e0eef9e1daade2be5e089cc8b",
+      "sha256": "8591240d8c0329cad47b5eedc5efa5e8782fee250e41caa484308a1e776734f1"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/ankle_right.stl",
+      "mode": "100644",
+      "git_blob": "55f5d794697144ba425ecc4023b95e5c83aceb44",
+      "sha256": "f83f388ae00787415e76b8ecaab769f08f25b8c4e90c1937ff0fc4d68d81722e"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/banana_pcb_locker.part",
+      "mode": "100644",
+      "git_blob": "f7222cd0db7d4a13ec6f73439b6982652096ca09",
+      "sha256": "88c2298109f8a3539a6814c50a68289332b389c0a98cb63129f3dfba3b72e0d0"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/banana_pcb_locker.stl",
+      "mode": "100644",
+      "git_blob": "e431ca6236a5dd0dbdfaa508d1dd4e2b0ae4c47c",
+      "sha256": "42ddde9d01bf5d91f88b99847017f14d97d2537ee27383c6d41dd8bf30a51134"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/bearing_roll.part",
+      "mode": "100644",
+      "git_blob": "1b372ed29371ba50b6f054647e8e66267e2feeb1",
+      "sha256": "fd7c1e7a77a318e8c4dd4b342228a3aff35857f010ada545105040ff64a97de7"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/bearing_roll.stl",
+      "mode": "100644",
+      "git_blob": "3e506e515c729f7d8e9c9be5c155b8489a8e0f4d",
+      "sha256": "b5603a64b2d965ad75ea847767b5798130852e12a658fde7b5068fc457e2adcc"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/bottom_head_shell.part",
+      "mode": "100644",
+      "git_blob": "2346190c6c5e1d0a273c6bfe6d07c9b22a28e181",
+      "sha256": "a0dd8d96c6c0d19153dfd01709b642c929457affc8420bfa4248cc57b1bbae47"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/bottom_head_shell.stl",
+      "mode": "100644",
+      "git_blob": "0cc4e79f405fac5b2cd93e4ddfefeeb8ea47f0ff",
+      "sha256": "1820f7cf96646b0fc0c431f07da87b91b13111bfa9857ab1bf2b1fc3388f8da2"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/elec_rpi_robot_hat_pcb.part",
+      "mode": "100644",
+      "git_blob": "faa1e72b609a26653bdf602cc88106b4c13f476f",
+      "sha256": "1ef13cd35c7eae75e5609f2d0773c698bedefa566d0e7de915f9b61d599d974f"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/elec_rpi_robot_hat_pcb.stl",
+      "mode": "100644",
+      "git_blob": "01bc5b73d4cf968fa4136870273510cdc7787006",
+      "sha256": "1a61582759d82b5b4df9b7d11099bf1bb3944fc77e6b74d3237adf24dd5d03d7"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/face_part.part",
+      "mode": "100644",
+      "git_blob": "243ef53504c8d12705ebb6da35d8711b844b9d8e",
+      "sha256": "11c225acb4aae06b51850ade1f542a0c8fc2f3916cab592b78735eea2a72f11c"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/face_part.stl",
+      "mode": "100644",
+      "git_blob": "174b04a2725c71dbece506d5801f6a02b5057666",
+      "sha256": "d0e89a173e7bdc8038c4d413f458140d8f42f1a2f098f67a887c2388eff31718"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/foot_left.part",
+      "mode": "100644",
+      "git_blob": "45055d843ecc5dfcbbbd8aeaa94dfa99e95fdcf8",
+      "sha256": "b5248b01d15c33316545773b4f2e892bb1a19625db67049ef6c1078e20096703"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/foot_left.stl",
+      "mode": "100644",
+      "git_blob": "e0e196b5f281d9744930e7fd96b0109f06975574",
+      "sha256": "a1f5d43456d0f522bd60870153795f1e8112c1adf9b8b4373b59608d9545c044"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/foot_right.part",
+      "mode": "100644",
+      "git_blob": "f08abcd93938edf2fa5927bd684b0e24a292e23c",
+      "sha256": "315d6ce39a4061f8c163e805d1555f4b140800f27f4a2394095571f43ffc9a08"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/foot_right.stl",
+      "mode": "100644",
+      "git_blob": "3d9ac8112fd60b4d787bd26a280b4d5045b8db02",
+      "sha256": "54f97fa1f0e0e611d31329df9f3c3b17ffcca2d695c579d1d32cbe99e8a6c7ef"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/hip_l.part",
+      "mode": "100644",
+      "git_blob": "32f6cbba0214d825875a5b5fad4b213fcb652a25",
+      "sha256": "0d07654fd3ef9a3ddb7b071362379fab813e87acb814843ebc90b9df3f3933cd"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/hip_l.stl",
+      "mode": "100644",
+      "git_blob": "6870737a6f88f62c03f22e01723b06905e2e80d7",
+      "sha256": "e175896932d76dc7648cf939aa39cb7b1d188b783d91745adb9a4cec65e9052c"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/jaw.part",
+      "mode": "100644",
+      "git_blob": "f72fa2cef93e0dc23490ed757a2f496bb3e05d8c",
+      "sha256": "257d1617ee2211e2724c3716523af391650711a1cc982209397b893aed9029ee"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/jaw.stl",
+      "mode": "100644",
+      "git_blob": "b8019924e79f2df088dfb503459bd1c1de7a227a",
+      "sha256": "45cdbd319a4583095d8daa0db07dee726522a743d59acb82d27d82ded500a1cf"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/jaw_soft.part",
+      "mode": "100644",
+      "git_blob": "bc030cbf36921e4d106849ce1a6c03bbb4bc35bf",
+      "sha256": "faa573ca64c9a98c65bd6288db990a0fa4d87ec2c8b52322dece28cd8f901faf"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/jaw_soft.stl",
+      "mode": "100644",
+      "git_blob": "70a8ee9248f65fcfa2f68bbab41e94571b26f25a",
+      "sha256": "2d2ade4e86df4b37ce313bb9b96023109dd04bab39dba08b154e76d332fbce2e"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/left_shell.part",
+      "mode": "100644",
+      "git_blob": "b66a2c29e25b2648b1e5113902a4833328fecf6e",
+      "sha256": "5f54088d4a0405eb667330f7ff0cdb0010ae48eaec47849b93cb31e0ec60234f"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/left_shell.stl",
+      "mode": "100644",
+      "git_blob": "afc336267d9b7ce2b5b309d3a762fa598cd5fa73",
+      "sha256": "2abde8e2b79c9b011cdb11957c67ab4287b45d7301affd4235ab81141118e331"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/leg.part",
+      "mode": "100644",
+      "git_blob": "df50aaafdfb4c1a023ba99b78fec1428c56ce2d7",
+      "sha256": "a4cea64f7e43c6a3de2e0150b192d5177b1c96ed578560717a85420db483130b"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/leg.stl",
+      "mode": "100644",
+      "git_blob": "7da4e67dadb2df338f49ffd25855345b4a905f8f",
+      "sha256": "9a91cc1ae31ecd9e0c1ba93f3bb2ad8a12e29bff24ec27d1ac66c0c3037d9fcf"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/lens.part",
+      "mode": "100644",
+      "git_blob": "f17d77c9dd601a2468580c348f8e71281ff6cea6",
+      "sha256": "bd62583c7184c9d0cdadc25664b5d827dbde821b4695c58e8279517b40866854"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/lens.stl",
+      "mode": "100644",
+      "git_blob": "c3d0bf32879e0bacd311eb5289902d1705b1d249",
+      "sha256": "b1c717432ff7666398de58adec6a1b7e03a7e45aa155dbfe27a6152ef19663e5"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/m12_lens_holder.part",
+      "mode": "100644",
+      "git_blob": "bd21bdf4bce016380f99ed1df562a7779f92c35b",
+      "sha256": "a0a87aeb786c48c33a518b4dd7fed0b89def972dd049c14e61ea79efc4e76b11"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/m12_lens_holder.stl",
+      "mode": "100644",
+      "git_blob": "d606a064040b65af3eb9e584657226c4970f1a8a",
+      "sha256": "031d5ffaf6247328cf6d020f6b6695ffb3f8d3f22cf923b85811351d89ecfd7c"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/motor_support.part",
+      "mode": "100644",
+      "git_blob": "d8947b69c46804c4a775578786196e7a9d6ab546",
+      "sha256": "36335b45277d021772415ef85398cb3636699b2d462c452dfb480b28bb68b516"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/motor_support.stl",
+      "mode": "100644",
+      "git_blob": "72289542cbb9b02f69686993f59fcf40fbe8422b",
+      "sha256": "ce0aa5bef82c7474512d302568c341b9769b3005e0bdb91a19c2eaaba6dad480"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/neck.part",
+      "mode": "100644",
+      "git_blob": "77726b38c6b8f1e4aafd77a9c28fbdc596b89481",
+      "sha256": "d80b9eb1be66d63a80e6d970f8c3ce1b9ff202590e8b52d421ba3d0402c39fda"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/neck.stl",
+      "mode": "100644",
+      "git_blob": "2841d71ffd4203a30bbdba33a6a171742e20a581",
+      "sha256": "b6e86b886153be8a8a776c1cb219c074ee9e89c8bd431117662a2d9e504d7cb5"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/neck_pitch.part",
+      "mode": "100644",
+      "git_blob": "038de486add063588f1a837d94b2ecfc098d5f62",
+      "sha256": "2eacfc6f3cd00271117bf60e2c804d36199514fceefcbf779d5a69e3fa9d9fb0"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/neck_pitch.stl",
+      "mode": "100644",
+      "git_blob": "d93b3d30b8c8e4bc596c96aeaa065685bb55ed45",
+      "sha256": "a685ce65348ae4d0d49417c69a7a8871f8bbd54a6e3419362be9c334abd5d2ae"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/noenoeil.part",
+      "mode": "100644",
+      "git_blob": "18f7372127970e23ede7b8fb5539f88672cc02a5",
+      "sha256": "a3efe21844d8356f9830e4208157d4708694596065e407feb74ed655fd80789a"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/noenoeil.stl",
+      "mode": "100644",
+      "git_blob": "9f498cfccddc9668dceff0c9e54d9f33d73b55cb",
+      "sha256": "e1167b3d5ad7fbbe6e63296bcd0c6b61556611e6bc1367b15ecfd27e3abb72f5"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/np_f970.part",
+      "mode": "100644",
+      "git_blob": "c4eaccc0621c3c45ae2bff02d6646674530f2c0f",
+      "sha256": "ef948d20413ed2e3e463041583755360f37dfb9189d1e13cf84048ff39a35c67"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/np_f970.stl",
+      "mode": "100644",
+      "git_blob": "d27fc27da228c3ece3f0909b95757b9c2e1e1a0f",
+      "sha256": "0e55a48281331b3b7b1a363d2e93b6012f37c52045b6dc922a149ca7c1b38388"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/pcb__raspberry_pi_zero_2_w.part",
+      "mode": "100644",
+      "git_blob": "c88c3a9465646ac5f7bc6d465d7f0dda72c4d277",
+      "sha256": "d940276bbba2831fa6ce6f512e090456b1247efbe87e882f26719075dd87aa1b"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/pcb__raspberry_pi_zero_2_w.stl",
+      "mode": "100644",
+      "git_blob": "7c160d099d48076e91b7f9924653817f3ead069f",
+      "sha256": "802cc66fc5447c67fc642d1339e55160df10f2ad04a65efd130e35fb7b2d3c90"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/power_support.part",
+      "mode": "100644",
+      "git_blob": "0b3c6fc514e916f7a253699598801843b3ff5f0f",
+      "sha256": "9a82260d06d2e00976f2e4e916c4d4782b0a23679d07ee759ae8f9f182e3540b"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/power_support.stl",
+      "mode": "100644",
+      "git_blob": "102f0deebf9670223b13ea1756046724970cb871",
+      "sha256": "ee45e397d3f3422f34940a4b61156c3c11c7e8c2b240451ce5f9ddd1622a130e"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/right_shell.part",
+      "mode": "100644",
+      "git_blob": "ee35df3eb742912dd9c0bb2dc6c0db22b0b5b6e6",
+      "sha256": "cbc6cb2889db13fa9a283fc29d275c47e50207ffa0616c8498a6addc38621fd1"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/right_shell.stl",
+      "mode": "100644",
+      "git_blob": "4341ee67696762fefc62dd5612a5abd32aed6f40",
+      "sha256": "3efba3e193cc6aa49d49a9c92cdded0504917397c9e2c5b8fe002a958e2f2d2b"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/rim.part",
+      "mode": "100644",
+      "git_blob": "e5638b681213fd37d3d6f86b0edc3615d41b22bf",
+      "sha256": "96648c282219239d1c1bba14c3d81949618759983674c15449776cb40d41c177"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/rim.stl",
+      "mode": "100644",
+      "git_blob": "88c0d2f734dc1231a52041cbc9c984e0475a8ad6",
+      "sha256": "b3c9cc8ea50a1406d289060dc007894e009471f15b59baf443a5545bfc242c6f"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/roller_blade.part",
+      "mode": "100644",
+      "git_blob": "e51e6b24df5d11859e4b51eaa97e0d095bef38a7",
+      "sha256": "add40a287e5f06d0fa704fc74795b7221940519653002aafa01e5e69accc9238"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/roller_blade.stl",
+      "mode": "100644",
+      "git_blob": "bb286cd381b381e547acb8ac42b49d0b57bd2271",
+      "sha256": "cbdc755394d5046640db6045dd241921654ec17a313db9de8e851c14b918472f"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/seeed_bearing__configuration__22x16x4.part",
+      "mode": "100644",
+      "git_blob": "a9eb47be279a0b91bfd670e4562cecca02718a9a",
+      "sha256": "5104963cc7ca63d44762ca762227f0528217d02d692a0ae9b1f397ba8c33a257"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/seeed_bearing__configuration__22x16x4.stl",
+      "mode": "100644",
+      "git_blob": "1cc2a3562e9cdec8667b849817569f7dc2c7f4fb",
+      "sha256": "295ee68ed9766c91fe06d3a2a49d39f7c2f56cc943395d293afdeb013123435e"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/seeed_bearing__configuration_default.part",
+      "mode": "100644",
+      "git_blob": "a24f79a1d45401a0bb83f63ccdd9fad7bdf7b138",
+      "sha256": "7bcd749ad222a1f10049e2511cc083766747b23aa9dd4746c8311c4cfcc84dd9"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/seeed_bearing__configuration_default.stl",
+      "mode": "100644",
+      "git_blob": "71aa1ba5f5f4002dee6aa887b86ad4b64cd31356",
+      "sha256": "e815f3483a2e7b80844f3c0938a47e53db38b12faed9b2d364414c19e4322da4"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/soft_mouth_top.part",
+      "mode": "100644",
+      "git_blob": "1bc8b3251e7b8b6781d9e41bc210100597dc4c80",
+      "sha256": "4bfa1f8ace9b9000ff76f2fd34e9cef278e6635b871c3291cb45e2e02e5fac4a"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/soft_mouth_top.stl",
+      "mode": "100644",
+      "git_blob": "e224e1e951ec24990884b033d5ac63a2073e5eea",
+      "sha256": "3c2b52b0b6e2ce944a1e1b5a0838e1216be1ad3a34c8cdf91be186e634aec57b"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/sole_left.part",
+      "mode": "100644",
+      "git_blob": "d804a5fb4bd0182c0c49c2d9792a7e1c43fe0eef",
+      "sha256": "b8ff505c92bfa8e89a9eb6db750dfe139fe8bb6606c532bc01d89f6088f619dc"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/sole_left.stl",
+      "mode": "100644",
+      "git_blob": "c15fe2f38994cbd988ebcb7a76bc6a14c49f2564",
+      "sha256": "e028c8b09fecd4cb354d042bf7fd95a1a1bc2d524d760d62137fa8d74093fc23"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/sole_right.part",
+      "mode": "100644",
+      "git_blob": "2e3e603c1b54c0720f5e2bfc73c7cce72a7d8b82",
+      "sha256": "62a129727a8d780a14099817444e62ad6b536ac2c8239774dab9dabaf50a3f05"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/sole_right.stl",
+      "mode": "100644",
+      "git_blob": "6ecced133512bfc34fc02216b4902a536d53334e",
+      "sha256": "3f5068872f3add10eb967327651445bdfca635f5a8a01befa0ef05e462b72b4c"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/speaker.part",
+      "mode": "100644",
+      "git_blob": "a6b42f681976c3f2406ab253dce5b3740be2f0db",
+      "sha256": "9850f9fcdb8f3138f976ac822a0e2774439623345f131056c7d7ec98d3078592"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/speaker.stl",
+      "mode": "100644",
+      "git_blob": "16de470fcc6b2977a2898ee2e60dc43d27b056d5",
+      "sha256": "75a35f9bcf94cd8e52f99b3fd6ae667b48f52503f9075ee2f699eebe8e7b3ddf"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/tire.part",
+      "mode": "100644",
+      "git_blob": "f6c666b7e5e518ee67d18806c5d68232ab677782",
+      "sha256": "4efa94edfa0848c7eaada2624404f9b202467b6c646d1d8688fb511a4d8f878e"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/tire.stl",
+      "mode": "100644",
+      "git_blob": "0ddadc66835a4eb576e1d719d63cd0c1a7fa3e18",
+      "sha256": "8aa460566e99afcccccd5c0507c883d3f6d1901e28ddd492cf0c7edc41067b54"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/top_head_shell.part",
+      "mode": "100644",
+      "git_blob": "e7f6a2ff89a6beaea8051808b7ea95a2b6b432eb",
+      "sha256": "47b4394f5cc1fdc36861fe916be8a11aa3049760d4e563120588cc6cf3ab6cd6"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/top_head_shell.stl",
+      "mode": "100644",
+      "git_blob": "7c10d0cfe279e4df0f3c7debfe95e3bf4852203f",
+      "sha256": "6d01f396f514c9d2185cf6b8250b1d8382ac3fa0702eb525bcb284f706196291"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/trunk_base.part",
+      "mode": "100644",
+      "git_blob": "a11328bfd8436190730d702d5c513799bb6a19fb",
+      "sha256": "3b459735741f8e0a9fab171ecd744c607999322228d045e6623282aa9eed3e9f"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/trunk_base.stl",
+      "mode": "100644",
+      "git_blob": "28a703ce76b817bdf73a4fb8f8089040c2ec4510",
+      "sha256": "aa4f853ae555a8b765e585ce4519c0bbff325ce298ec15a1437792c52a0beac1"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/upper_leg_left.part",
+      "mode": "100644",
+      "git_blob": "ecdb6fb5b8f6a4a5a6a1b4555d6bb6934679b917",
+      "sha256": "61414442f6766fd7aaadd64d29e37c74d4f19de6d7e93153c43559382d24f497"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/upper_leg_left.stl",
+      "mode": "100644",
+      "git_blob": "5b3edce01372224337cde91435e0dae70ee306d5",
+      "sha256": "8cb1c12dfa6d366a318bb1ec16f585427b9a185afeb7738d0a6f41f5db46a07d"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/upper_leg_right.part",
+      "mode": "100644",
+      "git_blob": "cb079207a9e69fccaf1242efa40ffea139b115ac",
+      "sha256": "33ae62db8087c1c15213fcde56329240d0bd9b70c9919a085ba8705815037383"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/upper_leg_right.stl",
+      "mode": "100644",
+      "git_blob": "f1443617b1aa5ebe201cded5bf9aecab041d56bc",
+      "sha256": "5caf996cc3e151b01f393cdc6a6a6a940c1d86179d8b7c7f5f85cf1f1ac2fb63"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/upper_leg_rigidity_plate.part",
+      "mode": "100644",
+      "git_blob": "baeb2119363ad9c94a5273f89ad408d5afdcc88f",
+      "sha256": "9abdfc1874da369ed5953a32e8481242929da69b96461e6f42242288a5baa2e8"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/upper_leg_rigidity_plate.stl",
+      "mode": "100644",
+      "git_blob": "01f9fdef32d84b2f63820bb718ab07087c21d71a",
+      "sha256": "231b3e5f1e24d146d735dc158cbcfec0c95a0d0ca8c500f61f04d15d0b665652"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/xl330.part",
+      "mode": "100644",
+      "git_blob": "b2988c8534f31ff0ba6d63976bf2ade952a821ca",
+      "sha256": "e611f8ad4068acadd8ef0ababd355bb8597becb7eddd1ba206df6bbd539624fd"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/xl330.stl",
+      "mode": "100644",
+      "git_blob": "036fba0df9acdd1568d5fcb13fe68673b1abde83",
+      "sha256": "96238ed0d020ce0009cf1a5aa4b6926176c800840318ee65e4375be2298d2744"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/yaw2roll.part",
+      "mode": "100644",
+      "git_blob": "ddd0bd5f52b3d7c01240a417f7255228d1ad2970",
+      "sha256": "bc0bd3f0c6551bf5eb35acc14b69fce0bbc0d335bf83026b18609f2c0c570d1b"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/yaw2roll.stl",
+      "mode": "100644",
+      "git_blob": "50e107311bb7af52c0452e3414d03d9b34857ee8",
+      "sha256": "6c8f193ec7cb40be0f48eeb5fba81bce2c87f12e1aab3f77f1bc4981386e1495"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/yaw_roll_motion.part",
+      "mode": "100644",
+      "git_blob": "e34a1166c82c657b69e6aca92fcb7281b5615f5a",
+      "sha256": "4189857fe1b3b8565b2654c3f7294f642ddf20732aad0f25dd93977ab7ffe277"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/assets/yaw_roll_motion.stl",
+      "mode": "100644",
+      "git_blob": "20dd91011e74f3002fc376e248b4c5e827909a87",
+      "sha256": "b0c9902dee19f06cdb7fa930292e0e1c91e2dc59baa971211495b58ff76c3c60"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/ball.xml",
+      "mode": "100644",
+      "git_blob": "42c3278eb5f5498e8204bc9696bf223c810e7d2e",
+      "sha256": "54a455bf454a9b6167655381df91593bbca86695d8d71e29fb6af69454c7c865"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/config_mjcf_allcollisions.json",
+      "mode": "100644",
+      "git_blob": "e797f65956415a78ee228893d85923ea36c9ed60",
+      "sha256": "a557bb21f6e38389450d448a02eb1b13ab7a679179e17e283d1fe79988ac9d9b"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/config_mjcf_groundcontact.json",
+      "mode": "100644",
+      "git_blob": "92a99b87b6135f7216101c6f36a3cf5345c0b107",
+      "sha256": "6e9d1efffa574f2f09ba40ae63e236d7bd8b7900b9d65c78231751d72b22f962"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/config_mjcf_groundcontact_backlash.json",
+      "mode": "100644",
+      "git_blob": "572037ef7dda7dbb479e7b082cf88e082e31ebc2",
+      "sha256": "fd6e89d562d0ca92cb1e789ed273d14ceecbd95198c79da3ca2690e8e62ab204"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/config_mjcf_groundcontact_rollers.json",
+      "mode": "100644",
+      "git_blob": "081dbcbd8c8c6f0870d35ded63fdbbe20d1dac70",
+      "sha256": "7b3d837a2b15b92ff02a53cce3936f6b6871ef4cbf823c2b386be8cad4eae7af"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/config_mjcf_groundcontact_rollers_backlash.json",
+      "mode": "100644",
+      "git_blob": "14785ad374ff77a5cde05376f5d6cdaa4eb783af",
+      "sha256": "9af2931a67955be82e76a2ee2fb9ca554c3e8cf87f964b2b770e1389c10382ff"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/config_mjcf_walk.json",
+      "mode": "100644",
+      "git_blob": "43db1632f26ce5d421b03d1c4941b69ee2d8ee4c",
+      "sha256": "31fdf5bd061170fb41729b3a82a7780e772121ec566625c5a6bf849b890b31f9"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/config_mjcf_walk_backlash.json",
+      "mode": "100644",
+      "git_blob": "fc1a83d27f945aa20ada665f2fc198e04ec7ddad",
+      "sha256": "1f662b54138c30b135a451e1765da34045b6330bcb7c573d2719c51ef5f564a0"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/joints_properties.xml",
+      "mode": "100644",
+      "git_blob": "ad2e7558204743c6532223e5f5d5f69c419250d4",
+      "sha256": "6a4481a9279ffd92139479e67515df7b3510799ceb648c18fde0d58c300eae86"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/robot_allcollisions.xml",
+      "mode": "100644",
+      "git_blob": "74acf47e7df13fa51346a1d3dbf2c85a7423498b",
+      "sha256": "ec9d2f731596cfc847a7fc3898ef8b5e67a548928abc23216537f1da8af2729c"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/robot_allcollisions_backlash.xml",
+      "mode": "100644",
+      "git_blob": "3c00d8db4153c246b4c9deafad8b760609f3826e",
+      "sha256": "ccee92e435e39eefc64ee99745823751492ae7f948d835c89701710717e71de8"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/robot_groundcontact.xml",
+      "mode": "100644",
+      "git_blob": "18b50b58e251a324774834127fc6c32cf236bfa1",
+      "sha256": "99d23867e46e9d4748ff1398016b850f09fb6cf02a558c0272743b39ce3acf15"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/robot_groundcontact_backlash.xml",
+      "mode": "100644",
+      "git_blob": "a8eec5faebac5cfb5e9415ae6cb855abf16e3ad6",
+      "sha256": "8ddae05f00d321945220c632cca13445287c94fdbc1654573142347a5ac87d59"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/robot_groundcontact_rollers.xml",
+      "mode": "100644",
+      "git_blob": "e36ea1eef1f7d26ef6385d5f2e4897e9622e2db3",
+      "sha256": "e410e74978511fa2efdc9dcbe1488964c0c149ecca568a59dc73ef7f8844bf8b"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/robot_groundcontact_rollers_backlash.xml",
+      "mode": "100644",
+      "git_blob": "08e4374d5fe9b42c95ca0eae3a950fd04f4f5e55",
+      "sha256": "400fe547140354899774f72634a66fc446a96ab317e894c2a6fac5aa706a9967"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/robot_walk.xml",
+      "mode": "100644",
+      "git_blob": "96de481cce278f089145cf07b7088b173a7bbede",
+      "sha256": "80fc4424ed71e430ec4919110dfdb5c714dc1c4e1138e1832a16865cf31eb8c8"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/robot_walk_backlash.xml",
+      "mode": "100644",
+      "git_blob": "a06023ec69f17a2e3250558f93e0643300fef3c0",
+      "sha256": "8c2f271948cf06a3c5720c48abaac35b909c53fcfc6f5c3d2cef15f732da74e9"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/scene.xml",
+      "mode": "100644",
+      "git_blob": "a3848be52113a50138d54921748733f09488d496",
+      "sha256": "9a85461121ba8273083c482c166f27e143ca386993b3ec8f8d97eb09aa257d31"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/scene_allcollisions.xml",
+      "mode": "100644",
+      "git_blob": "3ce5068fa88a9f9f9d1f9a2c3757f8f50a3e8dd6",
+      "sha256": "0d2f58227a3e1c4caae4e847a368ae83516d0f398f428c4e96737b67dd894ef1"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/scene_apartment.xml",
+      "mode": "100644",
+      "git_blob": "40a3005f9713d001204a3b495976f479bbf94221",
+      "sha256": "f89da842d8972db257cb9a1a7c1804e21e1d0c01cc3388d6de6ac6fa1060f6e2"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/scene_backlash.xml",
+      "mode": "100644",
+      "git_blob": "451fb3000b6178590868578f42426d546a796d69",
+      "sha256": "2e8abed8258c0299859ca5403e44013da241f494065ed5bf184302923bd03c7d"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/scene_ball.xml",
+      "mode": "100644",
+      "git_blob": "bda06bb8736d2de3a85f58093eba30af41e4aad6",
+      "sha256": "3a6e69457fe68af692823c46da9e081021e3bf4be6c5381018446762acd20265"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/scene_rollers.xml",
+      "mode": "100644",
+      "git_blob": "963c49703dda143cecf18d2f04bf50064531a004",
+      "sha256": "9029044d5b605882c7f10b52b9bf90c9d5572fb25d79033d0d04026a269375ac"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/scene_vslam.xml",
+      "mode": "100644",
+      "git_blob": "36d4e9160661d2930b8e3fc44015f617ca3d403f",
+      "sha256": "61135069f454d36bf10761a5cb864904c8ad88c68a16965da70d362716aefa93"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/scene_walk.xml",
+      "mode": "100644",
+      "git_blob": "7aa25e52b609da73d759c7adc99233c7e63239bc",
+      "sha256": "6e23146c1a5025473b55ec94cbe37b08104ca388b7eb005ea277f8230736c8be"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/scene_walk_backlash.xml",
+      "mode": "100644",
+      "git_blob": "0fba9a5e2fe909930058ebe6a26383b60240d05e",
+      "sha256": "bf71c93e90f5a70890f6f76f79f8ba25191cf7ef0a8de47b1dd24f629449150b"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/sensors.xml",
+      "mode": "100644",
+      "git_blob": "a2be91b7ff8f47643fe0937eb2d89f91069827ba",
+      "sha256": "47854a0ab18261f069553e1572e0c329c4f39e4557dbdada71e0dc62af14ee20"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck/vslam_room.xml",
+      "mode": "100644",
+      "git_blob": "23cef67d9a5162f461a21c867ade59d5d3f573d1",
+      "sha256": "f0956410dbfc4d966688c663bf60758a61c1af179f5421886ebf88e0ac30658a"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/microduck_constants.py",
+      "mode": "100644",
+      "git_blob": "d241cf3c0a0cc09f3904547c3ffb17a9d3d7b2ef",
+      "sha256": "0e7097afe833ac1259b197f9854d01c1666be03ac0c9b090233b4fbc7619eb94"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/testbench_constants.py",
+      "mode": "100644",
+      "git_blob": "e676e5918a0f3b79630bba28667b8324e75cd258",
+      "sha256": "bf5e95376131471443e1daddf5abb0bc6326bc6b5c49bfb352774bcc6b011b9f"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/arm.part",
+      "mode": "100644",
+      "git_blob": "51da6d449b6f2ed496acb1f82ff62fc95ea5aa77",
+      "sha256": "081b71065888ab6ccb90b601e21438a115d748a19164d0d1d0ac19fffbb3bbef"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/arm.stl",
+      "mode": "100644",
+      "git_blob": "a8dbbf40cc1925082c2554b550bee0a709df2200",
+      "sha256": "2b5adeff9acddca7ca3f14ca502687bdccb0d5718ca5eee5ea8e0b7b92fe460e"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/axis.part",
+      "mode": "100644",
+      "git_blob": "de3f789bff930380475fd3c1a8c987b382c768dd",
+      "sha256": "e50bc0c3d0d0efc2c0389db3da6614b38d1ac3d63b586bd0c419c097be35a6d3"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/axis.stl",
+      "mode": "100644",
+      "git_blob": "7cd475fbbc17abd6c8953c03c9ab02c5d74b33e7",
+      "sha256": "435cdf37cd5cfd9cc7ce1202fcf075aebabffbf6cf1249a8e8d3a93d6350b244"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/bench_holder.part",
+      "mode": "100644",
+      "git_blob": "62d6f930940d10c6816ea07c5b387f65ae5628a9",
+      "sha256": "e54085f77346853620ce55bf8bac6c6ba1e5569bda857edf851890605ec96327"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/bench_holder.stl",
+      "mode": "100644",
+      "git_blob": "32cfa186dccd172761f998cd5ec2b5566c058210",
+      "sha256": "3a46df8b07b5b7eda4a0f68642cc90e4a557cb3f8678e49a2508b9225a26cba1"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/part_1.part",
+      "mode": "100644",
+      "git_blob": "1c0a3885dff7a135b4904eaee94ca6a98f12ac33",
+      "sha256": "e49e473f52d3f72fd8dcdffa16bece1dd019ecba220721a5c03fd42986901367"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/part_1.stl",
+      "mode": "100644",
+      "git_blob": "a8dbbf40cc1925082c2554b550bee0a709df2200",
+      "sha256": "2b5adeff9acddca7ca3f14ca502687bdccb0d5718ca5eee5ea8e0b7b92fe460e"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/part_2.part",
+      "mode": "100644",
+      "git_blob": "8d4f8bf19e128dab42b59e52ac9bac7e24381acb",
+      "sha256": "b0c87058dda6e65b78ce252b0da49cc77f4e7101d6d9a1be1cfcff4ff8293208"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/part_2.stl",
+      "mode": "100644",
+      "git_blob": "8219a169ad1351269a6bccd54f102a10f4332663",
+      "sha256": "6f57229eb624849885294536527402ebd6a2e4933e086ad80eda1604d3fbec0c"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/part_3.part",
+      "mode": "100644",
+      "git_blob": "bd58d22f6d7cf79d5fd512c7df778dfb63664101",
+      "sha256": "f8021a43202b3a5b3af40455f4790a1fa85695ddec8dd38fb1ea8d6970a9bb30"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/part_3.stl",
+      "mode": "100644",
+      "git_blob": "32cfa186dccd172761f998cd5ec2b5566c058210",
+      "sha256": "3a46df8b07b5b7eda4a0f68642cc90e4a557cb3f8678e49a2508b9225a26cba1"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/part_4.part",
+      "mode": "100644",
+      "git_blob": "db6b2c206e9064923bff5466f28374c2aecfebfd",
+      "sha256": "7bc00fb470725890737598e59ee990a2bb82c242994f671d92b3fa597e4234d5"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/part_4.stl",
+      "mode": "100644",
+      "git_blob": "b5590840b429965cf9f54fe299d25d8ae63cdff1",
+      "sha256": "4e5b08e92d99bb9fa2d0f4b00f9c1f25b98092f1594e9735c38caef76a4475a7"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/part_5.part",
+      "mode": "100644",
+      "git_blob": "2b87f2be0be2e7464acc465e0d8716c9944e332a",
+      "sha256": "e650c96517ea0fc724fc6042043a7fa9bcba94faa26f9d5cdfcc0fc4b519e930"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/part_5.stl",
+      "mode": "100644",
+      "git_blob": "7cd475fbbc17abd6c8953c03c9ab02c5d74b33e7",
+      "sha256": "435cdf37cd5cfd9cc7ce1202fcf075aebabffbf6cf1249a8e8d3a93d6350b244"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/spacer.part",
+      "mode": "100644",
+      "git_blob": "292fd50b40d982ce62ebbd0dafc1feca62feacb1",
+      "sha256": "55d9bfc8ab9583b8f9967762d2e79821f27bdfe539790ac69968058b25fd4bbc"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/spacer.stl",
+      "mode": "100644",
+      "git_blob": "8219a169ad1351269a6bccd54f102a10f4332663",
+      "sha256": "6f57229eb624849885294536527402ebd6a2e4933e086ad80eda1604d3fbec0c"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/weight.part",
+      "mode": "100644",
+      "git_blob": "06dd404ae29d0c0e08cd9be929949c953be68d3e",
+      "sha256": "612e03a44dc3d61747e6504a9df7b927117503dfeeba38fe132ca697870c2164"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/weight.stl",
+      "mode": "100644",
+      "git_blob": "b5590840b429965cf9f54fe299d25d8ae63cdff1",
+      "sha256": "4e5b08e92d99bb9fa2d0f4b00f9c1f25b98092f1594e9735c38caef76a4475a7"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/xl330.part",
+      "mode": "100644",
+      "git_blob": "311a5fbe3f678b1847696367e7902b6a06f3070b",
+      "sha256": "e1e95b797098ec0e855db86c7d316b689dd04445d838c92a2bfc8d6a624efa50"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/assets/xl330.stl",
+      "mode": "100644",
+      "git_blob": "0ea8d4fa34037b0987a64a22a104bea0ff80a8b6",
+      "sha256": "c9f6bf7dd9d8b307a4174b40ff12517b3ea470e5535319a5b7dcce4ba52cdfe1"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/config.json",
+      "mode": "100644",
+      "git_blob": "8d44975bcceb541ea54710ccf295cbfb1495c712",
+      "sha256": "c66518cd6fade3bbe881be0ab9b6e1ac395ddfb41a9b3ce5b39dfdf58e3a0210"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/joints_properties.xml",
+      "mode": "100644",
+      "git_blob": "c0406a1cf62a96d05863c949e9c4e6ffa69cda6d",
+      "sha256": "5204d854ca41a08b752be733acc7abe238c279f6525cbf2c532792446b187458"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/scene.xml",
+      "mode": "100644",
+      "git_blob": "4b9fa89bbdfb1106f9def3c284447f9acbb3bb4a",
+      "sha256": "711f1503b4cee29270f206bd538de38fbd9df18cb2c12ff6a012061fadce247c"
+    },
+    {
+      "path": "src/mjlab_microduck/robot/xl330_test_bench/xl330_test_bench.xml",
+      "mode": "100644",
+      "git_blob": "14132ba3f49cd1a32be3672b8565fca3cfed9fca",
+      "sha256": "b189f8c9d97b1e8fd11a67e8270f379042f863bca24d3af03970194c5e3451f2"
+    },
+    {
+      "path": "src/mjlab_microduck/sim/__init__.py",
+      "mode": "100644",
+      "git_blob": "4062e5abbc918abd806151da7c45c42e9f1c62fd",
+      "sha256": "f13d4940266b9579529074bc60426353ed8fc6f49bf8f480691d30e8e4276e22"
+    },
+    {
+      "path": "src/mjlab_microduck/sim/body_server.py",
+      "mode": "100644",
+      "git_blob": "e587a1adc7590e55048094d8c31e8140863c3d35",
+      "sha256": "2040c827628c33fee998944bce1fcd456c4b993802bb473f016681688bff7b08"
+    },
+    {
+      "path": "src/mjlab_microduck/sim/camera.py",
+      "mode": "100644",
+      "git_blob": "5769a9eb9967737a82ba146d2e0c9db0ceef6eb2",
+      "sha256": "5f2e6c83b33e594583cbd5f3e003c3b8bb77f7a0e7b734d86ba0b2c821eaed71"
+    },
+    {
+      "path": "src/mjlab_microduck/sim/tof.py",
+      "mode": "100644",
+      "git_blob": "b8fb9715953f8be5d84abee54430d19cbb888e75",
+      "sha256": "256c06bac5ac64a02f3e065785bd70314b616c58da3cb94f93484c9e00d42663"
+    },
+    {
+      "path": "src/mjlab_microduck/tasks/__init__.py",
+      "mode": "100644",
+      "git_blob": "faa73668657b6c36aaad7f78494091ff801566e7",
+      "sha256": "9ac23d5ca686bc5d42b1f99698e86f51422c7b718b2512b7cc88f323d6b58f77"
+    },
+    {
+      "path": "src/mjlab_microduck/tasks/backlash.py",
+      "mode": "100644",
+      "git_blob": "e77219a482f19c1ca9db9d1b4a9d7a8bbc8099b0",
+      "sha256": "35598c2a3db496527fb8835269b4e0ac0eddcc86e683a7af447933c7281d0e22"
+    },
+    {
+      "path": "src/mjlab_microduck/tasks/distill.py",
+      "mode": "100644",
+      "git_blob": "7c1c8c82d759559c13bf2204468c0ad7d75e0c76",
+      "sha256": "fa08b3442e0b38422cd9aaa003a149114a884fd8120adbc2ca7d7771c687932e"
+    },
+    {
+      "path": "src/mjlab_microduck/tasks/mdp.py",
+      "mode": "100644",
+      "git_blob": "85d642c5d3b586601f5bb6a2a8f7f12f9ae0522b",
+      "sha256": "45a13e6d3f71ee2c0267ef6241610d6c5b51521f7fedc8a6865a6ec473c1e680"
+    },
+    {
+      "path": "src/mjlab_microduck/tasks/microduck_ball_kick_env_cfg.py",
+      "mode": "100644",
+      "git_blob": "34ea20cb1611a7e45c435b08e9ee5689700a5d3d",
+      "sha256": "313180628c0d0364ea6d0f1843e7e3e10b76585491b90b0c1f0e301d9e5fd30c"
+    },
+    {
+      "path": "src/mjlab_microduck/tasks/microduck_ground_pick_env_cfg.py",
+      "mode": "100644",
+      "git_blob": "94df8b551a913fe22e3e21dace40cc7fbfee76d3",
+      "sha256": "9b68951e2c84fdccb5894701efa97e060438eb56c956a34c65e844ba3fa6185e"
+    },
+    {
+      "path": "src/mjlab_microduck/tasks/microduck_roller_crouch_env_cfg.py",
+      "mode": "100644",
+      "git_blob": "c37507d68ce9a99372994051b355141cda50d86e",
+      "sha256": "745142fab9ffc4c43a6b7d367d6be37f5675f5fbf255ac4341a9e2a21a4062ee"
+    },
+    {
+      "path": "src/mjlab_microduck/tasks/microduck_roller_slope_env_cfg.py",
+      "mode": "100644",
+      "git_blob": "a39b601e14c6d080ce0b7c1ebae1329b1e7a13df",
+      "sha256": "92738df650e3527c8cbe194169f60fb2a232933b1eabbbaf7d4b7d2aa67e2b42"
+    },
+    {
+      "path": "src/mjlab_microduck/tasks/microduck_roller_standup_env_cfg.py",
+      "mode": "100644",
+      "git_blob": "872ad8c17cf6dfae3f8dea51a32518c25f75d7ad",
+      "sha256": "146e417c082823039b87d2ff350e96e84007df80c268d53984d7c160f25cdeee"
+    },
+    {
+      "path": "src/mjlab_microduck/tasks/microduck_roulade_env_cfg.py",
+      "mode": "100644",
+      "git_blob": "5d26a4242769b712f7e8ac3fc03c80a1c6c5db90",
+      "sha256": "5e923d9ba69946228062c72102fe2b97bce02b9fd6f52c2418a42bbd4f919b42"
+    },
+    {
+      "path": "src/mjlab_microduck/tasks/microduck_sitstand_env_cfg.py",
+      "mode": "100644",
+      "git_blob": "ba94cd7e13729d4fd0369ef5ffcc116b72114491",
+      "sha256": "65b1961566b0772852ba36af8e92c02a13a53de9b9a98f91e2dce1f4d8d627b1"
+    },
+    {
+      "path": "src/mjlab_microduck/tasks/microduck_spin_env_cfg.py",
+      "mode": "100644",
+      "git_blob": "60cf32ef09064eba13a205e17cd05ce359d2b08a",
+      "sha256": "ba85e26407a29a208f871aa229bb2c7971eca6087f0740e7de6f898adbc5b395"
+    },
+    {
+      "path": "src/mjlab_microduck/tasks/microduck_standup_env_cfg.py",
+      "mode": "100644",
+      "git_blob": "358b567c75300551c3e1b0ccbcd378f481cb9f14",
+      "sha256": "b20b8f3fac5a374dd602f371f0b500955b4dbcb4d3f7330bddfa15b327826873"
+    },
+    {
+      "path": "src/mjlab_microduck/tasks/microduck_velocity_env_cfg.py",
+      "mode": "100644",
+      "git_blob": "45a1f6d5b7f5d81aa58dab777ed34f458a2f847c",
+      "sha256": "75a0430b814ac7495eb237ab806fbd4dd10309b9fd3027ac3eee3c2e3c5a944a"
+    },
+    {
+      "path": "src/mjlab_microduck/tasks/microduck_velocity_rollers_env_cfg.py",
+      "mode": "100644",
+      "git_blob": "1d2c46644b5b0be460bd8cebafcd60e650d36f43",
+      "sha256": "53567a5ed91b4c70166b57c79fc31917fdcf41287128aff12d3b9ff678f4c38c"
+    },
+    {
+      "path": "src/mjlab_microduck/tasks/microduck_velocity_swizzle_env_cfg.py",
+      "mode": "100644",
+      "git_blob": "104dfa1964699a045aea0981f6c9e471493d4acf",
+      "sha256": "75197c956afd77586f60e4b773033ace15e088179bb5912a88328862b0a10f49"
+    },
+    {
+      "path": "src/mjlab_microduck/tasks/microduck_velstand_env_cfg.py",
+      "mode": "100644",
+      "git_blob": "929c4bb23ff97e64c19d1b94d91fd17fe117c2be",
+      "sha256": "24353bc964f22d0aaef364395dd72157c7947a25a1c7910690d6936e4cee4440"
+    },
+    {
+      "path": "src/mjlab_microduck/tasks/slope_terrain.py",
+      "mode": "100644",
+      "git_blob": "e4270fc6a211064f4137edd19a8e946275e1a83f",
+      "sha256": "1ce48eef8b4bd82cde94d7c9f50f19d2992f4dc8d3b5b5d314b7381bc572b8a0"
+    },
+    {
+      "path": "src/mjlab_microduck/tasks/symmetry.py",
+      "mode": "100644",
+      "git_blob": "e950421916f48231f22108178dc769ae7912d5d6",
+      "sha256": "e37980389773f2f87b8f376df449af4d70e0c983744459f9a35a3ee7b686186b"
+    },
+    {
+      "path": "src/mjlab_microduck/tasks/testbench_env_cfg.py",
+      "mode": "100644",
+      "git_blob": "7b6ebef8e75c20991a83c079ea2aebedef8e3103",
+      "sha256": "d254218ca3f491e52d471ad033ebd1cb39a339f1f21394ea55e2bec4f3dc2776"
+    },
+    {
+      "path": "src/mjlab_microduck/train_cli.py",
+      "mode": "100644",
+      "git_blob": "869772263959e441ae80fce6f31e721c691ce3a0",
+      "sha256": "6c1e118d2bf65f86f6b932dd41b4ddff2a20a0633194a03072f700c7bfa8e372"
+    },
+    {
+      "path": "src/mjlab_microduck/train_hook.py",
+      "mode": "100644",
+      "git_blob": "a10390cdeb3e7e3e9ed2ca66133784c0364e4472",
+      "sha256": "db1bcbceadd41d65077983eaadcb89dee146dc14ea9c9cc3df9d29c1cba20db5"
+    },
+    {
+      "path": "tests/test_aarch64_cuda_torch.py",
+      "mode": "100644",
+      "git_blob": "ebcda61f661f502d86ad38b97a8313fd32ed00a6",
+      "sha256": "a709e75b92398465c28244b5282f67fa0c762f83bf63f331dd7cc895ca203e02"
+    },
+    {
+      "path": "tests/test_crouch_glide.py",
+      "mode": "100644",
+      "git_blob": "af81d716fccff270a36cabac5bffa61e0a3ec48a",
+      "sha256": "a98d7a4cfea4d0995b685ab261b35de6173dc89b7024bd2fd7c80f840beda25c"
+    },
+    {
+      "path": "tests/test_descent_speed.py",
+      "mode": "100644",
+      "git_blob": "cf97f1f7ac6ff026f0e88679194507a1fab726a0",
+      "sha256": "3e4d7bca6881a3055b487507301801c6d6de1e880f7bfa9bec3d9ad978cbf69c"
+    },
+    {
+      "path": "tests/test_ground_pick_cfg.py",
+      "mode": "100644",
+      "git_blob": "fe9c9ca4e2608b73b9a22c3ffb60f5138eff35a4",
+      "sha256": "0d1556219800df3b7c7d6c7c53f1ae304d0072ebaf8dbe57e5937f11bdf05708"
+    },
+    {
+      "path": "tests/test_ground_pick_pose.py",
+      "mode": "100644",
+      "git_blob": "23d23c86ff5435e431781cb659932eddf4a7cbce",
+      "sha256": "dc2156a7d1f730f09c6ff139e07574f5255c7c6fc17900b190905dee00046855"
+    },
+    {
+      "path": "tests/test_head_pose_bias.py",
+      "mode": "100644",
+      "git_blob": "49334bbd17409f3a7ee0b3149376ecfbcfa920fe",
+      "sha256": "21c94e089004de584e7d0422f94dabb3b566bb182b000f01031c8badf84ed9ee"
+    },
+    {
+      "path": "tests/test_hf_jobs_flag.py",
+      "mode": "100644",
+      "git_blob": "be08beb955bd30af9b18856bef31a287986a401a",
+      "sha256": "ba54819eab252b3352b03dc176d6cc9ec9ef10f0bfc1fac4ec5c08adeb6de1f2"
+    },
+    {
+      "path": "tests/test_infer_policy_bam.py",
+      "mode": "100644",
+      "git_blob": "c3dd6b021fa1a55c3a7391fe58a0eeb4b5d733a0",
+      "sha256": "5eccd3370bcb3b12ac3dc4177259f98981fe2f8fba9b99d083ba5d7f1c673e3d"
+    },
+    {
+      "path": "tests/test_nan_guard.py",
+      "mode": "100644",
+      "git_blob": "77ea793006fe9062e599d7c63ecd730f5999f6d5",
+      "sha256": "b80c338ce6949ab754806615bce2b8b8e47b43391f0290f07afbb1cd43e7facf"
+    },
+    {
+      "path": "tests/test_obs_nan_guard.py",
+      "mode": "100644",
+      "git_blob": "12c7d12449253301478e8758dc96bba864e6ff63",
+      "sha256": "d521a3ddf30f9be8fee54dd2dce68a662952e9acc05223457bf68a24af8aa731"
+    },
+    {
+      "path": "tests/test_pickup_detector.py",
+      "mode": "100644",
+      "git_blob": "fb6756012b6b13da16c19513753582569995db0c",
+      "sha256": "4d98da833906086666cc37fd278df70abe4536304646e86744660006f413a886"
+    },
+    {
+      "path": "tests/test_publish_manifest.py",
+      "mode": "100644",
+      "git_blob": "bc21af89bece37aab4ab849bb4bd379f9c80c0fd",
+      "sha256": "35957101ef182083677ec8a1548869bb281030ab83155b0b95b24c7f54676bb6"
+    },
+    {
+      "path": "tests/test_roller_crouch_cfg.py",
+      "mode": "100644",
+      "git_blob": "25a7e86e5d994c6e2683db3eb3d6870ef567566c",
+      "sha256": "99598c25cbb265e12ea3eca0cbbe30616183e0e28f75cfa3f82fb5e600ecfa9d"
+    },
+    {
+      "path": "tests/test_roller_slope_cfg.py",
+      "mode": "100644",
+      "git_blob": "3a438e3b8bd9afd9aae2099c9c889cc26836feaa",
+      "sha256": "62fe70c4cc69b42294f43db2480a53b3048569118344d691b8c654947c724122"
+    },
+    {
+      "path": "tests/test_roller_standup_cfg.py",
+      "mode": "100644",
+      "git_blob": "9d8d558db152b4e671fe536e5a3752f1661e1318",
+      "sha256": "7067c4375d8b43471bcd94a6c9b1a8c1c17b6bac64099588cc13356009aebba7"
+    },
+    {
+      "path": "tests/test_sitstand_fallback.py",
+      "mode": "100644",
+      "git_blob": "8fff35f21b0fbf02647e8940a57ffbc2d958941f",
+      "sha256": "1df0ce939bac1841dff589469e6161ad0ad34dd419f8a01c4fb203f92ea4dab2"
+    },
+    {
+      "path": "tests/test_slope_curriculum.py",
+      "mode": "100644",
+      "git_blob": "b55f4a014cd2e991aa999306a9936e426c7c28e5",
+      "sha256": "efd0e6f4e3ece42bdfdca011815a5506af74a5f094fbd265e5644f964678e6a0"
+    },
+    {
+      "path": "tests/test_slope_terrain.py",
+      "mode": "100644",
+      "git_blob": "7bf32d126bee087b7461cb22b614441ff6f04eeb",
+      "sha256": "a48713d10b1ee4faddef6e96c54d1f3ff09f71ea73c787714babd1d3af6afbfc"
+    },
+    {
+      "path": "tests/test_spin.py",
+      "mode": "100644",
+      "git_blob": "73ca47a2c9ad9656497d005a4527d8aaeb1c265c",
+      "sha256": "0f27f1a1afee0c2c7c15e73fdad4c2649b4f396670206dbb57aa1743f71b4b95"
+    },
+    {
+      "path": "tests/test_spin_cfg.py",
+      "mode": "100644",
+      "git_blob": "888e939673f862c4f416b3dd67d42e9dfbb9d5b6",
+      "sha256": "62dfeac34c863e755650790f62af19b8e4584f829c640f455d71c08ec5fec065"
+    },
+    {
+      "path": "tests/test_swizzle_head_cfg.py",
+      "mode": "100644",
+      "git_blob": "52b31f33dce3f9d00fc1b49aae22d1962715a701",
+      "sha256": "d053d11281576687230fe60234ec0fb545ee1c2974486df8ac5996628e346cb7"
+    },
+    {
+      "path": "tests/test_velstand_cfg.py",
+      "mode": "100644",
+      "git_blob": "997db84e31c2218bd021cbb4fc1efd76e994bfac",
+      "sha256": "98a28c24229ed5da0bff828f8970d9f4029818c47f2c0f8f5759270026011e9f"
+    },
+    {
+      "path": "tests/test_wheel_glide.py",
+      "mode": "100644",
+      "git_blob": "2e51c76dbfd6cb686758ecd313968a8cd95e9268",
+      "sha256": "5e9796ed46f9a1b09a160c9b868c3d525ca2f6bece3ca202b369409e99c537bb"
+    },
+    {
+      "path": "uv.lock",
+      "mode": "100644",
+      "git_blob": "2d20aecb14941fa43ddcdbda960e3f03c3993cad",
+      "sha256": "2eeeb680025baa737e7ccf3a87da3695a9d49b228de0bb60d8af0c022ab5f1aa"
+    }
+  ],
+  "policy_contract": {
+    "actor_observations": 61,
+    "actions": 14,
+    "control_hz": 50,
+    "legacy_tutorial_observations": 51
+  },
+  "runtime_reference": {
+    "repository": "https://github.com/pollen-robotics/microduck",
+    "commit": "dec725c67ffbbdde7f1de30f8c936b1bf9c1d70e",
+    "status": "reference_only_not_integrated"
+  },
+  "verification": {
+    "source_import": "verified_byte_hashes",
+    "gpu_training": "not_run",
+    "hardware": "not_verified"
+  }
+}
