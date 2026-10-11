@@ -10,7 +10,7 @@
 - `proposed`：选为下一步实现/实验，尚未验证。
 - `verified_integration`：只有完成接入与相应本地验证才能升级；CPU配置检查只证明配置，不证明GPU训练收敛或实机有效。
 
-本目录的来源全部为 research/proposed。官方已实现某项功能，也不等于本机已训练或实机已验收该能力。实验执行和结果应写入独立运行目录，保存失败原始证据。
+2026-10-11增量核对：S01官方训练源码已完整纳入、254文件哈希通过，统一入口已覆盖33项注册任务；首轮行走CUDA链路已完成。因此S01的源码/工作流状态已更新为 verified_integration，其余来源保留各自的 research/proposed 状态。完整差异见[官方仓库对照](upstream-comparison.md)。这个状态不表示全部任务已训练或实机通过；实验执行和结果应写入独立运行目录，保存失败原始证据。
 
 ## 首先守住两个接口
 
@@ -55,7 +55,7 @@
 
 | ID | 可点来源 | 可吸收内容 | 状态 |
 |---|---|---|---|
-| S01 | [pollen-robotics/microduck_rl](https://github.com/pollen-robotics/microduck_rl) | 固定官方训练基线，优先平地速度与恢复 | proposed |
+| S01 | [pollen-robotics/microduck_rl](https://github.com/pollen-robotics/microduck_rl) | 固定官方源码及团队训练入口，行走短CUDA链路已完成 | verified_integration（源码/工作流，非全部技能） |
 | S02 | [pollen-robotics/microduck](https://github.com/pollen-robotics/microduck) | 先对齐模型清单、接口与部署仿真 | research |
 | S03 | [Rhoban/bam](https://github.com/Rhoban/bam) | 校准XL330摩擦、电压与延迟，不替换为理想PD | proposed |
 | S04 | [Rhoban/microban](https://github.com/Rhoban/microban) | 学习小型Dynamixel机械设计与系统辨识；不复用关节策略 | research |

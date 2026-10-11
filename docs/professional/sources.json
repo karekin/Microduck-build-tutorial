@@ -13,19 +13,19 @@
       "kind": "repository",
       "title": "pollen-robotics/microduck_rl",
       "url": "https://github.com/pollen-robotics/microduck_rl",
-      "checked_at": "2026-10-10",
+      "checked_at": "2026-10-11",
       "source_date": "2026-10-09T10:08:49Z",
       "date_kind": "repository_pushed_at_not_publication",
       "default_branch": "develop",
       "license": "Apache-2.0 (code); CC-BY-NC-SA-4.0 (STL model assets)",
       "license_url": "https://github.com/pollen-robotics/microduck_rl/blob/develop/LICENSE",
-      "evidence_basis": "GitHub API metadata and upstream README; root license reviewed where specified",
+      "evidence_basis": "2026-10-11 GitHub develop/compare API; pinned 254-file SHA256 verification; 33-task wrapper parity and local workflow tests",
       "actual_capability": "官方任务、61维接口与BAM/Backlash",
       "adoption_strategy": "固定官方训练基线，优先平地速度与恢复",
       "estimated_cost": "低：现成任务，需CUDA",
       "interface_risk": "61D official versus 51D tutorial must be separately checked; joint/observation semantics and normalization must match",
-      "adoption_status": "proposed",
-      "local_validation": "not trained or integrated by this research slice"
+      "adoption_status": "verified_integration",
+      "local_validation": "Pinned ceca017 full source and all 33 aliases verified; 64-env/5-iteration L4 walking pipeline completed on 2026-10-10; recovery/other skills and hardware not validated"
     },
     {
       "id": "S02",

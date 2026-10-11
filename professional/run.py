@@ -17,13 +17,51 @@ VENDOR = ROOT / "professional/upstream/microduck_rl"
 PREPARED = ROOT / "professional/runs/official"
 TASKS = {
     "walk": "Mjlab-Velocity-Flat-MicroDuck",
+    "walk-rough": "Mjlab-Velocity-Rough-MicroDuck",
     "walk-backlash": "Mjlab-Velocity-Flat-Backlash-MicroDuck",
+    "walk-rough-backlash": "Mjlab-Velocity-Rough-Backlash-MicroDuck",
     "recovery": "Mjlab-VelStand-Flat-MicroDuck",
+    "recovery-rough": "Mjlab-VelStand-Rough-MicroDuck",
+    "recovery-backlash": "Mjlab-VelStand-Flat-Backlash-MicroDuck",
+    "recovery-rough-backlash": "Mjlab-VelStand-Rough-Backlash-MicroDuck",
     "standup": "Mjlab-StandUp-Flat-MicroDuck",
+    "standup-rough": "Mjlab-StandUp-Rough-MicroDuck",
+    "standup-backlash": "Mjlab-StandUp-Flat-Backlash-MicroDuck",
+    "standup-rough-backlash": "Mjlab-StandUp-Rough-Backlash-MicroDuck",
     "sitstand": "Mjlab-SitStand-Flat-MicroDuck",
+    "sitstand-rough": "Mjlab-SitStand-Rough-MicroDuck",
+    "sitstand-backlash": "Mjlab-SitStand-Flat-Backlash-MicroDuck",
+    "sitstand-rough-backlash": "Mjlab-SitStand-Rough-Backlash-MicroDuck",
+    "ground-pick": "Mjlab-GroundPick-Flat-MicroDuck",
+    "ground-pick-rough": "Mjlab-GroundPick-Rough-MicroDuck",
+    "ground-pick-backlash": "Mjlab-GroundPick-Flat-Backlash-MicroDuck",
+    "ground-pick-rough-backlash": "Mjlab-GroundPick-Rough-Backlash-MicroDuck",
     "kick": "Mjlab-BallKick-Flat-MicroDuck",
+    "kick-backlash": "Mjlab-BallKick-Flat-Backlash-MicroDuck",
+    "roulade": "Mjlab-Roulade-Flat-MicroDuck",
+    "rollers": "Mjlab-Velocity-Flat-MicroDuck-Rollers",
+    "rollers-backlash": "Mjlab-Velocity-Flat-Backlash-MicroDuck-Rollers",
+    "swizzle": "Mjlab-Velocity-Swizzle-MicroDuck",
+    "swizzle-backlash": "Mjlab-Velocity-Swizzle-Backlash-MicroDuck",
+    "roller-crouch": "Mjlab-RollerCrouch-Flat-MicroDuck",
+    "roller-crouch-backlash": "Mjlab-RollerCrouch-Flat-Backlash-MicroDuck",
+    "roller-slope": "Mjlab-RollerSlope-Flat-MicroDuck",
+    "roller-slope-backlash": "Mjlab-RollerSlope-Flat-Backlash-MicroDuck",
+    "roller-standup": "Mjlab-RollerStandUp-Flat-MicroDuck",
+    "spin": "Mjlab-Spin-Flat-MicroDuck",
 }
 PROFILES = {"smoke": (64, 5), "baseline": (1024, 4000)}
+
+
+def task_catalog() -> list[dict]:
+    """Describe the pinned registry without importing CUDA-dependent packages."""
+    return [
+        {"alias": alias, "task_id": task_id,
+         "hardware": "roller_wheels" if alias.startswith(("rollers", "swizzle", "roller-", "spin")) else "standard_feet",
+         "expert_checkpoints_required": alias.startswith("recovery"),
+         "capability_verified_here": False}
+        for alias, task_id in TASKS.items()
+    ]
 
 
 def verify_source(vendor: Path = VENDOR) -> dict:
@@ -99,6 +137,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="专业训练入口；默认只生成命令，不启动训练或云任务。")
     sub = parser.add_subparsers(dest="action", required=True)
     sub.add_parser("verify", help="校验固定版本的完整官方源码")
+    sub.add_parser("catalog", help="列出全部官方任务、硬件与教师资产前提；不启动训练")
     sub.add_parser("prepare", help="建立独立官方源码工作目录，避免云端打包教程仓库")
     sub.add_parser("cpu-check", help="用独立官方环境做3步CPU物理预检，不训练或连接硬件")
     train = sub.add_parser("train", help="生成或执行固定配置的训练命令")
@@ -116,6 +155,9 @@ def main() -> int:
     try:
         if args.action == "verify":
             print(json.dumps(verify_source(), ensure_ascii=False, indent=2))
+        elif args.action == "catalog":
+            verify_source()
+            print(json.dumps(task_catalog(), ensure_ascii=False, indent=2))
         elif args.action == "prepare":
             print(prepare_workspace())
         elif args.action == "cpu-check":
