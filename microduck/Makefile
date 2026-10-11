@@ -1,4 +1,4 @@
-.PHONY: sync setup run stop shutdown voltage imu imu-check imu-viewer sim sim-headless viewer direction-check direction-check-sim gamepad-headless-enable gamepad-headless-disable
+.PHONY: sync setup run stop shutdown voltage imu imu-check imu-viewer sim sim-raw demo sim-headless viewer direction-check direction-check-sim gamepad-headless-enable gamepad-headless-disable
 
 HOST ?= microduck
 ID ?=
@@ -7,7 +7,7 @@ SERIAL_PORT ?= auto
 IMU_CHECK_DURATION ?= 3.0
 IMU_CHECK_FREQUENCY ?= 50.0
 IMU_CHECK_ARGS ?=
-SIM_PYTHON := $(if $(filter Darwin,$(shell uname -s)),mjpython,python)
+SIM_SPEED ?= 0.05
 
 sync:
 	rsync -avz \
@@ -27,7 +27,18 @@ setup: sync
 	ssh -tt $(HOST) "bash -l -c 'cd microduck && UV_HTTP_TIMEOUT=$(UV_HTTP_TIMEOUT) uv sync --frozen'"
 
 sim:
-	PYTHONPATH=src uv run --locked --group sim $(SIM_PYTHON) src/sim/sim_main.py --hz 50
+	uv run --locked --group sim python src/sim/launch_sim.py --hz 50 --walk --low-speed-keyboard --forward-limit $(SIM_SPEED) --heading-assist \
+		--policy-kp 200 --initial-height 0.12 --physics-timestep 0.005 \
+		--delay-act 0 --delay-vel 0 --delay-gyro 0 --delay-quat 0 --log logs/keyboard-sim.jsonl
+
+sim-raw:
+	uv run --locked --group sim python src/sim/launch_sim.py --hz 50 --walk
+
+demo:
+	uv run --locked --group sim python src/sim/launch_sim.py --walk --scripted-demo --ticks 1500 \
+		--policy-kp 200 --velocity 0.07142857142857144 0 0 --command-delay 2 --command-ramp 2 \
+		--initial-height 0.12 --physics-timestep 0.005 \
+		--delay-act 0 --delay-vel 0 --delay-gyro 0 --delay-quat 0 --log logs/gui-demo.jsonl
 
 sim-headless:
 	uv run --locked --group sim python src/sim/sim_main.py --headless --walk --ticks 500 --log logs/standing.jsonl

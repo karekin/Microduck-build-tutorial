@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-10",
+  "scope": "fixed low-speed GUI simulation; no sensor delay",
+  "hardware_verified": false,
+  "general_walking_verified": false,
+  "deployment_tests_passed": 23,
+  "profile": {
+    "type": "header",
+    "evidence": "LOCAL_SIM_POLICY_CLOSED_LOOP",
+    "hardware_verified": false,
+    "policy_sha256": "5707c06da8346ecd4c2ff15dcd74ffabc575e0f14bcbb18076501324f9bbe279",
+    "policy_path": "/Users/karekin/Downloads/coding/project/Microduck-build-tutorial/microduck/src/agents/walk.onnx",
+    "model_scene": "/Users/karekin/Downloads/coding/project/Microduck-build-tutorial/microduck/src/model/mjcf/scene.xml",
+    "hz": 50.0,
+    "command_delay_s": 2.0,
+    "command_ramp_s": 2.0,
+    "target_normalized_velocity": [
+      0.07142857142857144,
+      0.0,
+      0.0
+    ],
+    "policy_firmware_kp": 200,
+    "physics_timestep_s": 0.005,
+    "substeps_per_tick": 4,
+    "requested_ticks": 1500,
+    "scripted_demo": true,
+    "policy_immediately": false,
+    "initial_root_height_m": 0.12,
+    "bam_voltage_drop_resistance_ohm": 0.07320269937796878,
+    "bam_max_current_a": 1.75,
+    "bam_firmware_kp_at_start": 400,
+    "bam_cpu_friction_matches_constraint_dof_ids": true,
+    "bam_torque_actuators_gain_one_bias_none": true,
+    "overcurrent_source": "simulated_BAM_torque_divided_by_kt",
+    "delays": {
+      "act": 0,
+      "pos": 0,
+      "vel": 0,
+      "gyro": 0,
+      "quat": 0
+    },
+    "simulation_voltage_is_placeholder": true
+  },
+  "summary": {
+    "type": "summary",
+    "evidence": "LOCAL_SIM_POLICY_CLOSED_LOOP",
+    "hardware_verified": false,
+    "ticks": 1500,
+    "requested_ticks_completed": true,
+    "simulation_time_s": 29.999999999998316,
+    "minimum_root_height_m": 0.11537353826111514,
+    "below_training_height_threshold_ticks": 0,
+    "active_move_ticks": 1424
+  },
+  "maximum_body_tilt_deg": 4.559012652097575,
+  "final_position_m": [
+    0.9650802952904467,
+    -0.05744689442886463,
+    0.12066855031161162
+  ],
+  "known_limitations": [
+    "Default free-control parameters remain unstable",
+    "Heading and speed tracking have residual error",
+    "No hardware claim"
+  ]
+}

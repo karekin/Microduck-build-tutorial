@@ -59,11 +59,13 @@ class MuJoCoController:
         initial_height_m: float = 0.165,
         physics_timestep_s: float | None = None,
         policy_kp: int = KP_RL,
+        follow_body_camera: bool = False,
     ) -> None:
         self._stop_flag_path = Path(stop_flag_path)
         self._reset_source = reset_source
         self._scheduler_driven = scheduler_driven
         self._policy_kp = policy_kp
+        self._follow_body_camera = follow_body_camera
         if not math.isfinite(initial_height_m) or initial_height_m <= 0:
             raise ValueError("Initial root height must be finite and positive")
         self._initial_height_m = initial_height_m
@@ -165,9 +167,20 @@ class MuJoCoController:
         )
         self._reset_motor_model()
 
+        # Native viewer Reset uses qpos0, which otherwise places this floating
+        # robot's trunk at floor height rather than its configured standing pose.
+        # Preserve hinge qpos0: it also defines each joint's geometric reference.
+        self._model.qpos0[2] = self._initial_height_m
+
         self._viewer = None if headless else mujoco.viewer.launch_passive(
             self._model, self._data, key_callback=key_callback
         )
+        if self._viewer is not None:
+            with self._viewer.lock():
+                self._viewer.cam.azimuth = 135
+                self._viewer.cam.elevation = -20
+                self._viewer.cam.distance = 0.6
+                self._viewer.cam.lookat[:] = (0., 0., 0.14)
 
         # Sensor indices for IMU readout
         self._sensor_orientation = mujoco.mj_name2id(self._model, mujoco.mjtObj.mjOBJ_SENSOR, "orientation")
@@ -200,6 +213,11 @@ class MuJoCoController:
     def set_kp(self, kp: float) -> None:
         self._bam.model.actuator.kp = kp
 
+    def read_body_heading(self) -> float:
+        """True simulated trunk yaw for optional command-level heading assistance."""
+        w, x, y, z = self._data.qpos[3:7]
+        return math.atan2(2. * (w * z + x * y), 1. - 2. * (y * y + z * z))
+
     def sync_read_kp(self, ids: list[int]) -> list[int]:
         kp = int(self._bam.model.actuator.kp)
         return [kp] * len(ids)
@@ -224,7 +242,11 @@ class MuJoCoController:
             self._advance_physics()
 
     def begin_tick(self) -> bool:
-        if self._reset_source is not None and self._reset_source.consume_reset():
+        native_reset = self._data.time + 1e-9 < self._last_physics_time
+        keyboard_reset = self._reset_source is not None and self._reset_source.consume_reset()
+        if native_reset or keyboard_reset:
+            if self._reset_source is not None:
+                self._reset_source.clear_velocity()
             self.reset()
             return True
         return False
@@ -258,6 +280,8 @@ class MuJoCoController:
             self._model.dof_damping[dofs] = damping
             mujoco.mj_step(self._model, self._data)
 
+        self._last_physics_time = float(self._data.time)
+
         if self._reset_source is not None and self._reset_source.show_torque:
             now = time.monotonic()
             if now - self._last_torque_print >= self._torque_interval:
@@ -266,6 +290,9 @@ class MuJoCoController:
                 self._last_torque_print = now
 
         if self._viewer is not None:
+            if self._follow_body_camera:
+                with self._viewer.lock():
+                    self._viewer.cam.lookat[:] = (self._data.qpos[0], self._data.qpos[1], 0.14)
             self._viewer.sync()
 
     def shutdown(self) -> None:
@@ -362,6 +389,7 @@ class MuJoCoController:
             if name in self._name_to_qpos_idx:
                 self._data.qpos[self._name_to_qpos_idx[name]] = angle
         self._reset_motor_model()
+        self._last_physics_time = float(self._data.time)
         mujoco.mj_forward(self._model, self._data)
         self._targets = dict(initial_pose)
         for name, index in self._name_to_qpos_idx.items():

@@ -1,0 +1,391 @@
+{
+  "date": "2026-10-10",
+  "scope": "low-speed interactive local simulation",
+  "hardware_verified": false,
+  "deployment_unit_tests": 26,
+  "keyboard_scenarios": {
+    "A1": {
+      "requested_ticks_completed": true,
+      "global_elapsed_s": 30.0,
+      "minimum_height_m": 0.11537353826111514,
+      "max_tilt_deg": 4.534685883041617,
+      "fallen_ticks": 0,
+      "reset_epochs": 0,
+      "actual_kp_values": [
+        200,
+        400
+      ]
+    },
+    "A10": {
+      "requested_ticks_completed": true,
+      "global_elapsed_s": 30.0,
+      "minimum_height_m": 0.11537353826111514,
+      "max_tilt_deg": 4.534685883041617,
+      "fallen_ticks": 0,
+      "reset_epochs": 0,
+      "actual_kp_values": [
+        200,
+        400
+      ]
+    },
+    "B": {
+      "requested_ticks_completed": true,
+      "global_elapsed_s": 80.0,
+      "minimum_height_m": 0.11537353826111514,
+      "max_tilt_deg": 4.534685883041617,
+      "fallen_ticks": 0,
+      "reset_epochs": 1,
+      "actual_kp_values": [
+        200,
+        400
+      ]
+    }
+  },
+  "tracking_limitations": [
+    "Backward motion does not reach requested negative speed",
+    "Stationary turning direction/rate tracking is weak",
+    "No physical hardware validation"
+  ],
+  "command_invariants": {
+    "evidence": "REAL_KEYBOARD_CALLBACK_INVARIANT_READBACK",
+    "hardware_verified": false,
+    "A1_A10_actual_command_equal_every_tick": true,
+    "A1_A10_qpos_equal_every_tick": true,
+    "B_events": [
+      {
+        "tick": 100,
+        "global_time_s": 2.02,
+        "simulation_time_s": 2.019999999999979,
+        "events": [
+          {
+            "keycode": 265,
+            "count": 1,
+            "global_tick": 100,
+            "global_time_s": 2.0
+          }
+        ],
+        "physical_target": {
+          "vx": 0.05,
+          "vy": 0.0,
+          "vtheta": 0.0
+        },
+        "physical_input_current": {
+          "vx": 0.0,
+          "vy": 0.0,
+          "vtheta": 0.0
+        },
+        "actual_scheduler_command": {
+          "vx": 0.0,
+          "vy": 0.0,
+          "vtheta": 0.0
+        },
+        "root_height_m": 0.1171901806551102,
+        "body_tilt_deg": 2.1952094834548586
+      },
+      {
+        "tick": 600,
+        "global_time_s": 12.02,
+        "simulation_time_s": 12.02000000000048,
+        "events": [
+          {
+            "keycode": 88,
+            "count": 1,
+            "global_tick": 600,
+            "global_time_s": 12.0
+          }
+        ],
+        "physical_target": {
+          "vx": 0.0,
+          "vy": 0.0,
+          "vtheta": 0.0
+        },
+        "physical_input_current": {
+          "vx": 0.049499999999999926,
+          "vy": 0.0,
+          "vtheta": 0.0
+        },
+        "actual_scheduler_command": {
+          "vx": 0.04949999999999993,
+          "vy": 0.0,
+          "vtheta": 0.0
+        },
+        "root_height_m": 0.11662311637098749,
+        "body_tilt_deg": 2.06816965949903
+      },
+      {
+        "tick": 900,
+        "global_time_s": 18.02,
+        "simulation_time_s": 18.0200000000007,
+        "events": [
+          {
+            "keycode": 264,
+            "count": 1,
+            "global_tick": 900,
+            "global_time_s": 18.0
+          }
+        ],
+        "physical_target": {
+          "vx": -0.025,
+          "vy": 0.0,
+          "vtheta": 0.0
+        },
+        "physical_input_current": {
+          "vx": -0.0004999999999999006,
+          "vy": 0.0,
+          "vtheta": 0.0
+        },
+        "actual_scheduler_command": {
+          "vx": -0.0004999999999999006,
+          "vy": 0.0,
+          "vtheta": 0.0
+        },
+        "root_height_m": 0.1177329064644956,
+        "body_tilt_deg": 1.5891437955079586
+      },
+      {
+        "tick": 1400,
+        "global_time_s": 28.02,
+        "simulation_time_s": 28.01999999999871,
+        "events": [
+          {
+            "keycode": 88,
+            "count": 1,
+            "global_tick": 1400,
+            "global_time_s": 28.0
+          }
+        ],
+        "physical_target": {
+          "vx": 0.0,
+          "vy": 0.0,
+          "vtheta": 0.0
+        },
+        "physical_input_current": {
+          "vx": -0.0245000000000001,
+          "vy": 0.0,
+          "vtheta": 0.0
+        },
+        "actual_scheduler_command": {
+          "vx": -0.0245000000000001,
+          "vy": 0.0,
+          "vtheta": 0.0
+        },
+        "root_height_m": 0.1173400207711539,
+        "body_tilt_deg": 1.6429458549155664
+      },
+      {
+        "tick": 1700,
+        "global_time_s": 34.02,
+        "simulation_time_s": 34.01999999999895,
+        "events": [
+          {
+            "keycode": 262,
+            "count": 2,
+            "global_tick": 1700,
+            "global_time_s": 34.0
+          }
+        ],
+        "physical_target": {
+          "vx": 0.0,
+          "vy": 0.0,
+          "vtheta": 0.1
+        },
+        "physical_input_current": {
+          "vx": 0.0,
+          "vy": 0.0,
+          "vtheta": 0.0010000000000005115
+        },
+        "actual_scheduler_command": {
+          "vx": 0.0,
+          "vy": 0.0,
+          "vtheta": 0.0010000000000005115
+        },
+        "root_height_m": 0.11740385649883793,
+        "body_tilt_deg": 1.5605055387344542
+      },
+      {
+        "tick": 2200,
+        "global_time_s": 44.02,
+        "simulation_time_s": 44.02000000000407,
+        "events": [
+          {
+            "keycode": 265,
+            "count": 1,
+            "global_tick": 2200,
+            "global_time_s": 44.0
+          }
+        ],
+        "physical_target": {
+          "vx": 0.05,
+          "vy": 0.0,
+          "vtheta": 0.1
+        },
+        "physical_input_current": {
+          "vx": 0.0005000000000002558,
+          "vy": 0.0,
+          "vtheta": 0.1
+        },
+        "actual_scheduler_command": {
+          "vx": 0.0005000000000002558,
+          "vy": 0.0,
+          "vtheta": 0.1
+        },
+        "root_height_m": 0.11996595556577062,
+        "body_tilt_deg": 2.8492730795379546
+      },
+      {
+        "tick": 2700,
+        "global_time_s": 54.02,
+        "simulation_time_s": 54.02000000000918,
+        "events": [
+          {
+            "keycode": 88,
+            "count": 1,
+            "global_tick": 2700,
+            "global_time_s": 54.0
+          }
+        ],
+        "physical_target": {
+          "vx": 0.0,
+          "vy": 0.0,
+          "vtheta": 0.0
+        },
+        "physical_input_current": {
+          "vx": 0.049499999999999746,
+          "vy": 0.0,
+          "vtheta": 0.09899999999999949
+        },
+        "actual_scheduler_command": {
+          "vx": 0.049499999999999746,
+          "vy": 0.0,
+          "vtheta": 0.09899999999999948
+        },
+        "root_height_m": 0.12094609630001014,
+        "body_tilt_deg": 3.328505130978782
+      },
+      {
+        "tick": 3000,
+        "global_time_s": 60.02,
+        "simulation_time_s": 60.02000000001225,
+        "events": [
+          {
+            "keycode": 263,
+            "count": 2,
+            "global_tick": 3000,
+            "global_time_s": 60.0
+          }
+        ],
+        "physical_target": {
+          "vx": 0.0,
+          "vy": 0.0,
+          "vtheta": -0.1
+        },
+        "physical_input_current": {
+          "vx": 0.0,
+          "vy": 0.0,
+          "vtheta": -0.0010000000000005115
+        },
+        "actual_scheduler_command": {
+          "vx": 0.0,
+          "vy": 0.0,
+          "vtheta": -0.0010000000000005115
+        },
+        "root_height_m": 0.1174439659486636,
+        "body_tilt_deg": 1.5716036470649635
+      },
+      {
+        "tick": 3500,
+        "global_time_s": 70.02,
+        "simulation_time_s": 70.0200000000088,
+        "events": [
+          {
+            "keycode": 82,
+            "count": 1,
+            "global_tick": 3500,
+            "global_time_s": 70.0
+          }
+        ],
+        "physical_target": {
+          "vx": 0.0,
+          "vy": 0.0,
+          "vtheta": 0.0
+        },
+        "physical_input_current": {
+          "vx": 0.0,
+          "vy": 0.0,
+          "vtheta": 0.0
+        },
+        "actual_scheduler_command": {
+          "vx": 0.0,
+          "vy": 0.0,
+          "vtheta": 0.0
+        },
+        "root_height_m": 0.11704116531867051,
+        "body_tilt_deg": 1.4697225932504048
+      }
+    ],
+    "B_non_reset_max_vx_change_per_tick": 0.0005000000000002641,
+    "B_non_reset_max_yaw_change_per_tick": 0.0010000000000005282,
+    "B_adding_forward_at_44s_yaw_before": 0.1,
+    "B_adding_forward_at_44s_yaw_after": 0.1,
+    "B_R_target_and_current_zero": true,
+    "B_R_next_tick_reset_epoch": 1,
+    "B_R_next_tick_sim_time": 0.02
+  },
+  "live_gui_snapshot": {
+    "header": {
+      "type": "header",
+      "evidence": "LOCAL_SIM_POLICY_CLOSED_LOOP",
+      "hardware_verified": false,
+      "policy_sha256": "5707c06da8346ecd4c2ff15dcd74ffabc575e0f14bcbb18076501324f9bbe279",
+      "policy_path": "/Users/karekin/Downloads/coding/project/Microduck-build-tutorial/microduck/src/agents/walk.onnx",
+      "model_scene": "/Users/karekin/Downloads/coding/project/Microduck-build-tutorial/microduck/src/model/mjcf/scene.xml",
+      "hz": 50.0,
+      "command_delay_s": 0.0,
+      "command_ramp_s": 0.0,
+      "target_normalized_velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "policy_firmware_kp": 200,
+      "physics_timestep_s": 0.005,
+      "substeps_per_tick": 4,
+      "requested_ticks": null,
+      "scripted_demo": false,
+      "low_speed_keyboard": true,
+      "keyboard_physical_limits": {
+        "forward_m_s": 0.05,
+        "backward_m_s": 0.025,
+        "turn_rad_s": 0.1,
+        "startup_stand_s": 2.0,
+        "linear_slew_m_s2": 0.025,
+        "angular_slew_rad_s2": 0.05
+      },
+      "policy_immediately": false,
+      "initial_root_height_m": 0.12,
+      "bam_voltage_drop_resistance_ohm": 0.07320269937796878,
+      "bam_max_current_a": 1.75,
+      "bam_firmware_kp_at_start": 400,
+      "bam_cpu_friction_matches_constraint_dof_ids": true,
+      "bam_torque_actuators_gain_one_bias_none": true,
+      "overcurrent_source": "simulated_BAM_torque_divided_by_kt",
+      "delays": {
+        "act": 0,
+        "pos": 0,
+        "vel": 0,
+        "gyro": 0,
+        "quat": 0
+      },
+      "simulation_voltage_is_placeholder": true
+    },
+    "recorded_ticks": 12208,
+    "simulation_time_s": 244.15999999985044,
+    "minimum_height_m": 0.11537353826111514,
+    "maximum_tilt_deg": 4.559012652097575,
+    "latest_command": {
+      "vx": 0.025,
+      "vy": 0.0,
+      "vtheta": 0.0
+    }
+  }
+}

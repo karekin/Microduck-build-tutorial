@@ -35,12 +35,13 @@ class MuJoCoInputSource(InputSource):
         self,
         move_keys: dict[str, str],
         stop_flag_path: str = "/tmp/microduck_scheduler.stop",
+        initial_moves: set[str] | None = None,
     ) -> None:
         # Convert single-char keys to GLFW keycodes (letters = uppercase ASCII)
         self._keycode_to_move: dict[int, str] = {ord(k.upper()): v for k, v in move_keys.items()}
         self._move_keys_display = move_keys
         self._stop_flag_path = Path(stop_flag_path)
-        self._state = UserInput()
+        self._state = UserInput(active_moves=set(initial_moves or ()))
         self._lock = threading.Lock()
         self._reset_requested = threading.Event()
         self._viewer_opt: "MjvOption | None" = None
@@ -58,6 +59,10 @@ class MuJoCoInputSource(InputSource):
     def consume_reset(self) -> bool:
         """Return True (and clear the flag) if a reset was requested since last call."""
         return self._reset_requested.is_set() and not self._reset_requested.clear() or False
+
+    def clear_velocity(self) -> None:
+        with self._lock:
+            self._state.velocity = {"vx": 0.0, "vy": 0.0, "vtheta": 0.0}
 
     def start(self) -> None:
         print("MuJoCo viewer keyboard controls:")
@@ -93,11 +98,11 @@ class MuJoCoInputSource(InputSource):
                     print(f"Move '{move_name}' enabled")
 
         elif keycode == ord("X"):
-            with self._lock:
-                self._state.velocity = {"vx": 0.0, "vy": 0.0, "vtheta": 0.0}
+            self.clear_velocity()
             print("Velocity reset to zero")
 
         elif keycode == ord("R"):
+            self.clear_velocity()
             self._reset_requested.set()
             print("Robot reset to initial pose")
 

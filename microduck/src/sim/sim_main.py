@@ -20,10 +20,15 @@ from moves.move import MoveState
 from input.input_source import InputSource, UserInput
 from scheduler import Scheduler
 from sim.mujoco_input import MuJoCoInputSource
+from sim.low_speed_input import LowSpeedKeyboardInput
 from sim.mujoco_controller import MuJoCoController
-from moves.rotate_head import RotateHeadMove
-from moves.squat import SquatMove
 from moves.walk import WalkMove
+
+
+def simulation_moves(controller):
+    # Legacy head/squat behaviors target the old 19-joint robot. Register only
+    # the 14-joint policy here, including for reset/stop callbacks.
+    return {"walk": WalkMove(controller=controller)}
 
 
 class FixedSimulationInput(InputSource):
@@ -43,15 +48,49 @@ class FixedSimulationInput(InputSource):
                          velocity={name: value * progress for name, value in self.velocity.items()})
 
 
+class ScriptedDemoInput(MuJoCoInputSource):
+    """Fixed low-speed demonstration with reset/stop controls, no arrow mixing."""
+    def __init__(self, velocity, *, time_source, delay_s, ramp_s, stop_flag_path):
+        super().__init__({"v": "walk"}, stop_flag_path=stop_flag_path, initial_moves={"walk"})
+        self.script = FixedSimulationInput(True, velocity, delay_s=delay_s,
+                                           ramp_s=ramp_s, time_source=time_source)
+        self.motion_enabled = True
+
+    def start(self):
+        print("LOW-SPEED SIMULATION DEMO: scripted motion, no sensor delay; not hardware validation")
+        print("  [x] stand, [r] reset and replay, [q] quit; arrows disabled in this demo")
+
+    def read(self):
+        state = super().read()
+        state.velocity = (self.script.read().velocity if self.motion_enabled else
+                          {"vx": 0., "vy": 0., "vtheta": 0.})
+        return state
+
+    def key_callback(self, keycode):
+        if keycode in (262, 263, 264, 265):
+            print("Scripted demo uses a fixed command; press X to stand or R to replay")
+            return
+        if keycode == ord("X"):
+            self.motion_enabled = False
+        elif keycode == ord("R"):
+            self.motion_enabled = True
+        super().key_callback(keycode)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--hz", type=float, default=50.0)
     parser.add_argument("--physics-timestep", type=float,
                         help="Explicit physics timestep in seconds; omitted uses MJCF, current training config uses .005")
     parser.add_argument("--headless", action="store_true", help="No viewer; use finite --ticks")
+    parser.add_argument("--scripted-demo", action="store_true", help="Fixed motion demo with reset/stop keys; arrows do not change its velocity")
+    parser.add_argument("--low-speed-keyboard", action="store_true", help="Slew-limited keyboard input with physical low-speed limits")
+    parser.add_argument("--forward-limit", type=float, choices=(0.05, 0.10), default=0.05,
+                        help="Initial keyboard forward speed limit in m/s; keys 8/9 switch the limit")
+    parser.add_argument("--heading-assist", action="store_true", help="Use true simulated yaw to correct fast-forward policy commands; disabled on X/idle")
     parser.add_argument("--ticks", type=int, help="Stop after this many control ticks")
     parser.add_argument("--realtime", action="store_true", help="Pace headless ticks to wall time")
-    parser.add_argument("--walk", action="store_true", help="Activate walk from tick zero in headless mode")
+    parser.add_argument("--walk", action="store_true", help="Activate the policy at startup; zero velocity commands standing")
     parser.add_argument("--policy-immediately", action="store_true",
                         help="Headless walk only: begin policy immediately at its default pose, bypassing hardware startup ramp")
     parser.add_argument("--velocity", type=float, nargs=3, default=[0.0, 0.0, 0.0],
@@ -80,6 +119,12 @@ def main() -> None:
         parser.error("--headless requires a finite --ticks")
     if args.policy_immediately and not (args.headless and args.walk):
         parser.error("--policy-immediately requires --headless --walk")
+    if args.scripted_demo and not args.walk:
+        parser.error("--scripted-demo requires --walk")
+    if args.scripted_demo and args.low_speed_keyboard:
+        parser.error("Choose scripted demo or keyboard input, not both")
+    if args.heading_assist and not args.low_speed_keyboard:
+        parser.error("--heading-assist requires --low-speed-keyboard")
     if any(v < 0 for v in (args.delay_act, args.delay_pos, args.delay_vel, args.delay_gyro, args.delay_quat)):
         parser.error("delays must be nonnegative")
     if any(not math.isfinite(v) or abs(v) > 1 for v in args.velocity):
@@ -98,14 +143,23 @@ def main() -> None:
     # All stop files are private to this run, never the robot's public stop path.
     with tempfile.TemporaryDirectory(prefix="microduck-sim-") as directory:
         stop_path = str(Path(directory) / "stop")
-        input_source = (FixedSimulationInput(args.walk, args.velocity, delay_s=args.command_delay,
+        input_source = (LowSpeedKeyboardInput(stop_flag_path=stop_path,
+                                              forward_limit=args.forward_limit,
+                                              heading_source=(lambda: controller.read_body_heading()) if args.heading_assist else None,
+                                              initial_moves={"walk"} if args.walk else None,
+                                              time_source=lambda: controller.simulation_time) if args.low_speed_keyboard else
+                        ScriptedDemoInput(args.velocity, delay_s=args.command_delay,
+                                         ramp_s=args.command_ramp, stop_flag_path=stop_path,
+                                         time_source=lambda: controller.simulation_time) if args.scripted_demo else
+                        FixedSimulationInput(args.walk, args.velocity, delay_s=args.command_delay,
                                             ramp_s=args.command_ramp,
                                             time_source=lambda: controller.simulation_time) if args.headless else
-                        MuJoCoInputSource(move_keys={"h": "head", "s": "squat", "v": "walk"},
+                        MuJoCoInputSource(move_keys={"v": "walk"}, initial_moves={"walk"} if args.walk else None,
                                           stop_flag_path=stop_path))
         try:
             controller = MuJoCoController(
                 mjcf_path=str(model_scene), headless=args.headless, policy_kp=args.policy_kp,
+                follow_body_camera=args.scripted_demo or args.low_speed_keyboard,
                 initial_height_m=args.initial_height,
                 physics_timestep_s=args.physics_timestep,
                 frequency_hz=args.hz, scheduler_driven=True, stop_flag_path=stop_path,
@@ -120,17 +174,22 @@ def main() -> None:
             raise
         if not args.headless:
             input_source.set_viewer_opt(controller.viewer_opt)
+        if args.low_speed_keyboard:
+            print(f"Simulation settings: KP={args.policy_kp}, timestep={controller._model.opt.timestep}, "
+                  f"initial height={args.initial_height}, delays(act,pos,vel,gyro,quat)="
+                  f"{args.delay_act},{args.delay_pos},{args.delay_vel},{args.delay_gyro},{args.delay_quat}")
 
         log_file = None
         try:
-            walk = WalkMove(controller=controller)
+            moves = simulation_moves(controller)
+            walk = moves["walk"]
             if args.policy_immediately:
                 controller.reset(pose=walk._default_pose)
                 controller.set_kp(args.policy_kp)
                 walk.state = MoveState.ACTIVE
             scheduler = Scheduler(frequency_hz=args.hz, controller=controller,
                                   input_source=input_source, stop_flag_path=stop_path,
-                                  moves={"head": RotateHeadMove(), "squat": SquatMove(), "walk": walk})
+                                  moves=moves)
             # CPU sensor reads have no bus latency. Protect using the simulated
             # BAM current (applied torque / kt), rather than a hardware proxy.
             scheduler.observer.observe_current = True
@@ -157,6 +216,8 @@ def main() -> None:
                        "simulation_time_s": controller.simulation_time,
                        "move_state": walk.state.name,
                        "command_velocity": obs.user_input.velocity,
+                       "keyboard_forward_limit_m_s": (input_source.FORWARD_LIMIT if args.low_speed_keyboard else None),
+                       "keyboard_heading_correction_rad_s": (input_source.heading_correction if args.low_speed_keyboard else None),
                        "firmware_kp": controller._bam.model.actuator.kp,
                        "motor_positions": obs.robot_state.motor_positions,
                        "motor_velocities": obs.robot_state.motor_velocities,
@@ -186,6 +247,16 @@ def main() -> None:
                     "physics_timestep_s": controller._model.opt.timestep,
                     "substeps_per_tick": controller._steps_per_tick,
                     "requested_ticks": args.ticks,
+                    "scripted_demo": args.scripted_demo,
+                    "low_speed_keyboard": args.low_speed_keyboard,
+                    "heading_assist": args.heading_assist,
+                    "keyboard_physical_limits": ({"forward_m_s": input_source.FORWARD_LIMIT,
+                        "backward_m_s": LowSpeedKeyboardInput.BACKWARD_LIMIT,
+                        "turn_rad_s": LowSpeedKeyboardInput.TURN_LIMIT,
+                        "startup_stand_s": LowSpeedKeyboardInput.STARTUP_STAND_S,
+                        "linear_slew_m_s2": LowSpeedKeyboardInput.LINEAR_SLEW,
+                        "angular_slew_rad_s2": LowSpeedKeyboardInput.ANGULAR_SLEW}
+                        if args.low_speed_keyboard else None),
                     "policy_immediately": args.policy_immediately,
                     "initial_root_height_m": args.initial_height,
                     "bam_voltage_drop_resistance_ohm": controller._bam.vin_drop_resistance,
